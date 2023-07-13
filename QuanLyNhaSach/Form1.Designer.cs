@@ -29,30 +29,51 @@
         private void InitializeComponent()
         {
             comboBox1 = new ComboBox();
+
+            label2 = new Label();
             SuspendLayout();
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(211, 123);
+            comboBox1.Location = new Point(218, 123);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(425, 99);
+            label2.Name = "label2";
+            label2.Size = new Size(97, 20);
+            label2.TabIndex = 2;
+            label2.Text = "day la form 2";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1249, 450);
+            Controls.Add(label2);
+
             Controls.Add(comboBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ComboBox comboBox1;
+
+        private Label label2;
     }
 }
