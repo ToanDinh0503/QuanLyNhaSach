@@ -31,6 +31,7 @@
             comboBox1 = new ComboBox();
             label2 = new Label();
             button1 = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // comboBox1
@@ -61,11 +62,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(69, 240);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Day la Bao";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1249, 450);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(comboBox1);
@@ -82,5 +93,6 @@
 
         private Label label2;
         private Button button1;
+        private Label label1;
     }
 }
