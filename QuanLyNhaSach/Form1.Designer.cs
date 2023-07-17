@@ -31,7 +31,7 @@
             comboBox1 = new ComboBox();
             label2 = new Label();
             button1 = new Button();
-            label1 = new Label();
+            
             SuspendLayout();
             // 
             // comboBox1
@@ -64,13 +64,7 @@
             // 
             // label1
             // 
-            button2.Location = new Point(859, 205);
-            button2.Name = "button2";
-            button2.Size = new Size(179, 29);
-            button2.TabIndex = 4;
-            button2.Text = "Thêm Tài hello";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            
             // 
             // button1
             // 
@@ -104,6 +98,6 @@
         private Label label2;
         private Label label1;
         private Button button1;
-        private Label label1;
+        
     }
 }
