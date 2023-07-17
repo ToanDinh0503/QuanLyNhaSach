@@ -31,7 +31,7 @@
             comboBox1 = new ComboBox();
             label2 = new Label();
             button1 = new Button();
-            
+
             SuspendLayout();
             // 
             // comboBox1
@@ -64,17 +64,7 @@
             // 
             // label1
             // 
-            
-            // 
-            // button1
-            // 
-            button1.Location = new Point(602, 192);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+
             // 
             // Form1
             // 
@@ -82,6 +72,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1249, 450);
             Controls.Add(label1);
+
             Controls.Add(label2);
             Controls.Add(comboBox1);
             Name = "Form1";
@@ -98,6 +89,6 @@
         private Label label2;
         private Label label1;
         private Button button1;
-        
+
     }
 }
