@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class Form3
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form3";
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(142, 169);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(368, 75);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 20);
+            label2.TabIndex = 2;
+            label2.Text = "label2";
+            label2.Click += label2_Click;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(90, 64);
+            label1.Name = "label1";
+            label1.Size = new Size(404, 100);
+            label1.TabIndex = 0;
+            label1.Text = "MENU";
+            // 
+            // Menu
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
+            Name = "Menu";
+            Text = "Form3";
+            Load += MENU_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+        private DataGridView dataGridView1;
+        private Label label2;
+        private Label label1;
     }
 }
