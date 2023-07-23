@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            btn_thoat = new Button();
+            btn_Login = new Button();
             panel3 = new Panel();
             txb_PassWord = new TextBox();
             lb_PasssWord = new Label();
@@ -44,8 +44,8 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btn_thoat);
+            panel1.Controls.Add(btn_Login);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(17, 39);
@@ -54,24 +54,25 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // button2
+            // btn_thoat
             // 
-            button2.Location = new Point(786, 265);
-            button2.Name = "button2";
-            button2.Size = new Size(113, 48);
-            button2.TabIndex = 3;
-            button2.Text = "Thoát";
-            button2.UseVisualStyleBackColor = true;
+            btn_thoat.Location = new Point(786, 265);
+            btn_thoat.Name = "btn_thoat";
+            btn_thoat.Size = new Size(113, 48);
+            btn_thoat.TabIndex = 3;
+            btn_thoat.Text = "Thoát";
+            btn_thoat.UseVisualStyleBackColor = true;
+            btn_thoat.Click += btn_thoat_Click;
             // 
-            // button1
+            // btn_Login
             // 
-            button1.Location = new Point(654, 265);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 48);
-            button1.TabIndex = 2;
-            button1.Text = "Đăng nhập";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            btn_Login.Location = new Point(654, 265);
+            btn_Login.Name = "btn_Login";
+            btn_Login.Size = new Size(113, 48);
+            btn_Login.TabIndex = 2;
+            btn_Login.Text = "Đăng nhập";
+            btn_Login.UseVisualStyleBackColor = true;
+            btn_Login.Click += btn_Login_Click;
             // 
             // panel3
             // 
@@ -123,9 +124,9 @@
             lb_UserName.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lb_UserName.Location = new Point(3, 12);
             lb_UserName.Name = "lb_UserName";
-            lb_UserName.Size = new Size(236, 35);
+            lb_UserName.Size = new Size(217, 35);
             lb_UserName.TabIndex = 0;
-            lb_UserName.Text = "Tên đăng nhập:";
+            lb_UserName.Text = "Tên tài khoản:";
             // 
             // DangNhap
             // 
@@ -137,6 +138,7 @@
             Name = "DangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
+            FormClosing += DangNhap_FormClosing;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -155,7 +157,7 @@
         private Panel panel3;
         private TextBox txb_PassWord;
         private Label lb_PasssWord;
-        private Button button1;
-        private Button button2;
+        private Button btn_Login;
+        private Button btn_thoat;
     }
 }
