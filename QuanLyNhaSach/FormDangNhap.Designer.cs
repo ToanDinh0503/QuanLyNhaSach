@@ -28,112 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             panel1 = new Panel();
-            btn_thoat = new Button();
-            btn_Login = new Button();
+            button1 = new Button();
             panel3 = new Panel();
-            txb_PassWord = new TextBox();
-            lb_PasssWord = new Label();
+            groupBox2 = new GroupBox();
+            checkBox1 = new CheckBox();
+            txb_matkhau = new TextBox();
+            btn_Login = new Button();
             panel2 = new Panel();
-            txb_UserName = new TextBox();
-            lb_UserName = new Label();
+            groupBox1 = new GroupBox();
+            txb_taikhoan = new TextBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            groupBox2.SuspendLayout();
             panel2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_thoat);
-            panel1.Controls.Add(btn_Login);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(panel3);
+            panel1.Controls.Add(btn_Login);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(17, 39);
             panel1.Name = "panel1";
-            panel1.Size = new Size(948, 361);
+            panel1.Size = new Size(420, 361);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // btn_thoat
+            // button1
             // 
-            btn_thoat.Location = new Point(786, 265);
-            btn_thoat.Name = "btn_thoat";
-            btn_thoat.Size = new Size(113, 48);
-            btn_thoat.TabIndex = 3;
-            btn_thoat.Text = "Thoát";
-            btn_thoat.UseVisualStyleBackColor = true;
-            btn_thoat.Click += btn_thoat_Click;
-            // 
-            // btn_Login
-            // 
-            btn_Login.Location = new Point(654, 265);
-            btn_Login.Name = "btn_Login";
-            btn_Login.Size = new Size(113, 48);
-            btn_Login.TabIndex = 2;
-            btn_Login.Text = "Đăng nhập";
-            btn_Login.UseVisualStyleBackColor = true;
-            btn_Login.Click += btn_Login_Click;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(225, 274);
+            button1.Name = "button1";
+            button1.Size = new Size(172, 64);
+            button1.TabIndex = 5;
+            button1.Text = "         Thoát";
+            button1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            panel3.Controls.Add(txb_PassWord);
-            panel3.Controls.Add(lb_PasssWord);
-            panel3.Location = new Point(17, 130);
+            panel3.Controls.Add(groupBox2);
+            panel3.Location = new Point(26, 149);
             panel3.Name = "panel3";
-            panel3.Size = new Size(907, 107);
-            panel3.TabIndex = 1;
+            panel3.Size = new Size(371, 119);
+            panel3.TabIndex = 4;
             // 
-            // txb_PassWord
+            // groupBox2
             // 
-            txb_PassWord.Location = new Point(245, 20);
-            txb_PassWord.Name = "txb_PassWord";
-            txb_PassWord.Size = new Size(637, 27);
-            txb_PassWord.TabIndex = 1;
-            txb_PassWord.UseSystemPasswordChar = true;
+            groupBox2.Controls.Add(checkBox1);
+            groupBox2.Controls.Add(txb_matkhau);
+            groupBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Location = new Point(16, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(345, 113);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Mật khẩu:";
             // 
-            // lb_PasssWord
+            // checkBox1
             // 
-            lb_PasssWord.AutoSize = true;
-            lb_PasssWord.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lb_PasssWord.Location = new Point(84, 11);
-            lb_PasssWord.Name = "lb_PasssWord";
-            lb_PasssWord.Size = new Size(155, 35);
-            lb_PasssWord.TabIndex = 0;
-            lb_PasssWord.Text = "Mật khẩu:";
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox1.Location = new Point(0, 78);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(121, 21);
+            checkBox1.TabIndex = 3;
+            checkBox1.Text = "Hiện mật khẩu";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // txb_matkhau
+            // 
+            txb_matkhau.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txb_matkhau.Location = new Point(16, 37);
+            txb_matkhau.Name = "txb_matkhau";
+            txb_matkhau.Size = new Size(307, 38);
+            txb_matkhau.TabIndex = 2;
+            txb_matkhau.UseSystemPasswordChar = true;
+            // 
+            // btn_Login
+            // 
+            btn_Login.Image = (Image)resources.GetObject("btn_Login.Image");
+            btn_Login.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Login.Location = new Point(26, 274);
+            btn_Login.Name = "btn_Login";
+            btn_Login.Size = new Size(172, 64);
+            btn_Login.TabIndex = 4;
+            btn_Login.Text = "         Đăng nhập";
+            btn_Login.UseVisualStyleBackColor = true;
+            btn_Login.Click += btn_Login_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(txb_UserName);
-            panel2.Controls.Add(lb_UserName);
-            panel2.Location = new Point(17, 17);
+            panel2.Controls.Add(groupBox1);
+            panel2.Location = new Point(26, 18);
             panel2.Name = "panel2";
-            panel2.Size = new Size(907, 107);
+            panel2.Size = new Size(371, 107);
             panel2.TabIndex = 0;
             // 
-            // txb_UserName
+            // groupBox1
             // 
-            txb_UserName.Location = new Point(245, 20);
-            txb_UserName.Name = "txb_UserName";
-            txb_UserName.Size = new Size(637, 27);
-            txb_UserName.TabIndex = 1;
-            txb_UserName.TextChanged += textBox1_TextChanged;
+            groupBox1.Controls.Add(txb_taikhoan);
+            groupBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(16, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(345, 101);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Tài khoản:";
             // 
-            // lb_UserName
+            // txb_taikhoan
             // 
-            lb_UserName.AutoSize = true;
-            lb_UserName.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lb_UserName.Location = new Point(3, 12);
-            lb_UserName.Name = "lb_UserName";
-            lb_UserName.Size = new Size(217, 35);
-            lb_UserName.TabIndex = 0;
-            lb_UserName.Text = "Tên tài khoản:";
+            txb_taikhoan.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txb_taikhoan.Location = new Point(16, 37);
+            txb_taikhoan.Name = "txb_taikhoan";
+            txb_taikhoan.Size = new Size(307, 38);
+            txb_taikhoan.TabIndex = 1;
+            txb_taikhoan.TextChanged += textBox1_TextChanged;
             // 
             // DangNhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(975, 406);
+            ClientSize = new Size(451, 406);
             Controls.Add(panel1);
             Name = "DangNhap";
             StartPosition = FormStartPosition.CenterScreen;
@@ -142,9 +164,11 @@
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -152,12 +176,13 @@
 
         private Panel panel1;
         private Panel panel2;
-        private TextBox txb_UserName;
-        private Label lb_UserName;
-        private Panel panel3;
-        private TextBox txb_PassWord;
-        private Label lb_PasssWord;
+        private TextBox txb_taikhoan;
         private Button btn_Login;
-        private Button btn_thoat;
+        private GroupBox groupBox1;
+        private Panel panel3;
+        private GroupBox groupBox2;
+        private TextBox txb_matkhau;
+        private Button button1;
+        private CheckBox checkBox1;
     }
 }

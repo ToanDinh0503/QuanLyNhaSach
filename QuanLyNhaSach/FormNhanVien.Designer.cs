@@ -53,13 +53,14 @@
             label3 = new Label();
             label2 = new Label();
             lsv_danhsachnv = new ListView();
+            id = new ColumnHeader();
             hoten = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
+            diachi = new ColumnHeader();
+            sdt = new ColumnHeader();
+            ngaysinh = new ColumnHeader();
+            vaitro = new ColumnHeader();
+            taikhoan = new ColumnHeader();
+            matkhau = new ColumnHeader();
             pannel_timkiem.SuspendLayout();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -68,11 +69,10 @@
             // pannel_timkiem
             // 
             pannel_timkiem.Controls.Add(groupBox1);
-            pannel_timkiem.Location = new Point(12, 12);
+            pannel_timkiem.Location = new Point(11, 12);
             pannel_timkiem.Name = "pannel_timkiem";
-            pannel_timkiem.Size = new Size(580, 87);
+            pannel_timkiem.Size = new Size(581, 87);
             pannel_timkiem.TabIndex = 1;
-            pannel_timkiem.Paint += panel1_Paint;
             // 
             // groupBox1
             // 
@@ -80,24 +80,23 @@
             groupBox1.Controls.Add(txb_timkiem);
             groupBox1.Location = new Point(18, 7);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(524, 80);
+            groupBox1.Size = new Size(523, 80);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Tìm kiếm";
             // 
             // btn_tim
             // 
-            btn_tim.Location = new Point(414, 26);
+            btn_tim.Location = new Point(414, 27);
             btn_tim.Name = "btn_tim";
             btn_tim.Size = new Size(94, 29);
             btn_tim.TabIndex = 1;
             btn_tim.Text = "Search";
             btn_tim.UseVisualStyleBackColor = true;
-            btn_tim.Click += btn_tim_Click;
             // 
             // txb_timkiem
             // 
-            txb_timkiem.Location = new Point(112, 26);
+            txb_timkiem.Location = new Point(112, 27);
             txb_timkiem.Name = "txb_timkiem";
             txb_timkiem.Size = new Size(274, 27);
             txb_timkiem.TabIndex = 0;
@@ -123,7 +122,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 260);
+            panel1.Location = new Point(11, 260);
             panel1.Name = "panel1";
             panel1.Size = new Size(717, 323);
             panel1.TabIndex = 3;
@@ -132,6 +131,7 @@
             // 
             txb_matkhau.Location = new Point(390, 88);
             txb_matkhau.Name = "txb_matkhau";
+            txb_matkhau.PasswordChar = '*';
             txb_matkhau.Size = new Size(190, 27);
             txb_matkhau.TabIndex = 8;
             // 
@@ -170,7 +170,6 @@
             btn_thoat.TabIndex = 13;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
-            btn_thoat.Click += btn_thoat_Click;
             // 
             // btn_lammoi
             // 
@@ -180,7 +179,6 @@
             btn_lammoi.TabIndex = 12;
             btn_lammoi.Text = "Làm mới";
             btn_lammoi.UseVisualStyleBackColor = true;
-            btn_lammoi.Click += btn_lammoi_Click;
             // 
             // btn_xoa
             // 
@@ -190,7 +188,7 @@
             btn_xoa.TabIndex = 11;
             btn_xoa.Text = "Xóa";
             btn_xoa.UseVisualStyleBackColor = true;
-            btn_xoa.Click += btn_xoa_Click;
+            btn_xoa.Click += btn_xoa_Click_1;
             // 
             // btn_capnhat
             // 
@@ -200,7 +198,7 @@
             btn_capnhat.TabIndex = 10;
             btn_capnhat.Text = "Cập nhật";
             btn_capnhat.UseVisualStyleBackColor = true;
-            btn_capnhat.Click += btn_capnhat_Click;
+            btn_capnhat.Click += btn_capnhat_Click_1;
             // 
             // btn_them
             // 
@@ -210,7 +208,7 @@
             btn_them.TabIndex = 9;
             btn_them.Text = "Thêm";
             btn_them.UseVisualStyleBackColor = true;
-            btn_them.Click += btn_them_Click;
+            btn_them.Click += btn_them_Click_1;
             // 
             // txb_diachi
             // 
@@ -301,50 +299,53 @@
             // 
             // lsv_danhsachnv
             // 
-            lsv_danhsachnv.Columns.AddRange(new ColumnHeader[] { hoten, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
+            lsv_danhsachnv.Columns.AddRange(new ColumnHeader[] { id, hoten, diachi, sdt, ngaysinh, vaitro, taikhoan, matkhau });
             lsv_danhsachnv.FullRowSelect = true;
-            lsv_danhsachnv.Location = new Point(12, 105);
+            lsv_danhsachnv.Location = new Point(11, 105);
             lsv_danhsachnv.Name = "lsv_danhsachnv";
-            lsv_danhsachnv.Size = new Size(903, 149);
+            lsv_danhsachnv.Size = new Size(1005, 149);
             lsv_danhsachnv.TabIndex = 2;
             lsv_danhsachnv.UseCompatibleStateImageBehavior = false;
             lsv_danhsachnv.View = View.Details;
-            lsv_danhsachnv.SelectedIndexChanged += lsv_danhsachnv_SelectedIndexChanged;
+            // 
+            // id
+            // 
+            id.Text = "id";
             // 
             // hoten
             // 
             hoten.Text = "Họ tên";
             hoten.Width = 120;
             // 
-            // columnHeader2
+            // diachi
             // 
-            columnHeader2.Text = "Địa chỉ";
-            columnHeader2.Width = 170;
+            diachi.Text = "Địa chỉ";
+            diachi.Width = 170;
             // 
-            // columnHeader3
+            // sdt
             // 
-            columnHeader3.Text = "SĐT";
-            columnHeader3.Width = 120;
+            sdt.Text = "SĐT";
+            sdt.Width = 120;
             // 
-            // columnHeader4
+            // ngaysinh
             // 
-            columnHeader4.Text = "Ngày sinh";
-            columnHeader4.Width = 120;
+            ngaysinh.Text = "Ngày sinh";
+            ngaysinh.Width = 120;
             // 
-            // columnHeader5
+            // vaitro
             // 
-            columnHeader5.Text = "Tên vai trò";
-            columnHeader5.Width = 120;
+            vaitro.Text = "Tên vai trò";
+            vaitro.Width = 120;
             // 
-            // columnHeader6
+            // taikhoan
             // 
-            columnHeader6.Text = "Tài khoản";
-            columnHeader6.Width = 120;
+            taikhoan.Text = "Tài khoản";
+            taikhoan.Width = 120;
             // 
-            // columnHeader7
+            // matkhau
             // 
-            columnHeader7.Text = "Mật khẩu";
-            columnHeader7.Width = 120;
+            matkhau.Text = "Mật khẩu";
+            matkhau.Width = 120;
             // 
             // FormNhanVien
             // 
@@ -356,8 +357,6 @@
             Controls.Add(pannel_timkiem);
             Name = "FormNhanVien";
             Text = "Thông tin nhân viên";
-            FormClosing += FormNhanVien_FormClosing;
-            Load += FormNhanVien_Load;
             pannel_timkiem.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -389,15 +388,16 @@
         private Button btn_lammoi;
         private Button btn_thoat;
         private ColumnHeader hoten;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
+        private ColumnHeader diachi;
+        private ColumnHeader sdt;
+        private ColumnHeader ngaysinh;
+        private ColumnHeader vaitro;
         private TextBox txb_matkhau;
         private TextBox txb_taikhoan;
         private Label label8;
         private Label label7;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
+        private ColumnHeader taikhoan;
+        private ColumnHeader matkhau;
+        private ColumnHeader id;
     }
 }
