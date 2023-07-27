@@ -102,13 +102,14 @@ namespace QuanLyNhaSach
                 newitem.SubItems.Add(nv.tennv.ToString());
                 newitem.SubItems.Add(nv.gioitinh.ToString());
                 newitem.SubItems.Add(nv.sdt.ToString());
+                newitem.SubItems.Add(nv.ngaysinh.ToString());
                 newitem.SubItems.Add(nv.diachi.ToString());
                 newitem.SubItems.Add(nv.tenvt.ToString());
                 newitem.SubItems.Add(nv.taikhoan.ToString());
-                newitem.SubItems.Add(nv.ngaysinh.ToString());
-                newitem.SubItems.Add(nv.matkhau.ToString());
-          
                 
+                newitem.SubItems.Add(nv.matkhau.ToString());
+
+
 
                 lsv_danhsach.Items.Add(newitem);
             }
@@ -347,11 +348,15 @@ namespace QuanLyNhaSach
             // Hiển thị thông tin từ listView sang các TextBox
             txb_manv.Text = lvi.SubItems[0].Text;
             txb_hoten.Text = lvi.SubItems[1].Text;
-            txb_diachi.Text = lvi.SubItems[2].Text;
-            txb_matkhau.Text = lvi.SubItems[3].Text;
-
-            txb_sdt.Text = lvi.SubItems[5].Text;
-            txb_taikhoan.Text = lvi.SubItems[6].Text;
+            txb_taikhoan.Text = lvi.SubItems[2].Text;
+          
+            txb_sdt.Text = lvi.SubItems[3].Text;
+            cld_ngaysinh.Value = Convert.ToDateTime(lvi.SubItems[4].Text);
+           
+            txb_diachi.Text = lvi.SubItems[5].Text;
+            cbx_vaitro.Text = lvi.SubItems[6].Text;
+            txb_taikhoan.Text = lvi.SubItems[7].Text;
+            txb_matkhau.Text = lvi.SubItems[8].Text;
 
         }
 

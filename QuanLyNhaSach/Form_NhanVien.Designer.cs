@@ -49,6 +49,8 @@
             btn_Luu = new Button();
             btn_LamMoi = new Button();
             groupBox2 = new GroupBox();
+            cbx_vaitro = new ComboBox();
+            label11 = new Label();
             cld_ngaysinh = new DateTimePicker();
             chb_nu = new CheckBox();
             chb_nam = new CheckBox();
@@ -62,13 +64,11 @@
             tennv = new ColumnHeader();
             gioitinh = new ColumnHeader();
             sdt = new ColumnHeader();
-            taikhoan = new ColumnHeader();
-            matkhau = new ColumnHeader();
             ngaysinh = new ColumnHeader();
             diachi = new ColumnHeader();
             vaitro = new ColumnHeader();
-            label11 = new Label();
-            cbx_vaitro = new ComboBox();
+            taikhoan = new ColumnHeader();
+            matkhau = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -314,6 +314,23 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin nhân viên";
             // 
+            // cbx_vaitro
+            // 
+            cbx_vaitro.FormattingEnabled = true;
+            cbx_vaitro.Location = new Point(556, 254);
+            cbx_vaitro.Name = "cbx_vaitro";
+            cbx_vaitro.Size = new Size(172, 26);
+            cbx_vaitro.TabIndex = 21;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(427, 257);
+            label11.Name = "label11";
+            label11.Size = new Size(62, 18);
+            label11.TabIndex = 20;
+            label11.Text = "Vai trò:";
+            // 
             // cld_ngaysinh
             // 
             cld_ngaysinh.Format = DateTimePickerFormat.Short;
@@ -395,7 +412,7 @@
             // 
             // lsv_danhsach
             // 
-            lsv_danhsach.Columns.AddRange(new ColumnHeader[] { manv, tennv, gioitinh, sdt, taikhoan, matkhau, ngaysinh, diachi, vaitro });
+            lsv_danhsach.Columns.AddRange(new ColumnHeader[] { manv, tennv, gioitinh, sdt, ngaysinh, diachi, vaitro, taikhoan, matkhau });
             lsv_danhsach.FullRowSelect = true;
             lsv_danhsach.GridLines = true;
             lsv_danhsach.Location = new Point(21, 417);
@@ -414,7 +431,7 @@
             // tennv
             // 
             tennv.Text = "Họ tên";
-            tennv.Width = 350;
+            tennv.Width = 200;
             // 
             // gioitinh
             // 
@@ -426,20 +443,9 @@
             sdt.Text = "Điện thoại";
             sdt.Width = 300;
             // 
-            // taikhoan
-            // 
-            taikhoan.Text = "Tài khoản";
-            taikhoan.Width = 0;
-            // 
-            // matkhau
-            // 
-            matkhau.Text = "Mật khẩu";
-            matkhau.Width = 0;
-            // 
             // ngaysinh
             // 
             ngaysinh.Text = "Ngày sinh";
-            ngaysinh.Width = 0;
             // 
             // diachi
             // 
@@ -451,22 +457,13 @@
             vaitro.Text = "Vai trò";
             vaitro.Width = 120;
             // 
-            // label11
+            // taikhoan
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(427, 257);
-            label11.Name = "label11";
-            label11.Size = new Size(62, 18);
-            label11.TabIndex = 20;
-            label11.Text = "Vai trò:";
+            taikhoan.Text = "Tài khoản";
             // 
-            // cbx_vaitro
+            // matkhau
             // 
-            cbx_vaitro.FormattingEnabled = true;
-            cbx_vaitro.Location = new Point(556, 254);
-            cbx_vaitro.Name = "cbx_vaitro";
-            cbx_vaitro.Size = new Size(172, 26);
-            cbx_vaitro.TabIndex = 21;
+            matkhau.Text = "Mật khẩu";
             // 
             // Form_NhanVien
             // 
