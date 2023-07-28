@@ -76,7 +76,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 53);
+            label1.Location = new Point(428, 44);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(112, 18);
@@ -86,7 +86,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(428, 53);
+            label2.Location = new Point(24, 53);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(63, 18);
@@ -106,7 +106,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(428, 109);
+            label4.Location = new Point(428, 103);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(65, 18);
@@ -144,7 +144,7 @@
             // 
             // txb_manv
             // 
-            txb_manv.Location = new Point(147, 47);
+            txb_manv.Location = new Point(558, 44);
             txb_manv.Margin = new Padding(4, 3, 4, 3);
             txb_manv.Name = "txb_manv";
             txb_manv.Size = new Size(173, 24);
@@ -152,14 +152,12 @@
             // 
             // txb_hoten
             // 
-            txb_hoten.Location = new Point(556, 50);
+            txb_hoten.Location = new Point(148, 50);
             txb_hoten.Margin = new Padding(4, 3, 4, 3);
             txb_hoten.MaxLength = 50;
             txb_hoten.Name = "txb_hoten";
             txb_hoten.Size = new Size(173, 24);
             txb_hoten.TabIndex = 9;
-            txb_hoten.TextChanged += txt_ts_TextChanged;
-            txb_hoten.KeyPress += txt_ts_KeyPress;
             // 
             // txb_taikhoan
             // 
@@ -179,7 +177,6 @@
             txb_diachi.Name = "txb_diachi";
             txb_diachi.Size = new Size(174, 24);
             txb_diachi.TabIndex = 11;
-            txb_diachi.KeyPress += txt_gia_KeyPress;
             // 
             // txb_matkhau
             // 
@@ -189,7 +186,6 @@
             txb_matkhau.Name = "txb_matkhau";
             txb_matkhau.Size = new Size(172, 24);
             txb_matkhau.TabIndex = 12;
-            txb_matkhau.KeyPress += txt_tnxb_KeyPress;
             // 
             // txb_sdt
             // 
@@ -198,7 +194,6 @@
             txb_sdt.Name = "txb_sdt";
             txb_sdt.Size = new Size(172, 24);
             txb_sdt.TabIndex = 14;
-            txb_sdt.KeyPress += txt_mtl_KeyPress;
             // 
             // btn_them
             // 
@@ -209,7 +204,7 @@
             btn_them.TabIndex = 15;
             btn_them.Text = "Thêm";
             btn_them.UseVisualStyleBackColor = true;
-            btn_them.Click += btn_themsach_Click;
+            btn_them.Click += btn_them_Click;
             // 
             // btn_sua
             // 
@@ -241,7 +236,6 @@
             btn_thoat.TabIndex = 22;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
-            btn_thoat.Click += btn_thoat_Click;
             // 
             // groupBox1
             // 
@@ -259,7 +253,6 @@
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
             groupBox1.Text = "Chức năng";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // btn_Luu
             // 
@@ -270,7 +263,7 @@
             btn_Luu.TabIndex = 20;
             btn_Luu.Text = "Lưu";
             btn_Luu.UseVisualStyleBackColor = true;
-            btn_Luu.Click += btn_Luu_Click;
+            btn_Luu.Click += btn_Luu_Click_1;
             // 
             // btn_LamMoi
             // 
@@ -281,7 +274,7 @@
             btn_LamMoi.TabIndex = 21;
             btn_LamMoi.Text = "Làm Mới";
             btn_LamMoi.UseVisualStyleBackColor = true;
-            btn_LamMoi.Click += btn_KhongLuu_Click;
+            btn_LamMoi.Click += btn_LamMoi_Click;
             // 
             // groupBox2
             // 
@@ -317,6 +310,7 @@
             // cbx_vaitro
             // 
             cbx_vaitro.FormattingEnabled = true;
+            cbx_vaitro.Items.AddRange(new object[] { "ADMIN", "Nhân viên bán sách" });
             cbx_vaitro.Location = new Point(556, 254);
             cbx_vaitro.Name = "cbx_vaitro";
             cbx_vaitro.Size = new Size(172, 26);
@@ -348,6 +342,7 @@
             chb_nu.TabIndex = 18;
             chb_nu.Text = "Nữ";
             chb_nu.UseVisualStyleBackColor = true;
+            chb_nu.CheckedChanged += chb_nu_CheckedChanged_1;
             // 
             // chb_nam
             // 
@@ -358,6 +353,7 @@
             chb_nam.TabIndex = 17;
             chb_nam.Text = "Nam";
             chb_nam.UseVisualStyleBackColor = true;
+            chb_nam.CheckedChanged += chb_nam_CheckedChanged_1;
             // 
             // label10
             // 
@@ -399,7 +395,6 @@
             btn_search.TabIndex = 25;
             btn_search.Text = "Lọc";
             btn_search.UseVisualStyleBackColor = true;
-            btn_search.Click += btn_search_Click;
             // 
             // txt_search
             // 
@@ -408,7 +403,6 @@
             txt_search.Name = "txt_search";
             txt_search.Size = new Size(233, 24);
             txt_search.TabIndex = 15;
-            txt_search.TextChanged += txt_search_TextChanged;
             // 
             // lsv_danhsach
             // 
@@ -421,7 +415,7 @@
             lsv_danhsach.TabIndex = 26;
             lsv_danhsach.UseCompatibleStateImageBehavior = false;
             lsv_danhsach.View = View.Details;
-            lsv_danhsach.SelectedIndexChanged += lsv_sach_SelectedIndexChanged;
+            lsv_danhsach.SelectedIndexChanged += lsv_danhsach_SelectedIndexChanged;
             // 
             // manv
             // 
@@ -482,7 +476,6 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form_NhanVien";
             Text = "QUẢN LÝ THÔNG TIN NHÂN VIÊN";
-            FormClosing += Form_datagrid_FormClosing;
             Load += Form_data_Load;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);

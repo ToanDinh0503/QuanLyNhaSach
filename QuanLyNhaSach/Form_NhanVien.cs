@@ -15,7 +15,8 @@ namespace QuanLyNhaSach
 {
     public partial class Form_NhanVien : Form
     {
-
+        private bool isThemNhanVienButtonClicked = false;
+        private bool isSuaNhanVienButtonClicked = false;
         private class NhanVien
         {
 
@@ -95,7 +96,7 @@ namespace QuanLyNhaSach
                 nv.sdt = reader.GetInt32(5);
                 nv.tenvt = reader.GetString(6);
                 nv.ngaysinh = DateOnly.FromDateTime(reader.GetDateTime(7));
-
+                nv.gioitinh = reader.GetBoolean(8);
 
                 ListViewItem newitem = new ListViewItem(nv.manv.ToString());
 
@@ -106,7 +107,7 @@ namespace QuanLyNhaSach
                 newitem.SubItems.Add(nv.diachi.ToString());
                 newitem.SubItems.Add(nv.tenvt.ToString());
                 newitem.SubItems.Add(nv.taikhoan.ToString());
-                
+
                 newitem.SubItems.Add(nv.matkhau.ToString());
 
 
@@ -121,7 +122,9 @@ namespace QuanLyNhaSach
         {
             HienThiDanhSach();
             //ban dau thi tat ca cac textbox deu la read het
+
             trangThaiCacTextBox(false);
+            btn_them.Enabled = true;
             btn_LamMoi.Enabled = false;
             btn_Luu.Enabled = false;
             btn_sua.Enabled = false;
@@ -176,59 +179,21 @@ namespace QuanLyNhaSach
 
         private void btn_suasach_Click(object sender, EventArgs e)
         {
-            //ban dau thi cac txt deu la readonly
+            isThemNhanVienButtonClicked = false;
+            isSuaNhanVienButtonClicked = true;
+            //ban dau thi cac txt deu la disable
             trangThaiCacTextBox(false);
 
             btn_Luu.Enabled = true;
             btn_LamMoi.Enabled = true;
+            btn_them.Enabled = false;
+            btn_xoa.Enabled = false;
             //phai chon truoc moi sua duoc
-
-
-
-            //sua
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-                try
-                {
-                    string sql = "UPDATE nhan_vien SET tennv = @tennv, taikhoan = @taikhoan, matkhau = @matkhau, sdt = @sdt, diachi = @ diachi, gioitinh = @gioitinh, ngaythangnamsinh = @ngaysinh WHERE manv = @manv";
-                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@tennv", txb_hoten.Text);
-                        command.Parameters.AddWithValue("@taikhoan", txb_taikhoan.Text);
-                        command.Parameters.AddWithValue("@diachi", txb_diachi.Text);
-                        command.Parameters.AddWithValue("@sdt", Convert.ToInt32(txb_matkhau.Text));
-                        command.Parameters.AddWithValue("@ngaysinh", Convert.ToDateTime(cld_ngaysinh.Value));
-                        command.Parameters.AddWithValue("@manv", Convert.ToInt32(txb_manv.Text));
-
-
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Dữ liệu đã được cập nhật thành công!");
-                            Form_data_Load(sender, e);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể cập nhật dữ liệu!");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi thực hiện cập nhật dữ liệu: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+            trangThaiCacTextBox(true);
 
         }
+        //sua
+
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
@@ -271,75 +236,32 @@ namespace QuanLyNhaSach
 
             }
         }
-        private void txt_search_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_nxb_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)8))
-                e.Handled = true;
-        }
-
-        private void txt_ts_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-
-        private void txt_gia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)8))
-                e.Handled = true;
-        }
-
-        private void txt_tnxb_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-
-        private void txt_mtl_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)8))
-                e.Handled = true;
-        }
-
-        private void Form_datagrid_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn muốn đóng chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void btn_KhongLuu_Click(object sender, EventArgs e)
-        {
-            //dua ra thong bao
-            DialogResult result = MessageBox.Show("Bạn chắc chắn không lưu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                // reset các text
 
 
-                // dat readonly bang true
-                trangThaiCacTextBox(true);
 
-                //cho tat ca cac nut enable = true
-                Form_data_Load(sender, e);
+        // private void txt_gia_KeyPress(object sender, KeyPressEventArgs e)
+        // {
+        //     if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)8))
+        //       e.Handled = true;
+        ///}
 
-            }
-        }
 
-        private void txt_ts_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void lsv_sach_SelectedIndexChanged(object sender, EventArgs e)
+
+
+
+
+
+        private void lsv_danhsach_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsv_danhsach.SelectedItems.Count == 0) return;
 
+            trangThaiCacTextBox(false);
+
             btn_xoa.Enabled = true;
             btn_sua.Enabled = true;
+            btn_Luu.Enabled = false;
             // Lấy phần tử được chọn trên listview
             ListViewItem lvi = lsv_danhsach.SelectedItems[0];
 
@@ -348,78 +270,221 @@ namespace QuanLyNhaSach
             // Hiển thị thông tin từ listView sang các TextBox
             txb_manv.Text = lvi.SubItems[0].Text;
             txb_hoten.Text = lvi.SubItems[1].Text;
-            txb_taikhoan.Text = lvi.SubItems[2].Text;
-          
+            if (lvi.SubItems[2].Text == "True")
+            {
+                chb_nam.Checked = true;
+                chb_nu.Checked = false;
+            }
+            else
+            {
+                chb_nu.Checked = true;
+                chb_nam.Checked = false;
+            }
+
             txb_sdt.Text = lvi.SubItems[3].Text;
             cld_ngaysinh.Value = Convert.ToDateTime(lvi.SubItems[4].Text);
-           
+
             txb_diachi.Text = lvi.SubItems[5].Text;
             cbx_vaitro.Text = lvi.SubItems[6].Text;
             txb_taikhoan.Text = lvi.SubItems[7].Text;
             txb_matkhau.Text = lvi.SubItems[8].Text;
 
-        }
-
-        private void btn_themsach_Click(object sender, EventArgs e)
-        {
-            trangThaiCacTextBox(false);
-            btn_LamMoi.Enabled = true;
-            btn_Luu.Enabled = true;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = false;
 
         }
 
-        private void btn_Luu_Click(object sender, EventArgs e)
+
+        private void suaNhanVien(NpgsqlConnection connection)
         {
+            try
+            {
+                string sql = "UPDATE nhan_vien SET tennv = @tennv,taikhoan = @taikhoan, matkhau = @matkhau, diachi = @diachi, sdt = @sdt, mavt = @mavt, ngaythangnamsinh = @ngaythangnamsinh, gioitinh = @gioitinh WHERE manv = @manv";
+
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@manv", Convert.ToInt32(txb_manv.Text));
+                    command.Parameters.AddWithValue("@tennv", txb_hoten.Text);
+                    command.Parameters.AddWithValue("@taikhoan", txb_taikhoan.Text);
+                    command.Parameters.AddWithValue("@matkhau", txb_matkhau.Text);
+                    command.Parameters.AddWithValue("@diachi", txb_diachi.Text);
+                    command.Parameters.AddWithValue("@sdt", Convert.ToInt32(txb_sdt.Text));
+                    if (cbx_vaitro.Text == "Nhân viên bán sách")
+                    {
+                        command.Parameters.AddWithValue("@mavt", 2);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@mavt", 1);
+                    }
+                    command.Parameters.AddWithValue("@ngaythangnamsinh", cld_ngaysinh.Value);
+                    if (chb_nam.Checked)
+                    {
+                        command.Parameters.AddWithValue("@gioitinh", true);
+                    }
+                    else if (chb_nu.Checked)
+                    {
+                        command.Parameters.AddWithValue("@gioitinh", false);
+                    }
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Dữ liệu đã được sửa thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể sửa dữ liệu!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thực hiện sửa dữ liệu: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                lamTrongCacTextBox();
+            }
+        }
+        private void themNhanVien(NpgsqlConnection connection)
+        {
+            try
+            {
+                string sql = "INSERT INTO nhan_vien(tennv,taikhoan,matkhau,diachi,sdt,mavt,ngaythangnamsinh,gioitinh)" +
+                    " VALUES (@tennv,@taikhoan,@matkhau,@diachi,@sdt,@mavt,@ngaythangnamsinh,@gioitinh)";
+
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@tennv", txb_hoten.Text);
+                    command.Parameters.AddWithValue("@taikhoan", txb_taikhoan.Text);
+                    command.Parameters.AddWithValue("@matkhau", txb_matkhau.Text);
+                    command.Parameters.AddWithValue("@diachi", txb_diachi.Text);
+                    command.Parameters.AddWithValue("@sdt", Convert.ToInt32(txb_sdt.Text));
+
+                    if (cbx_vaitro.Text == "Nhân viên bán sách")
+                    {
+                        command.Parameters.AddWithValue("@mavt", 2);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@mavt", 1);
+                    }
+                    command.Parameters.AddWithValue("@ngaythangnamsinh", cld_ngaysinh.Value);
+                    if (chb_nam.Checked)
+                    {
+                        command.Parameters.AddWithValue("@gioitinh", true);
+                    }
+                    else if (chb_nu.Checked)
+                    {
+                        command.Parameters.AddWithValue("@gioitinh", false);
+                    }
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Dữ liệu đã được thêm thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể thêm dữ liệu!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thực hiện thêm dữ liệu: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                lamTrongCacTextBox();
+            }
+        }
+
+        private void btn_Luu_Click_1(object sender, EventArgs e)
+        {
+
+
+            if (txb_diachi.Text == "" || txb_hoten.Text == ""  || txb_matkhau.Text == "" || txb_sdt.Text == ""
+                || txb_taikhoan.Text == "" || (chb_nam.Checked == false && chb_nu.Checked == false) || cld_ngaysinh.Checked == false)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu !");
+                return;
+            }
+
+
+
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
-                connection.Open();
+
                 try
                 {
-                    string sql = "INSERT INTO sach (tensach, mota, gia, tennxb, nam, matl) VALUES (@ts, @mt, @g, @tnxb, @n, @mtl)";
-                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                    connection.Open();
+
+                    if (isThemNhanVienButtonClicked)
                     {
-                        command.Parameters.AddWithValue("@ts", txb_hoten.Text);
-                        command.Parameters.AddWithValue("@mt", txb_taikhoan.Text);
-                        command.Parameters.AddWithValue("@g", Convert.ToInt32(txb_diachi.Text));
-                        command.Parameters.AddWithValue("@tnxb", txb_matkhau.Text);
-
-                        command.Parameters.AddWithValue("@mtl", Convert.ToInt32(txb_sdt.Text));
-
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Dữ liệu đã được thêm thành công!");
-                            Form_data_Load(sender, e);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể thêm dữ liệu!");
-                        }
+                        themNhanVien(connection);
                     }
+                    else if (isSuaNhanVienButtonClicked)
+                    {
+                        suaNhanVien(connection);
+                    }
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thực hiện thêm dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi khi thực hiện thao tác với dữ liệu: " + ex.Message);
                 }
                 finally
                 {
                     connection.Close();
+                    HienThiDanhSach();
 
-
+                    lamTrongCacTextBox();
                 }
 
             }
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
+
+
+
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            Form_data_Load(sender, e);
         }
 
+        private void chb_nam_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chb_nam.Checked)
+            {
+                chb_nu.Checked = false;
+            }
+        }
 
+        private void chb_nu_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chb_nu.Checked)
+            {
+                chb_nam.Checked = false;
+            }
+        }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            isThemNhanVienButtonClicked = true;
+            isSuaNhanVienButtonClicked = false;
+            lamTrongCacTextBox();
+            trangThaiCacTextBox(true);
+            btn_LamMoi.Enabled = true;
+            btn_Luu.Enabled = true;
+            btn_sua.Enabled = false;
+            btn_xoa.Enabled = false;
+        }
     }
 }
