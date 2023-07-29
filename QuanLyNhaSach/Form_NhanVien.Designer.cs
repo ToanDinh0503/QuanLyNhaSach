@@ -49,6 +49,7 @@
             btn_Luu = new Button();
             btn_LamMoi = new Button();
             groupBox2 = new GroupBox();
+            label12 = new Label();
             cbx_vaitro = new ComboBox();
             label11 = new Label();
             cld_ngaysinh = new DateTimePicker();
@@ -69,6 +70,7 @@
             vaitro = new ColumnHeader();
             taikhoan = new ColumnHeader();
             matkhau = new ColumnHeader();
+            btn_hiendanhsach = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -146,18 +148,19 @@
             // 
             txb_manv.Location = new Point(558, 44);
             txb_manv.Margin = new Padding(4, 3, 4, 3);
+            txb_manv.MaxLength = 10;
             txb_manv.Name = "txb_manv";
             txb_manv.Size = new Size(173, 24);
-            txb_manv.TabIndex = 8;
+            txb_manv.TabIndex = 2;
             // 
             // txb_hoten
             // 
             txb_hoten.Location = new Point(148, 50);
             txb_hoten.Margin = new Padding(4, 3, 4, 3);
-            txb_hoten.MaxLength = 50;
+            txb_hoten.MaxLength = 35;
             txb_hoten.Name = "txb_hoten";
             txb_hoten.Size = new Size(173, 24);
-            txb_hoten.TabIndex = 9;
+            txb_hoten.TabIndex = 1;
             // 
             // txb_taikhoan
             // 
@@ -167,33 +170,35 @@
             txb_taikhoan.Multiline = true;
             txb_taikhoan.Name = "txb_taikhoan";
             txb_taikhoan.Size = new Size(273, 24);
-            txb_taikhoan.TabIndex = 10;
+            txb_taikhoan.TabIndex = 3;
             // 
             // txb_diachi
             // 
             txb_diachi.Location = new Point(556, 103);
             txb_diachi.Margin = new Padding(4, 3, 4, 3);
-            txb_diachi.MaxLength = 11;
+            txb_diachi.MaxLength = 50;
             txb_diachi.Name = "txb_diachi";
             txb_diachi.Size = new Size(174, 24);
-            txb_diachi.TabIndex = 11;
+            txb_diachi.TabIndex = 4;
             // 
             // txb_matkhau
             // 
             txb_matkhau.Location = new Point(148, 158);
             txb_matkhau.Margin = new Padding(4, 3, 4, 3);
-            txb_matkhau.MaxLength = 3000;
+            txb_matkhau.MaxLength = 50;
             txb_matkhau.Name = "txb_matkhau";
             txb_matkhau.Size = new Size(172, 24);
-            txb_matkhau.TabIndex = 12;
+            txb_matkhau.TabIndex = 5;
             // 
             // txb_sdt
             // 
             txb_sdt.Location = new Point(556, 213);
             txb_sdt.Margin = new Padding(4, 3, 4, 3);
+            txb_sdt.MaxLength = 10;
             txb_sdt.Name = "txb_sdt";
             txb_sdt.Size = new Size(172, 24);
-            txb_sdt.TabIndex = 14;
+            txb_sdt.TabIndex = 9;
+            txb_sdt.KeyPress += txb_sdt_KeyPress;
             // 
             // btn_them
             // 
@@ -226,6 +231,7 @@
             btn_xoa.TabIndex = 18;
             btn_xoa.Text = "Xóa";
             btn_xoa.UseVisualStyleBackColor = true;
+            btn_xoa.Click += btn_xoa_Click;
             // 
             // btn_thoat
             // 
@@ -236,6 +242,7 @@
             btn_thoat.TabIndex = 22;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
+            btn_thoat.Click += btn_thoat_Click;
             // 
             // groupBox1
             // 
@@ -260,7 +267,7 @@
             btn_Luu.Margin = new Padding(4, 3, 4, 3);
             btn_Luu.Name = "btn_Luu";
             btn_Luu.Size = new Size(139, 48);
-            btn_Luu.TabIndex = 20;
+            btn_Luu.TabIndex = 11;
             btn_Luu.Text = "Lưu";
             btn_Luu.UseVisualStyleBackColor = true;
             btn_Luu.Click += btn_Luu_Click_1;
@@ -278,6 +285,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(cbx_vaitro);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(cld_ngaysinh);
@@ -307,14 +315,23 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin nhân viên";
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Enabled = false;
+            label12.Location = new Point(556, 190);
+            label12.Name = "label12";
+            label12.Size = new Size(110, 18);
+            label12.TabIndex = 21;
+            label12.Text = "MM/DD/YYYY";
+            // 
             // cbx_vaitro
             // 
             cbx_vaitro.FormattingEnabled = true;
-            cbx_vaitro.Items.AddRange(new object[] { "ADMIN", "Nhân viên bán sách" });
             cbx_vaitro.Location = new Point(556, 254);
             cbx_vaitro.Name = "cbx_vaitro";
             cbx_vaitro.Size = new Size(172, 26);
-            cbx_vaitro.TabIndex = 21;
+            cbx_vaitro.TabIndex = 10;
             // 
             // label11
             // 
@@ -327,11 +344,14 @@
             // 
             // cld_ngaysinh
             // 
+            cld_ngaysinh.CustomFormat = "MM/dd/yyyy";
             cld_ngaysinh.Format = DateTimePickerFormat.Short;
             cld_ngaysinh.Location = new Point(556, 164);
+            cld_ngaysinh.MaxDate = new DateTime(9000, 12, 31, 9, 21, 0, 0);
             cld_ngaysinh.Name = "cld_ngaysinh";
             cld_ngaysinh.Size = new Size(175, 24);
-            cld_ngaysinh.TabIndex = 19;
+            cld_ngaysinh.TabIndex = 6;
+            cld_ngaysinh.Value = new DateTime(2023, 7, 29, 0, 0, 0, 0);
             // 
             // chb_nu
             // 
@@ -339,7 +359,7 @@
             chb_nu.Location = new Point(307, 218);
             chb_nu.Name = "chb_nu";
             chb_nu.Size = new Size(51, 22);
-            chb_nu.TabIndex = 18;
+            chb_nu.TabIndex = 8;
             chb_nu.Text = "Nữ";
             chb_nu.UseVisualStyleBackColor = true;
             chb_nu.CheckedChanged += chb_nu_CheckedChanged_1;
@@ -350,7 +370,7 @@
             chb_nam.Location = new Point(147, 218);
             chb_nam.Name = "chb_nam";
             chb_nam.Size = new Size(65, 22);
-            chb_nam.TabIndex = 17;
+            chb_nam.TabIndex = 7;
             chb_nam.Text = "Nam";
             chb_nam.UseVisualStyleBackColor = true;
             chb_nam.CheckedChanged += chb_nam_CheckedChanged_1;
@@ -389,12 +409,13 @@
             // 
             // btn_search
             // 
-            btn_search.Location = new Point(21, 374);
+            btn_search.Location = new Point(21, 376);
             btn_search.Name = "btn_search";
             btn_search.Size = new Size(72, 28);
             btn_search.TabIndex = 25;
             btn_search.Text = "Lọc";
             btn_search.UseVisualStyleBackColor = true;
+            btn_search.Click += btn_search_Click_1;
             // 
             // txt_search
             // 
@@ -409,7 +430,7 @@
             lsv_danhsach.Columns.AddRange(new ColumnHeader[] { manv, tennv, gioitinh, sdt, ngaysinh, diachi, vaitro, taikhoan, matkhau });
             lsv_danhsach.FullRowSelect = true;
             lsv_danhsach.GridLines = true;
-            lsv_danhsach.Location = new Point(21, 417);
+            lsv_danhsach.Location = new Point(23, 419);
             lsv_danhsach.Name = "lsv_danhsach";
             lsv_danhsach.Size = new Size(1358, 218);
             lsv_danhsach.TabIndex = 26;
@@ -420,7 +441,7 @@
             // manv
             // 
             manv.Text = "Mã nhân viên";
-            manv.Width = 150;
+            manv.Width = 120;
             // 
             // tennv
             // 
@@ -430,16 +451,17 @@
             // gioitinh
             // 
             gioitinh.Text = "Giới tính";
-            gioitinh.Width = 200;
+            gioitinh.Width = 120;
             // 
             // sdt
             // 
             sdt.Text = "Điện thoại";
-            sdt.Width = 300;
+            sdt.Width = 150;
             // 
             // ngaysinh
             // 
             ngaysinh.Text = "Ngày sinh";
+            ngaysinh.Width = 120;
             // 
             // diachi
             // 
@@ -449,15 +471,27 @@
             // vaitro
             // 
             vaitro.Text = "Vai trò";
-            vaitro.Width = 120;
+            vaitro.Width = 300;
             // 
             // taikhoan
             // 
             taikhoan.Text = "Tài khoản";
+            taikhoan.Width = 0;
             // 
             // matkhau
             // 
             matkhau.Text = "Mật khẩu";
+            matkhau.Width = 0;
+            // 
+            // btn_hiendanhsach
+            // 
+            btn_hiendanhsach.Location = new Point(340, 376);
+            btn_hiendanhsach.Name = "btn_hiendanhsach";
+            btn_hiendanhsach.Size = new Size(133, 29);
+            btn_hiendanhsach.TabIndex = 27;
+            btn_hiendanhsach.Text = "Hiện danh sách";
+            btn_hiendanhsach.UseVisualStyleBackColor = true;
+            btn_hiendanhsach.Click += btn_hiendanhsach_Click;
             // 
             // Form_NhanVien
             // 
@@ -466,6 +500,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoat;
             ClientSize = new Size(1412, 603);
+            Controls.Add(btn_hiendanhsach);
             Controls.Add(lsv_danhsach);
             Controls.Add(btn_search);
             Controls.Add(txt_search);
@@ -476,6 +511,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form_NhanVien";
             Text = "QUẢN LÝ THÔNG TIN NHÂN VIÊN";
+            FormClosing += Form_NhanVien_FormClosing;
             Load += Form_data_Load;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
@@ -526,5 +562,7 @@
         private DateTimePicker cld_ngaysinh;
         private ComboBox cbx_vaitro;
         private Label label11;
+        private Button btn_hiendanhsach;
+        private Label label12;
     }
 }
