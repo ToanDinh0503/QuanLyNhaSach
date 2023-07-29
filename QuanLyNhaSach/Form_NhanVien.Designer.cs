@@ -399,7 +399,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.Navy;
+            label8.ForeColor = Color.Blue;
             label8.Location = new Point(491, 15);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";

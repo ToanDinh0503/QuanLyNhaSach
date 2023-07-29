@@ -1,4 +1,5 @@
 
+using QuanLyNhaSach;
 using System;
 
 namespace QuanLyNhaSach
@@ -17,6 +18,7 @@ namespace QuanLyNhaSach
             //Application.Run(new DangNhap()); // Tao form dang nhap
             //Application.Run(new FormNhanVien());
             Application.Run(new Form_NhanVien());
+            
         }
     }
 }

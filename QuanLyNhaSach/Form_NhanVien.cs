@@ -326,15 +326,13 @@ namespace QuanLyNhaSach
             // Hiển thị thông tin từ listView sang các TextBox
             txb_manv.Text = lvi.SubItems[0].Text;
             txb_hoten.Text = lvi.SubItems[1].Text;
-            if (lvi.SubItems[2].Text == "True")
+            if (lvi.SubItems[2].Text == "Nam")
             {
                 chb_nam.Checked = true;
-                chb_nu.Checked = false;
             }
-            else
+            else if (lvi.SubItems[2].Text == "Nữ")
             {
                 chb_nu.Checked = true;
-                chb_nam.Checked = false;
             }
 
             txb_sdt.Text = lvi.SubItems[3].Text;
