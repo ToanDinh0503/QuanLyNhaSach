@@ -18,27 +18,15 @@ namespace QuanLyNhaSach
     {
         private bool isThemNhanVienButtonClicked = false;
         private bool isSuaNhanVienButtonClicked = false;
-        private class NhanVien
-        {
 
-            public int manv;
-            public string taikhoan;
-            public string matkhau;
-            public string tennv;
-            public string diachi;
-            public int sdt;
-            public string tenvt;
-            public DateOnly ngaysinh;
-            public bool gioitinh;
-        }
-
+        private static string connectionString = "Host=localhost;Database=QuanLyNhaSach2;Username=postgres;Password=123456";
+        NpgsqlConnection connpg = null;
         public Form_NhanVien()
         {
             InitializeComponent();
             hienThiDuLieuVao_Combobox_VaiTro();
         }
-        private static string connectionString = "Host=localhost;Database=QuanLyNhaSach2;Username=postgres;Password=123456";
-        NpgsqlConnection connpg = null;
+        
 
         private void trangThaiCacTextBox(bool true_false)
         {
