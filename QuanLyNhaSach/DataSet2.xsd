@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet3" targetNamespace="http://tempuri.org/DataSet3.xsd" xmlns:mstns="http://tempuri.org/DataSet3.xsd" xmlns="http://tempuri.org/DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Host=localhost;Database=QuanLyNhaSach;Username=postgres;Password=123456;Persist Security Info=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="QuanLyNhaSach" Provider="Npgsql" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QuanLyNhaSach" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT chi_tiet_hoa_don.mahd, chi_tiet_hoa_don.masach, sach.tensach, sach.gia, chi_tiet_hoa_don.soluong, chi_tiet_hoa_don.thanhtien
+FROM     chi_tiet_hoa_don INNER JOIN
+                  sach ON chi_tiet_hoa_don.masach = sach.masach</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="mahd" DataSetColumn="mahd" />
+              <Mapping SourceColumn="masach" DataSetColumn="masach" />
+              <Mapping SourceColumn="tensach" DataSetColumn="tensach" />
+              <Mapping SourceColumn="gia" DataSetColumn="gia" />
+              <Mapping SourceColumn="soluong" DataSetColumn="soluong" />
+              <Mapping SourceColumn="thanhtien" DataSetColumn="thanhtien" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet3" msprop:Generator_DataSetName="DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mahd" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="mahd" msprop:Generator_ColumnPropNameInTable="mahdColumn" msprop:Generator_ColumnVarNameInTable="columnmahd" msprop:Generator_UserColumnName="mahd" type="xs:int" />
+              <xs:element name="masach" msprop:Generator_ColumnPropNameInRow="masach" msprop:Generator_ColumnPropNameInTable="masachColumn" msprop:Generator_ColumnVarNameInTable="columnmasach" msprop:Generator_UserColumnName="masach" type="xs:int" />
+              <xs:element name="tensach" msprop:Generator_ColumnPropNameInRow="tensach" msprop:Generator_ColumnPropNameInTable="tensachColumn" msprop:Generator_ColumnVarNameInTable="columntensach" msprop:Generator_UserColumnName="tensach">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gia" msprop:Generator_ColumnPropNameInRow="gia" msprop:Generator_ColumnPropNameInTable="giaColumn" msprop:Generator_ColumnVarNameInTable="columngia" msprop:Generator_UserColumnName="gia" type="xs:int" />
+              <xs:element name="soluong" msprop:Generator_ColumnPropNameInRow="soluong" msprop:Generator_ColumnPropNameInTable="soluongColumn" msprop:Generator_ColumnVarNameInTable="columnsoluong" msprop:Generator_UserColumnName="soluong" type="xs:int" />
+              <xs:element name="thanhtien" msprop:Generator_ColumnPropNameInRow="thanhtien" msprop:Generator_ColumnPropNameInTable="thanhtienColumn" msprop:Generator_ColumnVarNameInTable="columnthanhtien" msprop:Generator_UserColumnName="thanhtien" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:mahd" />
+      <xs:field xpath="mstns:masach" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
