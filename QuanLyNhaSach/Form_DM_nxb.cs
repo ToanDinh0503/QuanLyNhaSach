@@ -103,7 +103,7 @@ namespace QuanLyNhaSach
         private void lsv_nhomnxb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsv_nhomnxb.SelectedItems.Count == 0) return;
-            // Lấy phần tử được chọn trên listview
+
             ListViewItem lvi = lsv_nhomnxb.SelectedItems[0];
 
             idmanxb = int.Parse(lvi.SubItems[0].Text);
