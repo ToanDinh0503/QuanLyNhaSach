@@ -95,11 +95,11 @@ public partial class Form_sach : Form
         }
         reader.Close();
     }
-    
+
     private void Form_sach_Load(object sender, EventArgs e)
     {
         HienThiDanhSach();
-        //ban dau thi tat ca cac textbox deu la read het
+        txt_ms.Enabled = false;
         hamtrong(false);
         comboBoxNXB.Text = "";
         comboBoxTheLoai.Text = "";
@@ -119,6 +119,7 @@ public partial class Form_sach : Form
     {
         isThemSachButtonClicked = true;
         isSuaSachButtonClicked = false;
+        txt_ms.Enabled = false;
         hamtrong(true);
         btn_Huy.Enabled = true;
         btn_Luu.Enabled = true;
@@ -138,7 +139,7 @@ public partial class Form_sach : Form
     {
         isThemSachButtonClicked = false;
         isSuaSachButtonClicked = true;
-        //ban dau thi cac txt deu la readonly
+        txt_ms.Enabled = false;
         hamtrong(true);
 
         btn_themsach.Enabled = false;
@@ -147,8 +148,8 @@ public partial class Form_sach : Form
         btn_Huy.Enabled = true;
     }
 
-    private void hamtrong(bool true_false) {
-        txt_ms.Enabled = true_false;
+    private void hamtrong(bool true_false)
+    {
         txt_gia.Enabled = true_false;
         txt_mt.Enabled = true_false;
         txt_nxb.Enabled = true_false;
@@ -209,7 +210,7 @@ public partial class Form_sach : Form
 
     private void btn_Luu_Click(object sender, EventArgs e)
     {
-        if (txt_ms.Text == "" || txt_ts.Text == "" || txt_mt.Text == "" || txt_gia.Text == "" || txt_nxb.Text == "")
+        if (txt_ts.Text == "" || txt_mt.Text == "" || txt_gia.Text == "" || txt_nxb.Text == "")
         {
             MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu !");
             return;
@@ -260,6 +261,7 @@ public partial class Form_sach : Form
             {
                 command.Parameters.AddWithValue("@ms", Convert.ToInt32(txt_ms.Text));
                 command.Parameters.AddWithValue("@ts", txt_ts.Text);
+                command.Parameters.AddWithValue("@ts", txt_ts.Text);
                 command.Parameters.AddWithValue("@mt", txt_mt.Text);
                 command.Parameters.AddWithValue("@g", Convert.ToInt32(txt_gia.Text));
                 command.Parameters.AddWithValue("@n", Convert.ToInt32(txt_nxb.Text));
@@ -288,12 +290,9 @@ public partial class Form_sach : Form
     {
         try
         {
-            string selectedTheLoai = comboBoxTheLoai.SelectedItem.ToString();
-            // Tìm mã thể loại dựa trên tên thể loại được chọn
             string sql = "INSERT INTO sach (tensach, mota, gia, nam, manxb, matl) VALUES (@ts, @mt, @g, @n, @mnxb, @mtl)";
             using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
             {
-                command.Parameters.AddWithValue("@ms", Convert.ToInt32(txt_ms.Text));
                 command.Parameters.AddWithValue("@ts", txt_ts.Text);
                 command.Parameters.AddWithValue("@mt", txt_mt.Text);
                 command.Parameters.AddWithValue("@g", Convert.ToInt32(txt_gia.Text));
@@ -327,7 +326,7 @@ public partial class Form_sach : Form
             txt_ts.Text = "";
             comboBoxNXB.Text = "";
             comboBoxTheLoai.Text = "";
-        }  
+        }
     }
 
     private void btn_Huy_Click(object sender, EventArgs e)
@@ -437,7 +436,7 @@ public partial class Form_sach : Form
     {
         if (MessageBox.Show("Bạn muốn đóng chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
         {
-                e.Cancel = true;
+            e.Cancel = true;
         }
     }
 
@@ -450,16 +449,25 @@ public partial class Form_sach : Form
     }
     private void btn_htmt_Click(object sender, EventArgs e)
     {
-        if(txt_mt.Text == "")
+        if (txt_mt.Text == "")
         {
             return;
         }
         else
         {
             MessageBox.Show(txt_mt.Text);
-            // Form f = new Form();
-            // f.Text = txt_mt.Text;
-            // Application.Run(new f());
+        }
+    }
+
+    private void btn_htts_Click(object sender, EventArgs e)
+    {
+        if (txt_ts.Text == "")
+        {
+            return;
+        }
+        else
+        {
+            MessageBox.Show(txt_ts.Text);
         }
     }
 }

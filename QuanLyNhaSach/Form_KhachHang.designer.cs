@@ -33,339 +33,345 @@ namespace QuanLyNhaSach
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_mkh = new System.Windows.Forms.TextBox();
-            this.txt_tkh = new System.Windows.Forms.TextBox();
-            this.txt_dchi = new System.Windows.Forms.TextBox();
-            this.txt_sdt = new System.Windows.Forms.TextBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.btn_themkhach = new System.Windows.Forms.Button();
-            this.btn_suakhach = new System.Windows.Forms.Button();
-            this.btn_xoakhach = new System.Windows.Forms.Button();
-            this.btn_thoatkhach = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_LuuKhach = new System.Windows.Forms.Button();
-            this.btn_LamMoiKhach = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btn_searchKhach = new System.Windows.Forms.Button();
-            this.txt_searchKhach = new System.Windows.Forms.TextBox();
-            this.lsv_khach = new System.Windows.Forms.ListView();
-            this.makh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tenkh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.diachi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            txt_mkh = new TextBox();
+            txt_tkh = new TextBox();
+            txt_dchi = new TextBox();
+            txt_sdt = new TextBox();
+            txt_email = new TextBox();
+            btn_themkhach = new Button();
+            btn_suakhach = new Button();
+            btn_xoakhach = new Button();
+            btn_thoatkhach = new Button();
+            groupBox1 = new GroupBox();
+            btn_LuuKhach = new Button();
+            btn_LamMoiKhach = new Button();
+            groupBox2 = new GroupBox();
+            label8 = new Label();
+            btn_searchKhach = new Button();
+            txt_searchKhach = new TextBox();
+            lsv_khach = new ListView();
+            makh = new ColumnHeader();
+            tenkh = new ColumnHeader();
+            diachi = new ColumnHeader();
+            sdt = new ColumnHeader();
+            email = new ColumnHeader();
+            btn_htds = new Button();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mã Khách:";
+            label1.AutoSize = true;
+            label1.Location = new Point(26, 56);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 18);
+            label1.TabIndex = 1;
+            label1.Text = "Mã Khách:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(411, 53);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên Khách Hàng:";
+            label2.AutoSize = true;
+            label2.Location = new Point(411, 53);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 18);
+            label2.TabIndex = 2;
+            label2.Text = "Tên Khách Hàng:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 112);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Địa Chỉ:";
+            label3.AutoSize = true;
+            label3.Location = new Point(26, 112);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 18);
+            label3.TabIndex = 3;
+            label3.Text = "Địa Chỉ:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(428, 109);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Số Điện Thoại:";
+            label4.AutoSize = true;
+            label4.Location = new Point(428, 109);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 18);
+            label4.TabIndex = 4;
+            label4.Text = "Số Điện Thoại:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 167);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 18);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Email:";
+            label5.AutoSize = true;
+            label5.Location = new Point(26, 167);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 18);
+            label5.TabIndex = 5;
+            label5.Text = "Email:";
             // 
             // txt_mkh
             // 
-            this.txt_mkh.Location = new System.Drawing.Point(149, 50);
-            this.txt_mkh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_mkh.MaxLength = 1000;
-            this.txt_mkh.Name = "txt_mkh";
-            this.txt_mkh.Size = new System.Drawing.Size(173, 24);
-            this.txt_mkh.TabIndex = 8;
-            this.txt_mkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mkh_KeyPress);
+            txt_mkh.Location = new Point(149, 50);
+            txt_mkh.Margin = new Padding(4, 3, 4, 3);
+            txt_mkh.MaxLength = 1000;
+            txt_mkh.Name = "txt_mkh";
+            txt_mkh.Size = new Size(173, 24);
+            txt_mkh.TabIndex = 8;
+            txt_mkh.KeyPress += txt_mkh_KeyPress;
             // 
             // txt_tkh
             // 
-            this.txt_tkh.Location = new System.Drawing.Point(556, 50);
-            this.txt_tkh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_tkh.MaxLength = 50;
-            this.txt_tkh.Name = "txt_tkh";
-            this.txt_tkh.Size = new System.Drawing.Size(182, 24);
-            this.txt_tkh.TabIndex = 9;
+            txt_tkh.Location = new Point(556, 50);
+            txt_tkh.Margin = new Padding(4, 3, 4, 3);
+            txt_tkh.MaxLength = 35;
+            txt_tkh.Name = "txt_tkh";
+            txt_tkh.Size = new Size(218, 24);
+            txt_tkh.TabIndex = 9;
             // 
             // txt_dchi
             // 
-            this.txt_dchi.Location = new System.Drawing.Point(149, 106);
-            this.txt_dchi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_dchi.MaxLength = 250;
-            this.txt_dchi.Multiline = true;
-            this.txt_dchi.Name = "txt_dchi";
-            this.txt_dchi.Size = new System.Drawing.Size(233, 24);
-            this.txt_dchi.TabIndex = 10;
+            txt_dchi.Location = new Point(149, 106);
+            txt_dchi.Margin = new Padding(4, 3, 4, 3);
+            txt_dchi.MaxLength = 50;
+            txt_dchi.Multiline = true;
+            txt_dchi.Name = "txt_dchi";
+            txt_dchi.Size = new Size(233, 24);
+            txt_dchi.TabIndex = 10;
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Location = new System.Drawing.Point(556, 103);
-            this.txt_sdt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_sdt.MaxLength = 11;
-            this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(182, 24);
-            this.txt_sdt.TabIndex = 11;
-            this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
+            txt_sdt.Location = new Point(556, 103);
+            txt_sdt.Margin = new Padding(4, 3, 4, 3);
+            txt_sdt.MaxLength = 11;
+            txt_sdt.Name = "txt_sdt";
+            txt_sdt.Size = new Size(218, 24);
+            txt_sdt.TabIndex = 11;
+            txt_sdt.KeyPress += txt_sdt_KeyPress;
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(150, 161);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_email.MaxLength = 50;
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(232, 24);
-            this.txt_email.TabIndex = 12;
+            txt_email.Location = new Point(150, 161);
+            txt_email.Margin = new Padding(4, 3, 4, 3);
+            txt_email.MaxLength = 35;
+            txt_email.Name = "txt_email";
+            txt_email.Size = new Size(232, 24);
+            txt_email.TabIndex = 12;
             // 
             // btn_themkhach
             // 
-            this.btn_themkhach.Location = new System.Drawing.Point(43, 62);
-            this.btn_themkhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_themkhach.Name = "btn_themkhach";
-            this.btn_themkhach.Size = new System.Drawing.Size(139, 48);
-            this.btn_themkhach.TabIndex = 15;
-            this.btn_themkhach.Text = "Thêm";
-            this.btn_themkhach.UseVisualStyleBackColor = true;
-            this.btn_themkhach.Click += new System.EventHandler(this.btn_themkhach_Click);
+            btn_themkhach.Location = new Point(43, 62);
+            btn_themkhach.Margin = new Padding(4, 3, 4, 3);
+            btn_themkhach.Name = "btn_themkhach";
+            btn_themkhach.Size = new Size(139, 48);
+            btn_themkhach.TabIndex = 15;
+            btn_themkhach.Text = "Thêm";
+            btn_themkhach.UseVisualStyleBackColor = true;
+            btn_themkhach.Click += btn_themkhach_Click;
             // 
             // btn_suakhach
             // 
-            this.btn_suakhach.Location = new System.Drawing.Point(207, 62);
-            this.btn_suakhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_suakhach.Name = "btn_suakhach";
-            this.btn_suakhach.Size = new System.Drawing.Size(139, 48);
-            this.btn_suakhach.TabIndex = 17;
-            this.btn_suakhach.Text = "Sửa";
-            this.btn_suakhach.UseVisualStyleBackColor = true;
-            this.btn_suakhach.Click += new System.EventHandler(this.btn_suakhach_Click);
+            btn_suakhach.Location = new Point(207, 62);
+            btn_suakhach.Margin = new Padding(4, 3, 4, 3);
+            btn_suakhach.Name = "btn_suakhach";
+            btn_suakhach.Size = new Size(139, 48);
+            btn_suakhach.TabIndex = 17;
+            btn_suakhach.Text = "Sửa";
+            btn_suakhach.UseVisualStyleBackColor = true;
+            btn_suakhach.Click += btn_suakhach_Click;
             // 
             // btn_xoakhach
             // 
-            this.btn_xoakhach.Location = new System.Drawing.Point(369, 62);
-            this.btn_xoakhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_xoakhach.Name = "btn_xoakhach";
-            this.btn_xoakhach.Size = new System.Drawing.Size(139, 48);
-            this.btn_xoakhach.TabIndex = 18;
-            this.btn_xoakhach.Text = "Xóa";
-            this.btn_xoakhach.UseVisualStyleBackColor = true;
-            this.btn_xoakhach.Click += new System.EventHandler(this.btn_xoakhach_Click);
+            btn_xoakhach.Location = new Point(369, 62);
+            btn_xoakhach.Margin = new Padding(4, 3, 4, 3);
+            btn_xoakhach.Name = "btn_xoakhach";
+            btn_xoakhach.Size = new Size(139, 48);
+            btn_xoakhach.TabIndex = 18;
+            btn_xoakhach.Text = "Xóa";
+            btn_xoakhach.UseVisualStyleBackColor = true;
+            btn_xoakhach.Click += btn_xoakhach_Click;
             // 
             // btn_thoatkhach
             // 
-            this.btn_thoatkhach.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_thoatkhach.Location = new System.Drawing.Point(369, 160);
-            this.btn_thoatkhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_thoatkhach.Name = "btn_thoatkhach";
-            this.btn_thoatkhach.Size = new System.Drawing.Size(139, 48);
-            this.btn_thoatkhach.TabIndex = 22;
-            this.btn_thoatkhach.Text = "Thoát";
-            this.btn_thoatkhach.UseVisualStyleBackColor = true;
-            this.btn_thoatkhach.Click += new System.EventHandler(this.btn_thoatkhach_Click);
+            btn_thoatkhach.DialogResult = DialogResult.Cancel;
+            btn_thoatkhach.Location = new Point(369, 160);
+            btn_thoatkhach.Margin = new Padding(4, 3, 4, 3);
+            btn_thoatkhach.Name = "btn_thoatkhach";
+            btn_thoatkhach.Size = new Size(139, 48);
+            btn_thoatkhach.TabIndex = 22;
+            btn_thoatkhach.Text = "Thoát";
+            btn_thoatkhach.UseVisualStyleBackColor = true;
+            btn_thoatkhach.Click += btn_thoatkhach_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_LuuKhach);
-            this.groupBox1.Controls.Add(this.btn_LamMoiKhach);
-            this.groupBox1.Controls.Add(this.btn_thoatkhach);
-            this.groupBox1.Controls.Add(this.btn_themkhach);
-            this.groupBox1.Controls.Add(this.btn_suakhach);
-            this.groupBox1.Controls.Add(this.btn_xoakhach);
-            this.groupBox1.Location = new System.Drawing.Point(825, 92);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(556, 227);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chức năng";
+            groupBox1.Controls.Add(btn_LuuKhach);
+            groupBox1.Controls.Add(btn_LamMoiKhach);
+            groupBox1.Controls.Add(btn_thoatkhach);
+            groupBox1.Controls.Add(btn_themkhach);
+            groupBox1.Controls.Add(btn_suakhach);
+            groupBox1.Controls.Add(btn_xoakhach);
+            groupBox1.Location = new Point(825, 92);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(556, 227);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Chức năng";
             // 
             // btn_LuuKhach
             // 
-            this.btn_LuuKhach.Location = new System.Drawing.Point(43, 160);
-            this.btn_LuuKhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_LuuKhach.Name = "btn_LuuKhach";
-            this.btn_LuuKhach.Size = new System.Drawing.Size(139, 48);
-            this.btn_LuuKhach.TabIndex = 20;
-            this.btn_LuuKhach.Text = "Lưu";
-            this.btn_LuuKhach.UseVisualStyleBackColor = true;
-            this.btn_LuuKhach.Click += new System.EventHandler(this.btn_LuuKhach_Click);
+            btn_LuuKhach.Location = new Point(43, 160);
+            btn_LuuKhach.Margin = new Padding(4, 3, 4, 3);
+            btn_LuuKhach.Name = "btn_LuuKhach";
+            btn_LuuKhach.Size = new Size(139, 48);
+            btn_LuuKhach.TabIndex = 20;
+            btn_LuuKhach.Text = "Lưu";
+            btn_LuuKhach.UseVisualStyleBackColor = true;
+            btn_LuuKhach.Click += btn_LuuKhach_Click;
             // 
             // btn_LamMoiKhach
             // 
-            this.btn_LamMoiKhach.Location = new System.Drawing.Point(207, 160);
-            this.btn_LamMoiKhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_LamMoiKhach.Name = "btn_LamMoiKhach";
-            this.btn_LamMoiKhach.Size = new System.Drawing.Size(139, 48);
-            this.btn_LamMoiKhach.TabIndex = 21;
-            this.btn_LamMoiKhach.Text = "Hủy";
-            this.btn_LamMoiKhach.UseVisualStyleBackColor = true;
-            this.btn_LamMoiKhach.Click += new System.EventHandler(this.btn_LamMoiKhach_Click);
+            btn_LamMoiKhach.Location = new Point(207, 160);
+            btn_LamMoiKhach.Margin = new Padding(4, 3, 4, 3);
+            btn_LamMoiKhach.Name = "btn_LamMoiKhach";
+            btn_LamMoiKhach.Size = new Size(139, 48);
+            btn_LamMoiKhach.TabIndex = 21;
+            btn_LamMoiKhach.Text = "Hủy";
+            btn_LamMoiKhach.UseVisualStyleBackColor = true;
+            btn_LamMoiKhach.Click += btn_LamMoiKhach_Click;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txt_mkh);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txt_tkh);
-            this.groupBox2.Controls.Add(this.txt_email);
-            this.groupBox2.Controls.Add(this.txt_dchi);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_sdt);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(23, 92);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Size = new System.Drawing.Size(755, 227);
-            this.groupBox2.TabIndex = 22;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin sách";
+            groupBox2.Controls.Add(txt_mkh);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(txt_tkh);
+            groupBox2.Controls.Add(txt_email);
+            groupBox2.Controls.Add(txt_dchi);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(txt_sdt);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Location = new Point(23, 92);
+            groupBox2.Margin = new Padding(4, 3, 4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(4, 3, 4, 3);
+            groupBox2.Size = new Size(794, 227);
+            groupBox2.TabIndex = 22;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Thông tin khách hàng";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(455, 33);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(552, 36);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "QUẢN LÝ THÔNG TIN KHÁCH HÀNG";
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.Navy;
+            label8.Location = new Point(455, 33);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(552, 36);
+            label8.TabIndex = 23;
+            label8.Text = "QUẢN LÝ THÔNG TIN KHÁCH HÀNG";
             // 
             // btn_searchKhach
             // 
-            this.btn_searchKhach.Location = new System.Drawing.Point(23, 330);
-            this.btn_searchKhach.Name = "btn_searchKhach";
-            this.btn_searchKhach.Size = new System.Drawing.Size(72, 28);
-            this.btn_searchKhach.TabIndex = 25;
-            this.btn_searchKhach.Text = "Lọc";
-            this.btn_searchKhach.UseVisualStyleBackColor = true;
-            this.btn_searchKhach.Click += new System.EventHandler(this.btn_searchKhach_Click);
+            btn_searchKhach.Location = new Point(23, 330);
+            btn_searchKhach.Name = "btn_searchKhach";
+            btn_searchKhach.Size = new Size(72, 28);
+            btn_searchKhach.TabIndex = 25;
+            btn_searchKhach.Text = "Lọc";
+            btn_searchKhach.UseVisualStyleBackColor = true;
+            btn_searchKhach.Click += btn_searchKhach_Click;
             // 
             // txt_searchKhach
             // 
-            this.txt_searchKhach.Location = new System.Drawing.Point(102, 334);
-            this.txt_searchKhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_searchKhach.Name = "txt_searchKhach";
-            this.txt_searchKhach.Size = new System.Drawing.Size(233, 24);
-            this.txt_searchKhach.TabIndex = 15;
+            txt_searchKhach.Location = new Point(102, 334);
+            txt_searchKhach.Margin = new Padding(4, 3, 4, 3);
+            txt_searchKhach.MaxLength = 35;
+            txt_searchKhach.Name = "txt_searchKhach";
+            txt_searchKhach.Size = new Size(233, 24);
+            txt_searchKhach.TabIndex = 15;
             // 
             // lsv_khach
             // 
-            this.lsv_khach.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.makh,
-            this.tenkh,
-            this.diachi,
-            this.sdt,
-            this.email});
-            this.lsv_khach.FullRowSelect = true;
-            this.lsv_khach.GridLines = true;
-            this.lsv_khach.HideSelection = false;
-            this.lsv_khach.Location = new System.Drawing.Point(23, 373);
-            this.lsv_khach.Name = "lsv_khach";
-            this.lsv_khach.Size = new System.Drawing.Size(1358, 218);
-            this.lsv_khach.TabIndex = 26;
-            this.lsv_khach.UseCompatibleStateImageBehavior = false;
-            this.lsv_khach.View = System.Windows.Forms.View.Details;
-            this.lsv_khach.SelectedIndexChanged += new System.EventHandler(this.lsv_khach_SelectedIndexChanged);
+            lsv_khach.Columns.AddRange(new ColumnHeader[] { makh, tenkh, diachi, sdt, email });
+            lsv_khach.FullRowSelect = true;
+            lsv_khach.GridLines = true;
+            lsv_khach.Location = new Point(23, 373);
+            lsv_khach.Name = "lsv_khach";
+            lsv_khach.Size = new Size(1358, 218);
+            lsv_khach.TabIndex = 26;
+            lsv_khach.UseCompatibleStateImageBehavior = false;
+            lsv_khach.View = View.Details;
+            lsv_khach.SelectedIndexChanged += lsv_khach_SelectedIndexChanged;
             // 
             // makh
             // 
-            this.makh.Text = "Mã Khách Hàng";
-            this.makh.Width = 200;
+            makh.Text = "Mã Khách Hàng";
+            makh.Width = 200;
             // 
             // tenkh
             // 
-            this.tenkh.Text = "Tên Khách Hàng";
-            this.tenkh.Width = 320;
+            tenkh.Text = "Tên Khách Hàng";
+            tenkh.Width = 320;
             // 
             // diachi
             // 
-            this.diachi.Text = "Địa Chỉ";
-            this.diachi.Width = 320;
+            diachi.Text = "Địa Chỉ";
+            diachi.Width = 320;
             // 
             // sdt
             // 
-            this.sdt.Text = "Số Điện Thoại";
-            this.sdt.Width = 250;
+            sdt.Text = "Số Điện Thoại";
+            sdt.Width = 250;
             // 
             // email
             // 
-            this.email.Text = "Email";
-            this.email.Width = 250;
+            email.Text = "Email";
+            email.Width = 250;
+            // 
+            // btn_htds
+            // 
+            btn_htds.Location = new Point(363, 330);
+            btn_htds.Name = "btn_htds";
+            btn_htds.Size = new Size(178, 34);
+            btn_htds.TabIndex = 28;
+            btn_htds.Text = "Hiển Thị Danh Sách";
+            btn_htds.UseVisualStyleBackColor = true;
+            btn_htds.Click += btn_htds_Click;
             // 
             // Form_khachhang
             // 
-            this.AcceptButton = this.btn_themkhach;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btn_thoatkhach;
-            this.ClientSize = new System.Drawing.Size(1412, 603);
-            this.Controls.Add(this.lsv_khach);
-            this.Controls.Add(this.btn_searchKhach);
-            this.Controls.Add(this.txt_searchKhach);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form_khachhang";
-            this.Text = "QUẢN LÝ THÔNG TIN KHÁCH HÀNG";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_KhachHang_FormClosing);
-            this.Load += new System.EventHandler(this.Form_khachhang_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btn_themkhach;
+            AutoScaleDimensions = new SizeF(10F, 18F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btn_thoatkhach;
+            ClientSize = new Size(1412, 603);
+            Controls.Add(btn_htds);
+            Controls.Add(lsv_khach);
+            Controls.Add(btn_searchKhach);
+            Controls.Add(txt_searchKhach);
+            Controls.Add(label8);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Form_khachhang";
+            Text = "QUẢN LÝ THÔNG TIN KHÁCH HÀNG";
+            FormClosing += Form_KhachHang_FormClosing;
+            Load += Form_khachhang_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -396,5 +402,6 @@ namespace QuanLyNhaSach
         private ColumnHeader diachi;
         private ColumnHeader sdt;
         private ColumnHeader email;
+        private Button btn_htds;
     }
 }

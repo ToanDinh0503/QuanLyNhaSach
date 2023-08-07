@@ -53,6 +53,7 @@ namespace QuanLyNhaSach
         private void Form_nxb_Load(object sender, EventArgs e)
         {
             HienThiDanhSach();
+            txt_mnxb.Enabled = false;
             hamtrong(false);
             btn_themnxb.Enabled = true;
             btn_suanxb.Enabled = false;
@@ -62,7 +63,6 @@ namespace QuanLyNhaSach
         }
         private void hamtrong(bool true_false)
         {
-            txt_mnxb.Enabled = true_false;
             txt_tnxb.Enabled = true_false;
         }
 
@@ -89,6 +89,7 @@ namespace QuanLyNhaSach
         {
             isThemNXBButtonClicked = true;
             isSuaNXBButtonClicked = false;
+            txt_mnxb.Enabled = false;
             hamtrong(true);
             btn_suanxb.Enabled = false;
             btn_xoanxb.Enabled = false;
@@ -102,9 +103,8 @@ namespace QuanLyNhaSach
         {
             isThemNXBButtonClicked = false;
             isSuaNXBButtonClicked = true;
-            //ban dau thi cac txt deu la readonly
+            txt_mnxb.Enabled = false;
             hamtrong(true);
-
             btn_themnxb.Enabled = false;
             btn_xoanxb.Enabled = false;
             btn_luu.Enabled = true;
@@ -190,7 +190,7 @@ namespace QuanLyNhaSach
         }
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            if (txt_mnxb.Text == "" || txt_tnxb.Text == "")
+            if (txt_tnxb.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu !");
                 return;
@@ -232,7 +232,6 @@ namespace QuanLyNhaSach
                 string sql = "INSERT INTO nha_xuat_ban (tennxb) VALUES (@tnxb)";
                 using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@mnxb", Convert.ToInt32(txt_mnxb.Text));
                     command.Parameters.AddWithValue("@tnxb", txt_tnxb.Text);
 
                     int rowsAffected = command.ExecuteNonQuery();

@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            txb_manv = new TextBox();
             txb_hoten = new TextBox();
             txb_taikhoan = new TextBox();
             txb_diachi = new TextBox();
@@ -48,6 +46,8 @@
             btn_Luu = new Button();
             btn_Huy = new Button();
             groupBox2 = new GroupBox();
+            txb_manv = new TextBox();
+            label1 = new Label();
             txb_matkhau = new TextBox();
             label12 = new Label();
             cbx_vaitro = new ComboBox();
@@ -77,16 +77,6 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(431, 31);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 18);
-            label1.TabIndex = 1;
-            label1.Text = "Mã nhân viên:";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -100,7 +90,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(431, 85);
+            label3.Location = new Point(426, 85);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(87, 18);
@@ -120,7 +110,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(431, 136);
+            label5.Location = new Point(431, 139);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(82, 18);
@@ -146,15 +136,6 @@
             label7.Size = new Size(0, 18);
             label7.TabIndex = 7;
             // 
-            // txb_manv
-            // 
-            txb_manv.Location = new Point(564, 28);
-            txb_manv.Margin = new Padding(4, 3, 4, 3);
-            txb_manv.MaxLength = 10;
-            txb_manv.Name = "txb_manv";
-            txb_manv.Size = new Size(173, 24);
-            txb_manv.TabIndex = 8;
-            // 
             // txb_hoten
             // 
             txb_hoten.Location = new Point(148, 31);
@@ -166,9 +147,9 @@
             // 
             // txb_taikhoan
             // 
-            txb_taikhoan.Location = new Point(563, 85);
+            txb_taikhoan.Location = new Point(563, 79);
             txb_taikhoan.Margin = new Padding(4, 3, 4, 3);
-            txb_taikhoan.MaxLength = 250;
+            txb_taikhoan.MaxLength = 15;
             txb_taikhoan.Multiline = true;
             txb_taikhoan.Name = "txb_taikhoan";
             txb_taikhoan.Size = new Size(174, 24);
@@ -188,7 +169,7 @@
             // 
             txb_sdt.Location = new Point(149, 318);
             txb_sdt.Margin = new Padding(4, 3, 4, 3);
-            txb_sdt.MaxLength = 10;
+            txb_sdt.MaxLength = 11;
             txb_sdt.Name = "txb_sdt";
             txb_sdt.Size = new Size(172, 24);
             txb_sdt.TabIndex = 6;
@@ -279,6 +260,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txb_manv);
+            groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(txb_matkhau);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(cbx_vaitro);
@@ -288,8 +271,6 @@
             groupBox2.Controls.Add(chb_nam);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(txb_manv);
-            groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(txb_sdt);
             groupBox2.Controls.Add(label2);
@@ -309,11 +290,31 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin nhân viên";
             // 
+            // txb_manv
+            // 
+            txb_manv.Location = new Point(563, 23);
+            txb_manv.Margin = new Padding(4, 3, 4, 3);
+            txb_manv.MaxLength = 250;
+            txb_manv.Multiline = true;
+            txb_manv.Name = "txb_manv";
+            txb_manv.Size = new Size(174, 24);
+            txb_manv.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(426, 29);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(112, 18);
+            label1.TabIndex = 22;
+            label1.Text = "Mã nhân viên:";
+            // 
             // txb_matkhau
             // 
-            txb_matkhau.Location = new Point(565, 133);
+            txb_matkhau.Location = new Point(564, 133);
             txb_matkhau.Margin = new Padding(4, 3, 4, 3);
-            txb_matkhau.MaxLength = 35;
+            txb_matkhau.MaxLength = 10;
             txb_matkhau.Name = "txb_matkhau";
             txb_matkhau.Size = new Size(173, 24);
             txb_matkhau.TabIndex = 10;
@@ -347,14 +348,16 @@
             // 
             // cld_ngaysinh
             // 
+
             cld_ngaysinh.CustomFormat = "MM/dd/yyyy";
             cld_ngaysinh.Format = DateTimePickerFormat.Short;
             cld_ngaysinh.Location = new Point(148, 222);
-            cld_ngaysinh.MaxDate = new DateTime(9000, 12, 31, 9, 21, 0, 0);
+            cld_ngaysinh.MaxDate = DateTime.Now;
+            cld_ngaysinh.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             cld_ngaysinh.Name = "cld_ngaysinh";
             cld_ngaysinh.Size = new Size(175, 24);
             cld_ngaysinh.TabIndex = 5;
-            cld_ngaysinh.Value = new DateTime(2023, 7, 29, 0, 0, 0, 0);
+            cld_ngaysinh.Value = new DateTime(2003, 7, 30, 0, 0, 0, 0);
             // 
             // chb_nu
             // 
@@ -402,7 +405,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.Blue;
+            label8.ForeColor = Color.Navy;
             label8.Location = new Point(459, 33);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
@@ -424,6 +427,7 @@
             // 
             txt_search.Location = new Point(94, 7);
             txt_search.Margin = new Padding(4, 3, 4, 3);
+            txt_search.MaxLength = 35;
             txt_search.Name = "txt_search";
             txt_search.Size = new Size(233, 24);
             txt_search.TabIndex = 15;
@@ -509,7 +513,7 @@
             // 
             // Form_NhanVien
             // 
-            AcceptButton = btn_them;
+            AcceptButton = btn_Luu;
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoat;
@@ -535,14 +539,12 @@
         }
 
         #endregion
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox txb_manv;
         private TextBox txb_hoten;
         private TextBox txb_taikhoan;
         private TextBox txb_diachi;
@@ -579,5 +581,7 @@
         private Label label12;
         private TextBox txb_matkhau;
         private Panel panel1;
+        private TextBox txb_manv;
+        private Label label1;
     }
 }

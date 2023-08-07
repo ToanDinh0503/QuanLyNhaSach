@@ -70,6 +70,11 @@ namespace QuanLyNhaSach
         private void Form_DanhMucNV_Load(object sender, EventArgs e)
         {
             HienThiDanhSach();
+            txt_mkh.ReadOnly = true;
+            txt_tkh.ReadOnly = true;
+            txt_dchi.ReadOnly = true;
+            txt_sdt.ReadOnly = true;
+            txt_email.ReadOnly = true;
             btn_searchKhach.Focus();
         }
 
@@ -142,6 +147,23 @@ namespace QuanLyNhaSach
         private void button1_Click(object sender, EventArgs e)
         {
             HienThiDanhSach();
+            txt_mkh.Text = "";
+            txt_tkh.Text = "";
+            txt_dchi.Text = "";
+            txt_sdt.Text = "";
+            txt_email.Text = "";
+            txt_searchKhach.Text = "";
+        }
+
+        private void lsv_khach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsv_khach.SelectedItems.Count == 0) return;
+            ListViewItem lvi = lsv_khach.SelectedItems[0];
+            txt_mkh.Text = lvi.SubItems[0].Text;
+            txt_tkh.Text = lvi.SubItems[1].Text;
+            txt_dchi.Text = lvi.SubItems[2].Text;
+            txt_sdt.Text = lvi.SubItems[3].Text;
+            txt_email.Text = lvi.SubItems[4].Text;
         }
     }
 }

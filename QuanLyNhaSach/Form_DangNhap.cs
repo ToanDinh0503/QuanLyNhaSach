@@ -20,7 +20,7 @@ namespace QuanLyNhaSach
         }
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chướng trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
@@ -50,22 +50,21 @@ namespace QuanLyNhaSach
                 NpgsqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Const.loaiTaiKhoan = reader.GetInt32(6);
-                }
+                    // nếu trong datatable có dữ liêu thì đăng nhập thành công
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Đăng nhập thành công!");
+                        Form_Menu_temp f = new Form_Menu_temp();
+                        Const.loaiTaiKhoan = reader.GetInt32(6);
+                        Const.nhanvien = reader.GetString(3);
+                        f.ShowDialog();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
 
-
-                // nếu trong datatable có dữ liêu thì đăng nhập thành công
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("Đăng nhập thành công!");
-                    this.Hide();
-                    Form_Menu_temp f = new Form_Menu_temp();
-                    f.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
-
+                    }
                 }
             }
             catch (Exception ex)
@@ -76,8 +75,6 @@ namespace QuanLyNhaSach
             {
                 connpg.Close();
             }
-
-
         }
 
 

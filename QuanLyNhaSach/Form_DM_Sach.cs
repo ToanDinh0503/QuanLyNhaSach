@@ -32,7 +32,7 @@ namespace QuanLyNhaSach
             // Đối tượng thực thi truy vấn 
             NpgsqlCommand sqlCmd = new NpgsqlCommand();
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "select masach,tensach,gia,nam,tennxb,tentl from sach s, the_loai t, nha_xuat_ban n where s.manxb = n.manxb and s.matl = t.matl order by masach";
+            sqlCmd.CommandText = "select masach,tensach,gia,nam,tennxb,tentl,mota from sach s, the_loai t, nha_xuat_ban n where s.manxb = n.manxb and s.matl = t.matl order by masach";
             sqlCmd.Connection = connpg;
 
             NpgsqlDataReader reader = sqlCmd.ExecuteReader();
@@ -45,6 +45,7 @@ namespace QuanLyNhaSach
                 int nam = reader.GetInt32(3);
                 string tennxb = reader.GetString(4);
                 string tentl = reader.GetString(5);
+                String mota = reader.GetString(6);
 
                 ListViewItem newitem = new ListViewItem(masach.ToString());
 
@@ -53,6 +54,7 @@ namespace QuanLyNhaSach
                 newitem.SubItems.Add(nam.ToString());
                 newitem.SubItems.Add(tennxb.ToString());
                 newitem.SubItems.Add(tentl.ToString());
+                newitem.SubItems.Add(mota.ToString());
 
                 lsv_dssach.Items.Add(newitem);
             }
@@ -61,22 +63,97 @@ namespace QuanLyNhaSach
         private void Form_DM_Sach_Load(object sender, EventArgs e)
         {
             HienThiDanhSach();
+            txt_ms.ReadOnly = true;
+            txt_ts.ReadOnly = true;
+            txt_gia.ReadOnly = true;
+            txt_nxb.ReadOnly = true;
+            txt_nxbb.ReadOnly = true;
+            txt_tl.ReadOnly = true;
+            txt_mt.ReadOnly = true;
+            txt_search.Text = "";
         }
 
         private void lsv_dssach_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsv_dssach.SelectedItems.Count == 0) return;
-            // Lấy phần tử được chọn trên listview
             ListViewItem lvi = lsv_dssach.SelectedItems[0];
+            txt_ms.Text = lvi.SubItems[0].Text;
+            txt_ts.Text = lvi.SubItems[1].Text;
+            txt_gia.Text = lvi.SubItems[2].Text;
+            txt_nxb.Text = lvi.SubItems[3].Text;
+            txt_nxbb.Text = lvi.SubItems[4].Text;
+            txt_tl.Text = lvi.SubItems[5].Text;
+            txt_mt.Text = lvi.SubItems[6].Text;
+        }
 
-            // Hiển thị thông tin từ listView sang các messageBox
-            MessageBox.Show("                       THÔNG TIN SÁCH" + "\n" + "\n" +
-                "Mã sách: " + lvi.SubItems[0].Text + "\n" + "\n" +
-                "Tên sách: " + lvi.SubItems[1].Text + "\n" + "\n" +
-                "Giá: " + lvi.SubItems[2].Text + "\n" + "\n" +
-                "Năm: " + lvi.SubItems[3].Text + "\n" + "\n" +
-                "Nhà Xuất Bản: " + lvi.SubItems[4].Text + "\n" + "\n" +
-                "Thể Loại: " + lvi.SubItems[5].Text + "\n" + "\n");
+        private void btn_htmt_Click(object sender, EventArgs e)
+        {
+            if (txt_mt.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show(txt_mt.Text);
+            }
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            string keyword = txt_search.Text;
+            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                try
+                {
+                    NpgsqlCommand cmd = new NpgsqlCommand("select masach,tensach,gia,nam,tennxb,tentl, mota from sach s, the_loai t, nha_xuat_ban n where s.manxb = n.manxb and s.matl = t.matl and tensach LIKE  @keyword ", conn);
+                    cmd.Parameters.AddWithValue("@keyword", keyword);
+                    NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    lsv_dssach.Items.Clear();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        ListViewItem item = new ListViewItem(row["masach"].ToString());
+                        item.SubItems.Add(row["tensach"].ToString());
+                        item.SubItems.Add(row["gia"].ToString());
+                        item.SubItems.Add(row["nam"].ToString());
+                        item.SubItems.Add(row["tennxb"].ToString());
+                        item.SubItems.Add(row["tentl"].ToString());
+                        item.SubItems.Add(row["mota"].ToString());
+
+
+                        lsv_dssach.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tìm kiếm sách: " + ex.Message);
+                }
+            }
+        }
+
+        private void btn_htds_Click(object sender, EventArgs e)
+        {
+            HienThiDanhSach();
+            txt_ms.Text = "";
+            txt_ts.Text = "";
+            txt_gia.Text = "";
+            txt_nxb.Text = "";
+            txt_nxbb.Text = "";
+            txt_tl.Text = "";
+            txt_mt.Text = "";
+            txt_search.Text = "";
+        }
+
+        private void Form_DM_Sach_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

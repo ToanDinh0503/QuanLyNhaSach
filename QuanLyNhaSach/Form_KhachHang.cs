@@ -82,6 +82,7 @@ namespace QuanLyNhaSach
         private void Form_khachhang_Load(object sender, EventArgs e)
         {
             HienThiDanhSach();
+            txt_mkh.Enabled = false;
             hamtrong(false);
             btn_themkhach.Enabled = true;
             btn_LamMoiKhach.Enabled = false;
@@ -91,7 +92,6 @@ namespace QuanLyNhaSach
         }
         private void hamtrong(bool true_false)
         {
-            txt_mkh.Enabled = true_false;
             txt_tkh.Enabled = true_false;
             txt_dchi.Enabled = true_false;
             txt_sdt.Enabled = true_false;
@@ -101,6 +101,7 @@ namespace QuanLyNhaSach
         {
             isThemSachButtonClicked = false;
             isSuaSachButtonClicked = true;
+            txt_mkh.Enabled = false;
             hamtrong(true);
             btn_themkhach.Enabled = false;
             btn_xoakhach.Enabled = false;
@@ -175,7 +176,7 @@ namespace QuanLyNhaSach
 
         private void btn_LuuKhach_Click(object sender, EventArgs e)
         {
-            if (txt_tkh.Text == "" || txt_sdt.Text == "" || txt_mkh.Text == "" || txt_dchi.Text == "" || txt_email.Text == "")
+            if (txt_tkh.Text == "" || txt_sdt.Text == "" || txt_dchi.Text == "" || txt_email.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu !");
                 return;
@@ -393,6 +394,12 @@ namespace QuanLyNhaSach
         {
             if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)8))
                 e.Handled = true;
+        }
+
+        private void btn_htds_Click(object sender, EventArgs e)
+        {
+            HienThiDanhSach();
+            txt_searchKhach.Text = "";
         }
     }
 }

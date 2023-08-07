@@ -28,293 +28,304 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_ttl = new System.Windows.Forms.TextBox();
-            this.txt_mtl = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_luu = new System.Windows.Forms.Button();
-            this.btn_themtl = new System.Windows.Forms.Button();
-            this.btn_huy = new System.Windows.Forms.Button();
-            this.btn_suatl = new System.Windows.Forms.Button();
-            this.btn_thoat = new System.Windows.Forms.Button();
-            this.btn_xoatl = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lsv_tl = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.btn_search = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.SuspendLayout();
+            label1 = new Label();
+            groupBox1 = new GroupBox();
+            txt_ttl = new TextBox();
+            txt_mtl = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            groupBox2 = new GroupBox();
+            btn_luu = new Button();
+            btn_themtl = new Button();
+            btn_huy = new Button();
+            btn_suatl = new Button();
+            btn_thoat = new Button();
+            btn_xoatl = new Button();
+            groupBox3 = new GroupBox();
+            lsv_tl = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            txt_search = new TextBox();
+            btn_search = new Button();
+            button1 = new Button();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(347, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÍ THỂ LOẠI SÁCH";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(347, 46);
+            label1.Name = "label1";
+            label1.Size = new Size(313, 29);
+            label1.TabIndex = 1;
+            label1.Text = "QUẢN LÍ THỂ LOẠI SÁCH";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_ttl);
-            this.groupBox1.Controls.Add(this.txt_mtl);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(436, 169);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Thể Loại";
+            groupBox1.Controls.Add(txt_ttl);
+            groupBox1.Controls.Add(txt_mtl);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(12, 138);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(436, 211);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Thông Tin Thể Loại";
             // 
             // txt_ttl
             // 
-            this.txt_ttl.Location = new System.Drawing.Point(138, 97);
-            this.txt_ttl.Name = "txt_ttl";
-            this.txt_ttl.Size = new System.Drawing.Size(266, 24);
-            this.txt_ttl.TabIndex = 3;
+            txt_ttl.Location = new Point(138, 121);
+            txt_ttl.Margin = new Padding(3, 4, 3, 4);
+            txt_ttl.MaxLength = 35;
+            txt_ttl.Name = "txt_ttl";
+            txt_ttl.Size = new Size(266, 24);
+            txt_ttl.TabIndex = 3;
             // 
             // txt_mtl
             // 
-            this.txt_mtl.Location = new System.Drawing.Point(138, 38);
-            this.txt_mtl.Name = "txt_mtl";
-            this.txt_mtl.Size = new System.Drawing.Size(266, 24);
-            this.txt_mtl.TabIndex = 2;
+            txt_mtl.Location = new Point(138, 48);
+            txt_mtl.Margin = new Padding(3, 4, 3, 4);
+            txt_mtl.Name = "txt_mtl";
+            txt_mtl.Size = new Size(266, 24);
+            txt_mtl.TabIndex = 2;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Tên Thể Loại:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(7, 129);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 16);
+            label3.TabIndex = 1;
+            label3.Text = "Tên Thể Loại:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã Thể Loại:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(7, 54);
+            label2.Name = "label2";
+            label2.Size = new Size(97, 16);
+            label2.TabIndex = 0;
+            label2.Text = "Mã Thể Loại:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btn_luu);
-            this.groupBox2.Controls.Add(this.btn_themtl);
-            this.groupBox2.Controls.Add(this.btn_huy);
-            this.groupBox2.Controls.Add(this.btn_suatl);
-            this.groupBox2.Controls.Add(this.btn_thoat);
-            this.groupBox2.Controls.Add(this.btn_xoatl);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(454, 110);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(526, 169);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chức năng";
+            groupBox2.Controls.Add(btn_luu);
+            groupBox2.Controls.Add(btn_themtl);
+            groupBox2.Controls.Add(btn_huy);
+            groupBox2.Controls.Add(btn_suatl);
+            groupBox2.Controls.Add(btn_thoat);
+            groupBox2.Controls.Add(btn_xoatl);
+            groupBox2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Location = new Point(454, 138);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(526, 211);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Chức năng";
             // 
             // btn_luu
             // 
-            this.btn_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_luu.Location = new System.Drawing.Point(42, 107);
-            this.btn_luu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(116, 48);
-            this.btn_luu.TabIndex = 32;
-            this.btn_luu.Text = "Lưu";
-            this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            btn_luu.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_luu.Location = new Point(42, 134);
+            btn_luu.Margin = new Padding(4);
+            btn_luu.Name = "btn_luu";
+            btn_luu.Size = new Size(116, 60);
+            btn_luu.TabIndex = 32;
+            btn_luu.Text = "Lưu";
+            btn_luu.UseVisualStyleBackColor = true;
+            btn_luu.Click += btn_luu_Click;
             // 
             // btn_themtl
             // 
-            this.btn_themtl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_themtl.Location = new System.Drawing.Point(42, 43);
-            this.btn_themtl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_themtl.Name = "btn_themtl";
-            this.btn_themtl.Size = new System.Drawing.Size(116, 48);
-            this.btn_themtl.TabIndex = 31;
-            this.btn_themtl.Text = "Thêm";
-            this.btn_themtl.UseVisualStyleBackColor = true;
-            this.btn_themtl.Click += new System.EventHandler(this.btn_themtl_Click);
+            btn_themtl.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_themtl.Location = new Point(42, 54);
+            btn_themtl.Margin = new Padding(4);
+            btn_themtl.Name = "btn_themtl";
+            btn_themtl.Size = new Size(116, 60);
+            btn_themtl.TabIndex = 31;
+            btn_themtl.Text = "Thêm";
+            btn_themtl.UseVisualStyleBackColor = true;
+            btn_themtl.Click += btn_themtl_Click;
             // 
             // btn_huy
             // 
-            this.btn_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_huy.Location = new System.Drawing.Point(214, 107);
-            this.btn_huy.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(113, 48);
-            this.btn_huy.TabIndex = 30;
-            this.btn_huy.Text = "Hủy";
-            this.btn_huy.UseVisualStyleBackColor = true;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            btn_huy.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_huy.Location = new Point(214, 134);
+            btn_huy.Margin = new Padding(4);
+            btn_huy.Name = "btn_huy";
+            btn_huy.Size = new Size(113, 60);
+            btn_huy.TabIndex = 30;
+            btn_huy.Text = "Hủy";
+            btn_huy.UseVisualStyleBackColor = true;
+            btn_huy.Click += btn_huy_Click;
             // 
             // btn_suatl
             // 
-            this.btn_suatl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_suatl.Location = new System.Drawing.Point(214, 43);
-            this.btn_suatl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_suatl.Name = "btn_suatl";
-            this.btn_suatl.Size = new System.Drawing.Size(113, 48);
-            this.btn_suatl.TabIndex = 29;
-            this.btn_suatl.Text = "Sửa";
-            this.btn_suatl.UseVisualStyleBackColor = true;
-            this.btn_suatl.Click += new System.EventHandler(this.btn_suatl_Click);
+            btn_suatl.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_suatl.Location = new Point(214, 54);
+            btn_suatl.Margin = new Padding(4);
+            btn_suatl.Name = "btn_suatl";
+            btn_suatl.Size = new Size(113, 60);
+            btn_suatl.TabIndex = 29;
+            btn_suatl.Text = "Sửa";
+            btn_suatl.UseVisualStyleBackColor = true;
+            btn_suatl.Click += btn_suatl_Click;
             // 
             // btn_thoat
             // 
-            this.btn_thoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thoat.Location = new System.Drawing.Point(387, 107);
-            this.btn_thoat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(114, 48);
-            this.btn_thoat.TabIndex = 28;
-            this.btn_thoat.Text = "Thoát";
-            this.btn_thoat.UseVisualStyleBackColor = true;
-            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
+            btn_thoat.DialogResult = DialogResult.Cancel;
+            btn_thoat.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_thoat.Location = new Point(387, 134);
+            btn_thoat.Margin = new Padding(4);
+            btn_thoat.Name = "btn_thoat";
+            btn_thoat.Size = new Size(114, 60);
+            btn_thoat.TabIndex = 28;
+            btn_thoat.Text = "Thoát";
+            btn_thoat.UseVisualStyleBackColor = true;
+            btn_thoat.Click += btn_thoat_Click;
             // 
             // btn_xoatl
             // 
-            this.btn_xoatl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoatl.Location = new System.Drawing.Point(387, 43);
-            this.btn_xoatl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_xoatl.Name = "btn_xoatl";
-            this.btn_xoatl.Size = new System.Drawing.Size(114, 48);
-            this.btn_xoatl.TabIndex = 25;
-            this.btn_xoatl.Text = "Xóa";
-            this.btn_xoatl.UseVisualStyleBackColor = true;
-            this.btn_xoatl.Click += new System.EventHandler(this.btn_xoatl_Click);
+            btn_xoatl.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_xoatl.Location = new Point(387, 54);
+            btn_xoatl.Margin = new Padding(4);
+            btn_xoatl.Name = "btn_xoatl";
+            btn_xoatl.Size = new Size(114, 60);
+            btn_xoatl.TabIndex = 25;
+            btn_xoatl.Text = "Xóa";
+            btn_xoatl.UseVisualStyleBackColor = true;
+            btn_xoatl.Click += btn_xoatl_Click;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lsv_tl);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 320);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(968, 290);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh Sách Các Thể Loại";
+            groupBox3.Controls.Add(lsv_tl);
+            groupBox3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox3.Location = new Point(12, 411);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(968, 221);
+            groupBox3.TabIndex = 4;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Danh Sách Các Thể Loại";
             // 
             // lsv_tl
             // 
-            this.lsv_tl.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.lsv_tl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsv_tl.FullRowSelect = true;
-            this.lsv_tl.GridLines = true;
-            this.lsv_tl.HideSelection = false;
-            this.lsv_tl.Location = new System.Drawing.Point(3, 20);
-            this.lsv_tl.Name = "lsv_tl";
-            this.lsv_tl.Size = new System.Drawing.Size(962, 267);
-            this.lsv_tl.TabIndex = 0;
-            this.lsv_tl.UseCompatibleStateImageBehavior = false;
-            this.lsv_tl.View = System.Windows.Forms.View.Details;
-            this.lsv_tl.SelectedIndexChanged += new System.EventHandler(this.lsv_tl_SelectedIndexChanged);
+            lsv_tl.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            lsv_tl.Dock = DockStyle.Fill;
+            lsv_tl.FullRowSelect = true;
+            lsv_tl.GridLines = true;
+            lsv_tl.Location = new Point(3, 21);
+            lsv_tl.Margin = new Padding(3, 4, 3, 4);
+            lsv_tl.Name = "lsv_tl";
+            lsv_tl.Size = new Size(962, 196);
+            lsv_tl.TabIndex = 0;
+            lsv_tl.UseCompatibleStateImageBehavior = false;
+            lsv_tl.View = View.Details;
+            lsv_tl.SelectedIndexChanged += lsv_tl_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã Thể Loại";
-            this.columnHeader1.Width = 372;
+            columnHeader1.Text = "Mã Thể Loại";
+            columnHeader1.Width = 372;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Tên Thể Loại";
-            this.columnHeader2.Width = 585;
+            columnHeader2.Text = "Tên Thể Loại";
+            columnHeader2.Width = 585;
             // 
             // txt_search
             // 
-            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(364, 294);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(180, 24);
-            this.txt_search.TabIndex = 5;
+            txt_search.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txt_search.Location = new Point(364, 368);
+            txt_search.Margin = new Padding(3, 4, 3, 4);
+            txt_search.MaxLength = 35;
+            txt_search.Name = "txt_search";
+            txt_search.Size = new Size(180, 24);
+            txt_search.TabIndex = 5;
             // 
             // btn_search
             // 
-            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Location = new System.Drawing.Point(283, 292);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(63, 29);
-            this.btn_search.TabIndex = 6;
-            this.btn_search.Text = "Lọc";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            btn_search.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_search.Location = new Point(283, 365);
+            btn_search.Margin = new Padding(3, 4, 3, 4);
+            btn_search.Name = "btn_search";
+            btn_search.Size = new Size(63, 36);
+            btn_search.TabIndex = 6;
+            btn_search.Text = "Lọc";
+            btn_search.UseVisualStyleBackColor = true;
+            btn_search.Click += btn_search_Click;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(560, 289);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 34);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Hiển Thị Danh Sách";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(560, 361);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(207, 42);
+            button1.TabIndex = 28;
+            button1.Text = "Hiển Thị Danh Sách";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form_theloai
             // 
-            this.AcceptButton = this.btn_themtl;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 622);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Name = "Form_theloai";
-            this.Text = "QUẢN LÝ THỂ LOẠI SÁCH";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form7_FormClosing);
-            this.Load += new System.EventHandler(this.Form7_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btn_themtl;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(992, 653);
+            Controls.Add(button1);
+            Controls.Add(btn_search);
+            Controls.Add(txt_search);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form_theloai";
+            Text = "QUẢN LÝ THỂ LOẠI SÁCH";
+            FormClosing += Form7_FormClosing;
+            Load += Form7_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_ttl;
-        private System.Windows.Forms.TextBox txt_mtl;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_thoat;
-        private System.Windows.Forms.Button btn_xoatl;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListView lsv_tl;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Button btn_suatl;
-        private System.Windows.Forms.Button btn_luu;
-        private System.Windows.Forms.Button btn_themtl;
-        private System.Windows.Forms.Button btn_huy;
-        private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button button1;
+        private Label label1;
+        private GroupBox groupBox1;
+        private TextBox txt_ttl;
+        private TextBox txt_mtl;
+        private Label label3;
+        private Label label2;
+        private GroupBox groupBox2;
+        private Button btn_thoat;
+        private Button btn_xoatl;
+        private GroupBox groupBox3;
+        private ListView lsv_tl;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private Button btn_suatl;
+        private Button btn_luu;
+        private Button btn_themtl;
+        private Button btn_huy;
+        private TextBox txt_search;
+        private Button btn_search;
+        private Button button1;
     }
 }

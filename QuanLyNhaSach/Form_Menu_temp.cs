@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +19,28 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
         }
-
         private void Form_Menu_Load(object sender, EventArgs e)
         {
+            string vaitro = "";
+            if (Const.loaiTaiKhoan == 1)
+            {
+                vaitro = "Admin";
+            }
+            else if (Const.loaiTaiKhoan == 2)
+            {
+                vaitro = "Nhân Viên Bán Sách";
+            }
+
+            lb_xinchao.Text = "Xin chào " + Const.nhanvien + "\n" +
+            "(" + vaitro + ")";
+
             //Gan gia tri "vai tro" vao Const.loaiTaiKhoan de phan loai tai khoan
             if (Const.loaiTaiKhoan == 1)
             {
                 mntt_sach.Enabled = true;
                 mntt_nv.Enabled = true;
                 mntt_kh.Enabled = true;
+                mnt_hd.Enabled = true;
                 mntt_tl.Enabled = true;
                 mntt_nxb.Enabled = true;
             }
@@ -35,6 +49,7 @@ namespace QuanLyNhaSach
                 mntt_sach.Enabled = false;
                 mntt_nv.Enabled = false;
                 mntt_kh.Enabled = false;
+                mnt_hd.Enabled = false;
                 mntt_tl.Enabled = false;
                 mntt_nxb.Enabled = false;
             }
@@ -59,7 +74,7 @@ namespace QuanLyNhaSach
         }
         private void mntt_dx_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chướng trình ?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn đăng xuất chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 isThoatChuongTrinh = false;
                 this.Close();
@@ -141,6 +156,60 @@ namespace QuanLyNhaSach
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void mntt_dmnv_Click(object sender, EventArgs e)
+        {
+            Form_DanhMucNV f = new Form_DanhMucNV();
+            f.ShowDialog();
+        }
+        private void mnt_bc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnt_thoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void mnt_tg_Click(object sender, EventArgs e)
+        {
+            Form_TroGiup f = new Form_TroGiup();
+            f.ShowDialog();
+        }
+
+        private void mnt_hd_Click(object sender, EventArgs e)
+        {
+            Form_hd f = new Form_hd();
+            f.ShowDialog();
+        }
+
+        private void mnt_hethong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mntt_dmhd_Click(object sender, EventArgs e)
+        {
+            Form_DanhMucHD f = new Form_DanhMucHD();
+            f.ShowDialog();
+        }
+
+        private void mntt_bh_Click(object sender, EventArgs e)
+        {
+            Form_banhang f = new Form_banhang();
+            f.ShowDialog();
+        }
+
+        private void mntt_dmk_Click(object sender, EventArgs e)
+        {
+            Form_DoiMatKhau f = new Form_DoiMatKhau();
+            f.ShowDialog();
         }
     }
 }

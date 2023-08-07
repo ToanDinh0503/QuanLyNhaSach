@@ -53,6 +53,7 @@ namespace QuanLyNhaSach
         private void Form7_Load(object sender, EventArgs e)
         {
             HienThiDanhSach();
+            txt_mtl.Enabled = false;
             hamtrong(false);
             btn_themtl.Enabled = true;
             btn_suatl.Enabled = false;
@@ -62,7 +63,6 @@ namespace QuanLyNhaSach
         }
         private void hamtrong(bool true_false)
         {
-            txt_mtl.Enabled = true_false;
             txt_ttl.Enabled = true_false;
         }
 
@@ -89,6 +89,7 @@ namespace QuanLyNhaSach
         {
             isThemTLButtonClicked = true;
             isSuaTLButtonClicked = false;
+            txt_mtl.Enabled = false;
             hamtrong(true);
             btn_suatl.Enabled = false;
             btn_xoatl.Enabled = false;
@@ -103,7 +104,7 @@ namespace QuanLyNhaSach
         {
             isThemTLButtonClicked = false;
             isSuaTLButtonClicked = true;
-            //ban dau thi cac txt deu la readonly
+            txt_mtl.Enabled = false;
             hamtrong(true);
 
             btn_themtl.Enabled = false;
@@ -192,7 +193,7 @@ namespace QuanLyNhaSach
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            if (txt_mtl.Text == "" || txt_ttl.Text == "")
+            if (txt_ttl.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu !");
                 return;
@@ -235,7 +236,6 @@ namespace QuanLyNhaSach
                 string sql = "INSERT INTO the_loai (tentl) VALUES (@ttl)";
                 using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@mtl", Convert.ToInt32(txt_mtl.Text));
                     command.Parameters.AddWithValue("@ttl", txt_ttl.Text);
 
                     int rowsAffected = command.ExecuteNonQuery();

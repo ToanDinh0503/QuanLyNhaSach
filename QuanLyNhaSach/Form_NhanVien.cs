@@ -31,7 +31,6 @@ namespace QuanLyNhaSach
         {
             txb_diachi.Enabled = true_false;
             txb_hoten.Enabled = true_false;
-            txb_manv.Enabled = true_false;
             txb_matkhau.Enabled = true_false;
             txb_taikhoan.Enabled = true_false;
             cld_ngaysinh.Enabled = true_false;
@@ -191,6 +190,9 @@ namespace QuanLyNhaSach
             //ban dau thi tat ca cac textbox deu la read het
             lamTrongCacTextBox();
             trangThaiCacTextBox(false);
+
+            txb_manv.Enabled = false;
+
             btn_them.Enabled = true;
             btn_Huy.Enabled = false;
             btn_Luu.Enabled = false;
@@ -423,9 +425,10 @@ namespace QuanLyNhaSach
 
         private void btn_Luu_Click_1(object sender, EventArgs e)
         {
-            if (chuanHoaTaiKhoanMatKhau(txb_taikhoan.Text) == true || chuanHoaTaiKhoanMatKhau(txb_matkhau.Text) == false)
+            if (chuanHoaTaiKhoanMatKhau(txb_taikhoan.Text) == false || chuanHoaTaiKhoanMatKhau(txb_matkhau.Text) == false)
             {
                 MessageBox.Show("Tài khoản và mật khẩu không được chứa ký tự đặc biệt hoặc có dấu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (txb_diachi.Text == "" || txb_hoten.Text == "" || txb_matkhau.Text == "" || txb_sdt.Text == ""
@@ -471,9 +474,16 @@ namespace QuanLyNhaSach
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
-            Form_data_Load(sender, e);
-        }
+            DialogResult result = MessageBox.Show("Bạn chắc chắn không lưu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                // reset các text
+                lamTrongCacTextBox();
+                //cho tat ca cac nut enable = true
+                Form_data_Load(sender, e);
+            }
+        }
         private void chb_nam_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chb_nam.Checked)
@@ -492,9 +502,6 @@ namespace QuanLyNhaSach
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-
-
-            txb_diachi.TabIndex = 0;
             isThemNhanVienButtonClicked = true;
             isSuaNhanVienButtonClicked = false;
             lamTrongCacTextBox();
@@ -536,6 +543,9 @@ namespace QuanLyNhaSach
 
                         command.ExecuteNonQuery();
                     }
+
+                    lamTrongCacTextBox();
+                    Form_data_Load(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -630,5 +640,7 @@ namespace QuanLyNhaSach
             if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == (char)8))
                 e.Handled = true;
         }
+
+
     }
 }

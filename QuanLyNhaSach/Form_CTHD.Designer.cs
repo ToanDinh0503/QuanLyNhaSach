@@ -118,7 +118,7 @@ namespace QuanLyNhaSach
             // 
             txt_soluong.Location = new Point(148, 96);
             txt_soluong.Margin = new Padding(4, 3, 4, 3);
-            txt_soluong.MaxLength = 11;
+            txt_soluong.MaxLength = 3;
             txt_soluong.Name = "txt_soluong";
             txt_soluong.Size = new Size(173, 24);
             txt_soluong.TabIndex = 10;
@@ -129,7 +129,7 @@ namespace QuanLyNhaSach
             // 
             txt_thanhtien.Location = new Point(555, 96);
             txt_thanhtien.Margin = new Padding(4, 3, 4, 3);
-            txt_thanhtien.MaxLength = 11;
+            txt_thanhtien.MaxLength = 8;
             txt_thanhtien.Name = "txt_thanhtien";
             txt_thanhtien.Size = new Size(173, 24);
             txt_thanhtien.TabIndex = 11;
@@ -138,7 +138,7 @@ namespace QuanLyNhaSach
             // 
             txt_tinhtrang.Location = new Point(149, 169);
             txt_tinhtrang.Margin = new Padding(4, 3, 4, 3);
-            txt_tinhtrang.MaxLength = 100;
+            txt_tinhtrang.MaxLength = 50;
             txt_tinhtrang.Multiline = true;
             txt_tinhtrang.Name = "txt_tinhtrang";
             txt_tinhtrang.Size = new Size(579, 44);
@@ -196,7 +196,7 @@ namespace QuanLyNhaSach
             groupBox1.Controls.Add(btn_themchitiet);
             groupBox1.Controls.Add(btn_suachitiet);
             groupBox1.Controls.Add(btn_xoachitiet);
-            groupBox1.Location = new Point(825, 87);
+            groupBox1.Location = new Point(786, 87);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
@@ -279,7 +279,7 @@ namespace QuanLyNhaSach
             // 
             // btn_searchchitiet
             // 
-            btn_searchchitiet.Location = new Point(23, 356);
+            btn_searchchitiet.Location = new Point(61, 358);
             btn_searchchitiet.Name = "btn_searchchitiet";
             btn_searchchitiet.Size = new Size(72, 28);
             btn_searchchitiet.TabIndex = 25;
@@ -289,8 +289,9 @@ namespace QuanLyNhaSach
             // 
             // txt_searchMaHD
             // 
-            txt_searchMaHD.Location = new Point(213, 361);
+            txt_searchMaHD.Location = new Point(269, 360);
             txt_searchMaHD.Margin = new Padding(4, 3, 4, 3);
+            txt_searchMaHD.MaxLength = 1000;
             txt_searchMaHD.Name = "txt_searchMaHD";
             txt_searchMaHD.Size = new Size(180, 24);
             txt_searchMaHD.TabIndex = 15;
@@ -302,7 +303,7 @@ namespace QuanLyNhaSach
             lsv_CTHD.GridLines = true;
             lsv_CTHD.Location = new Point(23, 407);
             lsv_CTHD.Name = "lsv_CTHD";
-            lsv_CTHD.Size = new Size(1358, 218);
+            lsv_CTHD.Size = new Size(1319, 218);
             lsv_CTHD.TabIndex = 26;
             lsv_CTHD.UseCompatibleStateImageBehavior = false;
             lsv_CTHD.View = View.Details;
@@ -311,17 +312,17 @@ namespace QuanLyNhaSach
             // mahd
             // 
             mahd.Text = "Mã Hóa Đơn";
-            mahd.Width = 300;
+            mahd.Width = 150;
             // 
             // masach
             // 
             masach.Text = "Mã Sách";
-            masach.Width = 300;
+            masach.Width = 350;
             // 
             // soluong
             // 
             soluong.Text = "Số Lượng";
-            soluong.Width = 250;
+            soluong.Width = 150;
             // 
             // thanhtien
             // 
@@ -331,12 +332,12 @@ namespace QuanLyNhaSach
             // tinhtrang
             // 
             tinhtrang.Text = "Tình Trạng";
-            tinhtrang.Width = 250;
+            tinhtrang.Width = 300;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(97, 361);
+            label7.Location = new Point(153, 364);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(108, 18);
@@ -350,7 +351,7 @@ namespace QuanLyNhaSach
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoatchitiet;
-            ClientSize = new Size(1412, 637);
+            ClientSize = new Size(1352, 643);
             Controls.Add(label7);
             Controls.Add(lsv_CTHD);
             Controls.Add(btn_searchchitiet);

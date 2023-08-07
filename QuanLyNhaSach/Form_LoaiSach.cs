@@ -22,6 +22,13 @@ namespace QuanLyNhaSach
         NpgsqlConnection connpg = null;
         private void Form_LoaiSach_Load(object sender, EventArgs e)
         {
+            txt_ms.ReadOnly = true;
+            txt_ts.ReadOnly = true;
+            txt_gia.ReadOnly = true;
+            txt_nxb.ReadOnly = true;
+            txt_nxbb.ReadOnly = true;
+            txt_tl.ReadOnly = true;
+            txt_mt.ReadOnly = true;
             if (connpg == null)
             {
                 connpg = new NpgsqlConnection(connectionString);
@@ -75,7 +82,7 @@ namespace QuanLyNhaSach
             // Đối tượng thực thi truy vấn 
             NpgsqlCommand sqlCmd = new NpgsqlCommand();
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "SELECT s.masach, s.tensach, s.gia, s.nam, n.tennxb, t.tentl FROM sach s, the_loai t, nha_xuat_ban n WHERE s.matl = t.matl AND s.manxb = n.manxb AND s.matl = '" + matl + "'";
+            sqlCmd.CommandText = "SELECT s.masach, s.tensach, s.gia, s.nam, n.tennxb, t.tentl, mota FROM sach s, the_loai t, nha_xuat_ban n WHERE s.matl = t.matl AND s.manxb = n.manxb AND s.matl = '" + matl + "'";
             sqlCmd.Connection = connpg;
 
             // thực thi
@@ -89,6 +96,7 @@ namespace QuanLyNhaSach
                 int nam = reader.GetInt32(3);
                 string tennxb = reader.GetString(4);
                 string tentl = reader.GetString(5);
+                string mota = reader.GetString(6);
 
                 ListViewItem lvi = new ListViewItem(masach.ToString());
                 lvi.SubItems.Add(tensach);
@@ -96,6 +104,7 @@ namespace QuanLyNhaSach
                 lvi.SubItems.Add(nam.ToString());
                 lvi.SubItems.Add(tennxb);
                 lvi.SubItems.Add(tentl);
+                lvi.SubItems.Add(mota);
 
                 lsv_nhomsach.Items.Add(lvi);
             }
@@ -105,19 +114,47 @@ namespace QuanLyNhaSach
         private void lsv_nhomsach_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsv_nhomsach.SelectedItems.Count == 0) return;
-            // Lấy phần tử được chọn trên listview
             ListViewItem lvi = lsv_nhomsach.SelectedItems[0];
+            txt_ms.Text = lvi.SubItems[0].Text;
+            txt_ts.Text = lvi.SubItems[1].Text;
+            txt_gia.Text = lvi.SubItems[2].Text;
+            txt_nxb.Text = lvi.SubItems[3].Text;
+            txt_nxbb.Text = lvi.SubItems[4].Text;
+            txt_tl.Text = lvi.SubItems[5].Text;
+            txt_mt.Text = lvi.SubItems[6].Text;
+        }
 
-            idmasach = int.Parse(lvi.SubItems[0].Text);
+        private void btn_htmt_Click(object sender, EventArgs e)
+        {
+            if (txt_mt.Text == "")
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show(txt_mt.Text);
+            }
+        }
 
-            // Hiển thị thông tin từ listView sang các TextBox
-            MessageBox.Show("                       THÔNG TIN SÁCH" + "\n" + "\n" + 
-                "Mã sách: " + lvi.SubItems[0].Text + "\n" + "\n" +
-                "Tên sách: " + lvi.SubItems[1].Text + "\n" + "\n" +
-                "Giá: " + lvi.SubItems[2].Text + "\n" + "\n" +
-                "Năm: " + lvi.SubItems[3].Text + "\n" + "\n" +
-                "Nhà Xuất Bản: " + lvi.SubItems[4].Text + "\n" + "\n" +
-                "Thể Loại: " + lvi.SubItems[5].Text + "\n" + "\n");
+        private void btn_htds_Click(object sender, EventArgs e)
+        {
+            Form_LoaiSach_Load(sender, e);
+            txt_ms.Text = "";
+            txt_ts.Text = "";
+            txt_gia.Text = "";
+            txt_nxb.Text = "";
+            txt_nxbb.Text = "";
+            txt_tl.Text = "";
+            txt_mt.Text = "";
+            cbo_nhomsach.Text = "";
+        }
+
+        private void Form_LoaiSach_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

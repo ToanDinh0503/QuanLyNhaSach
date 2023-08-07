@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class Form_Report
+    partial class Form_Report_2
     {
         /// <summary>
         /// Required designer variable.
@@ -39,17 +39,18 @@
             reportViewer1.ServerReport.BearerToken = null;
             reportViewer1.Size = new Size(800, 450);
             reportViewer1.TabIndex = 0;
+            reportViewer1.Load += reportViewer1_Load;
             // 
-            // Form_Report
+            // Form_Report_2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(reportViewer1);
-            Name = "Form_Report";
+            Name = "Form_Report_2";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "THỐNG KÊ";
-            Load += Form_Report_Load_1;
+            Text = "Form_Report";
+            Load += Form_Report_BanHang_Load;
             ResumeLayout(false);
         }
 

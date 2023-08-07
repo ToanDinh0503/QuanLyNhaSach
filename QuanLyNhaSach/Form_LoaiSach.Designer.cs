@@ -28,160 +28,382 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbo_nhomsach = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lsv_nhomsach = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            label2 = new Label();
+            cbo_nhomsach = new ComboBox();
+            groupBox1 = new GroupBox();
+            lsv_nhomsach = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            label1 = new Label();
+            panel1 = new Panel();
+            groupBox2 = new GroupBox();
+            txt_tl = new TextBox();
+            txt_nxbb = new TextBox();
+            btn_htmt = new Button();
+            txt_ms = new TextBox();
+            label3 = new Label();
+            label7 = new Label();
+            label4 = new Label();
+            txt_nxb = new TextBox();
+            label6 = new Label();
+            txt_ts = new TextBox();
+            txt_mt = new TextBox();
+            label5 = new Label();
+            txt_gia = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            btn_htds = new Button();
+            groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(435, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 18);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Nhóm Thể Loại Sách:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(448, 364);
+            label2.Name = "label2";
+            label2.Size = new Size(171, 18);
+            label2.TabIndex = 26;
+            label2.Text = "Nhóm Thể Loại Sách:";
             // 
             // cbo_nhomsach
             // 
-            this.cbo_nhomsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_nhomsach.FormattingEnabled = true;
-            this.cbo_nhomsach.Location = new System.Drawing.Point(650, 113);
-            this.cbo_nhomsach.Name = "cbo_nhomsach";
-            this.cbo_nhomsach.Size = new System.Drawing.Size(243, 26);
-            this.cbo_nhomsach.TabIndex = 25;
-            this.cbo_nhomsach.SelectedIndexChanged += new System.EventHandler(this.cbo_nhomsach_SelectedIndexChanged);
+            cbo_nhomsach.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cbo_nhomsach.FormattingEnabled = true;
+            cbo_nhomsach.Location = new Point(648, 361);
+            cbo_nhomsach.Margin = new Padding(3, 4, 3, 4);
+            cbo_nhomsach.Name = "cbo_nhomsach";
+            cbo_nhomsach.Size = new Size(243, 26);
+            cbo_nhomsach.TabIndex = 25;
+            cbo_nhomsach.SelectedIndexChanged += cbo_nhomsach_SelectedIndexChanged;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lsv_nhomsach);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 155);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1158, 336);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Các Quyển Sách Theo Thể Loại";
+            groupBox1.Controls.Add(lsv_nhomsach);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(12, 395);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(1158, 285);
+            groupBox1.TabIndex = 24;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Danh Sách Các Quyển Sách Theo Thể Loại";
             // 
             // lsv_nhomsach
             // 
-            this.lsv_nhomsach.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lsv_nhomsach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsv_nhomsach.FullRowSelect = true;
-            this.lsv_nhomsach.GridLines = true;
-            this.lsv_nhomsach.HideSelection = false;
-            this.lsv_nhomsach.Location = new System.Drawing.Point(3, 20);
-            this.lsv_nhomsach.Name = "lsv_nhomsach";
-            this.lsv_nhomsach.Size = new System.Drawing.Size(1152, 313);
-            this.lsv_nhomsach.TabIndex = 0;
-            this.lsv_nhomsach.UseCompatibleStateImageBehavior = false;
-            this.lsv_nhomsach.View = System.Windows.Forms.View.Details;
-            this.lsv_nhomsach.SelectedIndexChanged += new System.EventHandler(this.lsv_nhomsach_SelectedIndexChanged);
+            lsv_nhomsach.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
+            lsv_nhomsach.Dock = DockStyle.Fill;
+            lsv_nhomsach.FullRowSelect = true;
+            lsv_nhomsach.GridLines = true;
+            lsv_nhomsach.Location = new Point(3, 21);
+            lsv_nhomsach.Margin = new Padding(3, 4, 3, 4);
+            lsv_nhomsach.Name = "lsv_nhomsach";
+            lsv_nhomsach.Size = new Size(1152, 260);
+            lsv_nhomsach.TabIndex = 0;
+            lsv_nhomsach.UseCompatibleStateImageBehavior = false;
+            lsv_nhomsach.View = View.Details;
+            lsv_nhomsach.SelectedIndexChanged += lsv_nhomsach_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã Sách";
-            this.columnHeader1.Width = 91;
+            columnHeader1.Text = "Mã Sách";
+            columnHeader1.Width = 91;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Tên sách";
-            this.columnHeader2.Width = 358;
+            columnHeader2.Text = "Tên sách";
+            columnHeader2.Width = 358;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Giá";
-            this.columnHeader3.Width = 124;
+            columnHeader3.Text = "Giá";
+            columnHeader3.Width = 124;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Năm";
-            this.columnHeader4.Width = 94;
+            columnHeader4.Text = "Năm";
+            columnHeader4.Width = 94;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Nhà Xuất Bản";
-            this.columnHeader5.Width = 298;
+            columnHeader5.Text = "Nhà Xuất Bản";
+            columnHeader5.Width = 298;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Thể Loại";
-            this.columnHeader6.Width = 316;
+            columnHeader6.Text = "Thể Loại";
+            columnHeader6.Width = 316;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(491, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 29);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "THỂ LOẠI SÁCH";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(491, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(205, 29);
+            label1.TabIndex = 23;
+            label1.Text = "THỂ LOẠI SÁCH";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 57);
-            this.panel1.TabIndex = 27;
+            panel1.BackColor = Color.Aquamarine;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(0, 32);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1184, 71);
+            panel1.TabIndex = 27;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txt_tl);
+            groupBox2.Controls.Add(txt_nxbb);
+            groupBox2.Controls.Add(btn_htmt);
+            groupBox2.Controls.Add(txt_ms);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(txt_nxb);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(txt_ts);
+            groupBox2.Controls.Add(txt_mt);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(txt_gia);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.ForeColor = Color.Black;
+            groupBox2.Location = new Point(15, 126);
+            groupBox2.Margin = new Padding(4, 3, 4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(4, 3, 4, 3);
+            groupBox2.Size = new Size(1152, 212);
+            groupBox2.TabIndex = 33;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Thông tin chung";
+            // 
+            // txt_tl
+            // 
+            txt_tl.Location = new Point(120, 159);
+            txt_tl.Margin = new Padding(4, 3, 4, 3);
+            txt_tl.MaxLength = 11;
+            txt_tl.Name = "txt_tl";
+            txt_tl.Size = new Size(211, 27);
+            txt_tl.TabIndex = 18;
+            // 
+            // txt_nxbb
+            // 
+            txt_nxbb.Location = new Point(859, 107);
+            txt_nxbb.Margin = new Padding(4, 3, 4, 3);
+            txt_nxbb.MaxLength = 11;
+            txt_nxbb.Name = "txt_nxbb";
+            txt_nxbb.Size = new Size(227, 27);
+            txt_nxbb.TabIndex = 17;
+            // 
+            // btn_htmt
+            // 
+            btn_htmt.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btn_htmt.Location = new Point(1109, 51);
+            btn_htmt.Name = "btn_htmt";
+            btn_htmt.Size = new Size(36, 28);
+            btn_htmt.TabIndex = 16;
+            btn_htmt.Text = "...";
+            btn_htmt.UseVisualStyleBackColor = true;
+            btn_htmt.Click += btn_htmt_Click;
+            // 
+            // txt_ms
+            // 
+            txt_ms.Location = new Point(121, 47);
+            txt_ms.Margin = new Padding(4, 3, 4, 3);
+            txt_ms.Name = "txt_ms";
+            txt_ms.Size = new Size(210, 27);
+            txt_ms.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(26, 53);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(71, 20);
+            label3.TabIndex = 1;
+            label3.Text = "Mã Sách:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(26, 166);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(68, 20);
+            label7.TabIndex = 7;
+            label7.Text = "Thể loại:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(365, 50);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 20);
+            label4.TabIndex = 2;
+            label4.Text = "Tên Sách:";
+            // 
+            // txt_nxb
+            // 
+            txt_nxb.Location = new Point(491, 104);
+            txt_nxb.Margin = new Padding(4, 3, 4, 3);
+            txt_nxb.MaxLength = 4;
+            txt_nxb.Name = "txt_nxb";
+            txt_nxb.Size = new Size(174, 27);
+            txt_nxb.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(365, 110);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(112, 20);
+            label6.TabIndex = 6;
+            label6.Text = "Năm xuất bản:";
+            // 
+            // txt_ts
+            // 
+            txt_ts.Location = new Point(453, 47);
+            txt_ts.Margin = new Padding(4, 3, 4, 3);
+            txt_ts.MaxLength = 50;
+            txt_ts.Name = "txt_ts";
+            txt_ts.Size = new Size(335, 27);
+            txt_ts.TabIndex = 9;
+            // 
+            // txt_mt
+            // 
+            txt_mt.Location = new Point(913, 51);
+            txt_mt.Margin = new Padding(4, 3, 4, 3);
+            txt_mt.MaxLength = 250;
+            txt_mt.Multiline = true;
+            txt_mt.Name = "txt_mt";
+            txt_mt.Size = new Size(173, 24);
+            txt_mt.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(732, 111);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(107, 20);
+            label5.TabIndex = 5;
+            label5.Text = "Nhà xuất bản:";
+            // 
+            // txt_gia
+            // 
+            txt_gia.Location = new Point(121, 103);
+            txt_gia.Margin = new Padding(4, 3, 4, 3);
+            txt_gia.MaxLength = 11;
+            txt_gia.Name = "txt_gia";
+            txt_gia.Size = new Size(211, 27);
+            txt_gia.TabIndex = 11;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(838, 55);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(54, 20);
+            label8.TabIndex = 3;
+            label8.Text = "Mô tả:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(26, 110);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(36, 20);
+            label9.TabIndex = 4;
+            label9.Text = "Giá:";
+            // 
+            // btn_htds
+            // 
+            btn_htds.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_htds.ForeColor = Color.Black;
+            btn_htds.Location = new Point(929, 355);
+            btn_htds.Name = "btn_htds";
+            btn_htds.Size = new Size(172, 36);
+            btn_htds.TabIndex = 34;
+            btn_htds.Text = "Hiển thị danh sách";
+            btn_htds.UseVisualStyleBackColor = true;
+            btn_htds.Click += btn_htds_Click;
             // 
             // Form_LoaiSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(1182, 512);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbo_nhomsach);
-            this.Controls.Add(this.groupBox1);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Form_LoaiSach";
-            this.Text = "DANH MỤC THỂ LOẠI SÁCH";
-            this.Load += new System.EventHandler(this.Form_LoaiSach_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AntiqueWhite;
+            ClientSize = new Size(1182, 684);
+            Controls.Add(btn_htds);
+            Controls.Add(groupBox2);
+            Controls.Add(panel1);
+            Controls.Add(label2);
+            Controls.Add(cbo_nhomsach);
+            Controls.Add(groupBox1);
+            ForeColor = Color.White;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form_LoaiSach";
+            Text = "DANH MỤC THỂ LOẠI SÁCH";
+            FormClosing += Form_LoaiSach_FormClosing;
+            Load += Form_LoaiSach_Load;
+            groupBox1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbo_nhomsach;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView lsv_nhomsach;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private Label label2;
+        private ComboBox cbo_nhomsach;
+        private GroupBox groupBox1;
+        private ListView lsv_nhomsach;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private Label label1;
+        private Panel panel1;
+        private GroupBox groupBox2;
+        private TextBox txt_tl;
+        private TextBox txt_nxbb;
+        private Button btn_htmt;
+        private TextBox txt_ms;
+        private Label label3;
+        private Label label7;
+        private Label label4;
+        private TextBox txt_nxb;
+        private Label label6;
+        private TextBox txt_ts;
+        private TextBox txt_mt;
+        private Label label5;
+        private TextBox txt_gia;
+        private Label label8;
+        private Label label9;
+        private Button btn_htds;
     }
 }
