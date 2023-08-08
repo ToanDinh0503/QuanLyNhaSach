@@ -57,13 +57,8 @@ namespace QuanLyNhaSach
         {
             if (isThoatChuongTrinh)
             {
-
-                if (MessageBox.Show("Bạn có muốn thoát chướng trình ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-                {
-                    e.Cancel = true;
-                }
+                Application.Exit();
             }
-
         }
 
         private void quảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,7 +157,10 @@ namespace QuanLyNhaSach
 
         private void mnt_thoat_Click(object sender, EventArgs e)
         {
-            Close();
+            if (isThoatChuongTrinh)
+            {
+                Application.Exit();
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
