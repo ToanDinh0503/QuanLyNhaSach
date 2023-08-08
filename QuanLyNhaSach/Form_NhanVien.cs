@@ -101,7 +101,7 @@ namespace QuanLyNhaSach
                 nv.tennv = reader.GetString(3);
 
                 nv.diachi = reader.GetString(4);
-                nv.sdt = reader.GetInt32(5);
+                nv.sdt = reader.GetInt64(5);
                 nv.tenvt = reader.GetString(6);
                 nv.ngaysinh = DateOnly.FromDateTime(reader.GetDateTime(7));
                 nv.gioitinh = reader.GetBoolean(8);
@@ -318,7 +318,7 @@ namespace QuanLyNhaSach
                     command.Parameters.AddWithValue("@taikhoan", txb_taikhoan.Text);
                     command.Parameters.AddWithValue("@matkhau", txb_matkhau.Text);
                     command.Parameters.AddWithValue("@diachi", txb_diachi.Text);
-                    command.Parameters.AddWithValue("@sdt", Convert.ToInt32(txb_sdt.Text));
+                    command.Parameters.AddWithValue("@sdt", Convert.ToInt64(txb_sdt.Text));
                     if (cbx_vaitro.Text == "Nhân viên bán sách")
                     {
                         command.Parameters.AddWithValue("@mavt", 2);
@@ -376,7 +376,7 @@ namespace QuanLyNhaSach
                     command.Parameters.AddWithValue("@taikhoan", txb_taikhoan.Text);
                     command.Parameters.AddWithValue("@matkhau", txb_matkhau.Text);
                     command.Parameters.AddWithValue("@diachi", txb_diachi.Text);
-                    command.Parameters.AddWithValue("@sdt", Convert.ToInt32(txb_sdt.Text));
+                    command.Parameters.AddWithValue("@sdt", Convert.ToInt64(txb_sdt.Text));
 
                     if (cbx_vaitro.Text == "Nhân viên bán sách")
                     {
@@ -583,7 +583,7 @@ namespace QuanLyNhaSach
                             nv.tennv = reader.GetString(3);
 
                             nv.diachi = reader.GetString(4);
-                            nv.sdt = reader.GetInt32(5);
+                            nv.sdt = reader.GetInt64(5);
                             nv.tenvt = reader.GetString(6);
                             nv.ngaysinh = DateOnly.FromDateTime(reader.GetDateTime(7));
                             nv.gioitinh = reader.GetBoolean(8);

@@ -33,7 +33,6 @@
             mnt_hethong = new ToolStripMenuItem();
             mntt_sach = new ToolStripMenuItem();
             mntt_nv = new ToolStripMenuItem();
-            mntt_kh = new ToolStripMenuItem();
             mnt_hd = new ToolStripMenuItem();
             mntt_tl = new ToolStripMenuItem();
             mntt_nxb = new ToolStripMenuItem();
@@ -89,7 +88,7 @@
             // mnt_hethong
             // 
             mnt_hethong.BackColor = Color.Lavender;
-            mnt_hethong.DropDownItems.AddRange(new ToolStripItem[] { mntt_sach, mntt_nv, mntt_kh, mnt_hd, mntt_tl, mntt_nxb, mntt_dmk, mntt_dx, mnt_thoat });
+            mnt_hethong.DropDownItems.AddRange(new ToolStripItem[] { mntt_sach, mntt_nv, mnt_hd, mntt_tl, mntt_nxb, mntt_dmk, mntt_dx, mnt_thoat });
             mnt_hethong.Name = "mnt_hethong";
             mnt_hethong.Padding = new Padding(30, 30, 30, 0);
             mnt_hethong.Size = new Size(152, 57);
@@ -111,14 +110,6 @@
             mntt_nv.Size = new Size(273, 28);
             mntt_nv.Text = "Quản Lý Nhân Viên";
             mntt_nv.Click += mntt_nv_Click;
-            // 
-            // mntt_kh
-            // 
-            mntt_kh.BackColor = Color.Bisque;
-            mntt_kh.Name = "mntt_kh";
-            mntt_kh.Size = new Size(273, 28);
-            mntt_kh.Text = "Quản Lý Khách Hàng";
-            mntt_kh.Click += mntt_kh_Click;
             // 
             // mnt_hd
             // 
@@ -340,7 +331,6 @@
         private ToolStripMenuItem mnt_hethong;
         private ToolStripMenuItem mntt_sach;
         private ToolStripMenuItem mntt_nv;
-        private ToolStripMenuItem mntt_kh;
         private ToolStripMenuItem mntt_tl;
         private PictureBox pictureBox1;
         private Panel panel2;

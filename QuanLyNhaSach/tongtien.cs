@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSach
 {
-    public  class Const
+    internal class tongtien
     {
-        public static int loaiTaiKhoan;
-        public static string nhanvien;
+        public static int tongtienmoi;
     }
 }

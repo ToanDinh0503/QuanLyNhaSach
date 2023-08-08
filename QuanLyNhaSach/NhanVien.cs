@@ -13,7 +13,7 @@ namespace QuanLyNhaSach
         public string matkhau;
         public string tennv;
         public string diachi;
-        public int sdt;
+        public long sdt;
         public string tenvt;
         public DateOnly ngaysinh;
         public bool gioitinh;

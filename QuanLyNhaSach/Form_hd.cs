@@ -25,7 +25,6 @@ namespace QuanLyNhaSach
         private static string connectionString = "Host=localhost;Database=QLNS;Username=postgres;Password=12345";
         NpgsqlConnection connpg = null;
 
-        private bool isThemSachButtonClicked = false;
         private bool isSuaSachButtonClicked = false;
         private void LayDuLieuComboboxKH()
         {
@@ -65,7 +64,7 @@ namespace QuanLyNhaSach
             // Đối tượng thực thi truy vấn 
             NpgsqlCommand sqlCmd = new NpgsqlCommand();
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "select mahd,ngaylap,tongtien,tenkh, tennv from hoa_don h, khach_hang k, nhan_vien n where h.makh = k.makh and h.manv = n.manv";
+            sqlCmd.CommandText = "select mahd,ngaylap,tongtien,tenkh, tennv from hoa_don h, khach_hang k, nhan_vien n where h.makh = k.makh and h.manv = n.manv order by mahd";
             LayDuLieuComboboxKH();
             LayDuLieuComboboxNV();
             sqlCmd.Connection = connpg;
@@ -91,11 +90,47 @@ namespace QuanLyNhaSach
             }
             reader.Close();
         }
+
+        private void xoaAllCTHD()
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                try
+                {
+                    string sql = "DELETE FROM chi_tiet_hoa_don WHERE mahd = @mhd";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@mhd", Convert.ToInt32(txt_mhd.Text));
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Dữ liệu đã được xóa thành công!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể xóa dữ liệu!");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi thực hiện xóa dữ liệu: " + ex.Message);
+                }
+
+            }
+
+        }
+
         private void HoaDon_Load_1(object sender, EventArgs e)
         {
             HienThiDanhSach();
             //ban dau thi tat ca cac textbox deu la read het
             hamtrong(false);
+            txt_mhd.Enabled = false;
             txt_mhd.Text = "";
             dt_nlhd.Text = "";
             txt_tt.Text = "";
@@ -103,43 +138,25 @@ namespace QuanLyNhaSach
             cbo_nv.Text = "";
             btn_huy.Enabled = false;
             btn_luu.Enabled = false;
-            btn_them.Enabled = true;
+
             btn_sua.Enabled = false;
             btn_xoa.Enabled = false;
         }
         private void hamtrong(bool true_false)
         {
-            txt_mhd.Enabled = true_false;
             dt_nlhd.Enabled = true_false;
             txt_tt.Enabled = true_false;
             cbo_kh.Enabled = true_false;
             cbo_nv.Enabled = true_false;
         }
-        private void btn_them_Click(object sender, EventArgs e)
-        {
-            isThemSachButtonClicked = true;
-            isSuaSachButtonClicked = false;
-            hamtrong(true);
-            btn_huy.Enabled = true;
-            btn_luu.Enabled = true;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = false;
 
-            txt_mhd.Text = "";
-            dt_nlhd.Text = "";
-            txt_tt.Text = "";
-            cbo_kh.Text = "";
-            cbo_nv.Text = "";
-        }
         private void btn_sua_Click(object sender, EventArgs e)
         {
 
-            isThemSachButtonClicked = false;
             isSuaSachButtonClicked = true;
             //ban dau thi cac txt deu la readonly
             hamtrong(true);
-
-            btn_them.Enabled = false;
+            txt_mhd.Enabled = false;
             btn_xoa.Enabled = false;
             btn_luu.Enabled = true;
             btn_huy.Enabled = true;
@@ -154,6 +171,7 @@ namespace QuanLyNhaSach
                     connection.Open();
                     try
                     {
+                        xoaAllCTHD();
                         string sql = "DELETE FROM hoa_don WHERE mahd = @mhd";
 
                         using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
@@ -225,7 +243,37 @@ namespace QuanLyNhaSach
                 e.Cancel = true;
             }
         }
+        private int CheckMaHD(int mahd)
+        {
+            int kq = -1;
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                try
+                {
+                    string sql = "SELECT mahd FROM hoa_don WHERE mahd = @mhd";
+                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@mhd", mahd);
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            kq = Convert.ToInt32(result);
+                        }
 
+                        // Đóng kết nối
+                        connection.Close();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+                return kq;
+
+            }
+        }
         private void btn_luu_Click(object sender, EventArgs e)
         {
             if (txt_mhd.Text == "" || dt_nlhd.Text == "" || txt_tt.Text == "" || cbo_kh.Text == "" || cbo_nv.Text == "")
@@ -240,15 +288,11 @@ namespace QuanLyNhaSach
                 {
                     connection.Open();
 
-                    if (isThemSachButtonClicked) // Kiểm tra nút "Thêm sách" đã được chọn
-                    {
-                        ThemHoaDon(connection);
-                    }
-                    else if (isSuaSachButtonClicked) // Kiểm tra nút "Sửa sách" đã được chọn
+                    if (isSuaSachButtonClicked) // Kiểm tra nút "Sửa sách" đã được chọn
                     {
                         SuaHoaDon(connection);
                     }
-
+                    txt_tt.Text = tongtien.tongtienmoi.ToString();
                     // Cập nhật giao diện hoặc dữ liệu cần thiết
                     HoaDon_Load_1(sender, e);
                 }
@@ -274,8 +318,8 @@ namespace QuanLyNhaSach
                 string sql = "UPDATE hoa_don SET ngaylap = @nlhd, tongtien = @tt, makh = @mkh, manv = @mnv WHERE mahd = @mhd";
                 using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@mahd", txt_mhd.Text);
-                    command.Parameters.AddWithValue("@nlhd", dt_nlhd.Text);
+                    command.Parameters.AddWithValue("@mhd", Convert.ToInt32(txt_mhd.Text));
+                    command.Parameters.AddWithValue("@nlhd", Convert.ToDateTime(dt_nlhd.Text));
                     command.Parameters.AddWithValue("@tt", Convert.ToInt32(txt_tt.Text));
                     command.Parameters.AddWithValue("@mkh", Convert.ToInt32(cbo_kh.SelectedValue));
                     command.Parameters.AddWithValue("@mnv", Convert.ToInt32(cbo_nv.SelectedValue));
@@ -298,47 +342,7 @@ namespace QuanLyNhaSach
             }
         }
 
-        private void ThemHoaDon(NpgsqlConnection connection)
-        {
-            try
-            {
 
-                // Tìm mã thể loại dựa trên tên thể loại được chọn
-                string sql = "INSERT INTO hoa_don ( ngaylap, tongtien, makh, manv ) VALUES (@nlhd, @tt, @mkh, @mnv)";
-                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@mahd", txt_mhd.Text);
-                    command.Parameters.AddWithValue("@nlhd", Convert.ToDateTime(dt_nlhd.Text));
-                    command.Parameters.AddWithValue("@tt", Convert.ToInt32(txt_tt.Text));
-                    command.Parameters.AddWithValue("@mkh", Convert.ToInt32(cbo_kh.SelectedValue));
-                    command.Parameters.AddWithValue("@mnv", Convert.ToInt32(cbo_nv.SelectedValue));
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Dữ liệu đã được thêm thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể thêm dữ liệu!");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi thực hiện thêm dữ liệu: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-                txt_mhd.Text = "";
-                dt_nlhd.Text = "";
-                txt_tt.Text = "";
-                cbo_kh.Text = "";
-                cbo_nv.Text = "";
-            }
-        }
 
         private void lsv_hd_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -351,7 +355,6 @@ namespace QuanLyNhaSach
             // Lấy phần tử được chọn trên listview
             ListViewItem lvi = lsv_hd.SelectedItems[0];
 
-            //hoten = lvi.SubItems[0].Text;
 
             // Hiển thị thông tin từ listView sang các TextBox
             txt_mhd.Text = lvi.SubItems[0].Text;
@@ -365,6 +368,53 @@ namespace QuanLyNhaSach
         {
             Form_CTHD f = new Form_CTHD();
             f.ShowDialog();
+        }
+
+
+
+        private void btn_searchchitiet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int mahdValue; //tao bien kieu int
+
+                // Vxac thuc va chuyen txt.Text qua mahdValue
+                if (int.TryParse(txt_search.Text, out mahdValue))
+                {
+                    if (CheckMaHD(mahdValue) == -1)
+                    {
+                        MessageBox.Show("Mã Hóa Đơn không hợp lệ");
+                        return;
+                    }
+
+                    string query = "select mahd,ngaylap,tongtien,tenkh, tennv from hoa_don h, khach_hang k, nhan_vien n where h.makh = k.makh and h.manv = n.manv and h.mahd =@mhd";
+                    NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(query, connpg);
+
+                    // gan mahd parameter 
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@mhd", mahdValue);
+
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    //dat cac thong tin vao cac textbox
+                    txt_mhd.Text = dataTable.Rows[0]["mahd"].ToString();
+                    cbo_kh.Text = dataTable.Rows[0]["tenkh"].ToString();
+                    dt_nlhd.Text = dataTable.Rows[0]["ngaylap"].ToString();
+                    cbo_nv.Text = dataTable.Rows[0]["tennv"].ToString();
+                    txt_tt.Text = dataTable.Rows[0]["tongtien"].ToString();
+                    HienThiDanhSach();
+                }
+                else
+                {
+
+                    Console.WriteLine("Mã hóa đơn không hợp lệ.");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }

@@ -30,6 +30,8 @@ namespace QuanLyNhaSach
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            int kq = 0;
+
             if (connpg == null)
             {
                 connpg = new NpgsqlConnection(connectionString);
@@ -40,31 +42,43 @@ namespace QuanLyNhaSach
             }
             try
             {
-                string sql = "SELECT * FROM nhan_vien WHERE taikhoan = '" + txb_taikhoan.Text + "' AND matkhau = '" + txb_matkhau.Text + "'";
-                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(sql, connpg);
+                string sqlTruyXuat = "SELECT * FROM nhan_vien WHERE taikhoan = '" + txb_taikhoan.Text + "' AND matkhau = '" + txb_matkhau.Text + "'";
+                string sqlTraCuu = "SELECT count(*) FROM nhan_vien WHERE taikhoan = '" + txb_taikhoan.Text + "' AND matkhau = '" + txb_matkhau.Text + "'";
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(sqlTraCuu, connpg);
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
 
                 //Phan loai tai khoan
-                NpgsqlCommand command = new NpgsqlCommand(sql, connpg);
+                NpgsqlCommand command = new NpgsqlCommand(sqlTraCuu, connpg);
                 NpgsqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    // nếu trong datatable có dữ liêu thì đăng nhập thành công
-                    if (dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Đăng nhập thành công!");
-                        Form_Menu_temp f = new Form_Menu_temp();
-                        Const.loaiTaiKhoan = reader.GetInt32(6);
-                        Const.nhanvien = reader.GetString(3);
-                        f.ShowDialog();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
 
+                reader.Read();
+                kq = reader.GetInt32(0);
+                if(kq > 0)
+                {
+                    MessageBox.Show("Đăng nhập thành công");
+                    connpg.Close();
+
+                    //đóng kết nối đẻ tạo biến command mới
+                    connpg.Open();
+                    command = new NpgsqlCommand(sqlTruyXuat, connpg);
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        // nếu trong datatable có dữ liêu thì đăng nhập thành công
+                        LuuDN.loaiTaiKhoan = reader.GetInt32(6);
+                        LuuDN.taikhoan = reader.GetString(1);
+                        LuuDN.matkhau = reader.GetString(2);
+                        LuuDN.nhanvien = reader.GetString(3);
                     }
+                    this.Hide();
+                    Form_Menu_temp f = new Form_Menu_temp();
+                    f.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

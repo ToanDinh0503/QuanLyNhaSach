@@ -348,11 +348,10 @@
             // 
             // cld_ngaysinh
             // 
-
             cld_ngaysinh.CustomFormat = "MM/dd/yyyy";
             cld_ngaysinh.Format = DateTimePickerFormat.Short;
             cld_ngaysinh.Location = new Point(148, 222);
-            cld_ngaysinh.MaxDate = DateTime.Now;
+            cld_ngaysinh.MaxDate = new DateTime(2023, 8, 8, 15, 21, 26, 928);
             cld_ngaysinh.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             cld_ngaysinh.Name = "cld_ngaysinh";
             cld_ngaysinh.Size = new Size(175, 24);

@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,66 +15,69 @@ namespace QuanLyNhaSach
 {
     public partial class Form_DoiMatKhau : Form
     {
+        private static string connectionString = "Host=localhost;Database=QLNS;Username=postgres;Password=12345";
+        NpgsqlConnection? connpg = null;
         public Form_DoiMatKhau()
         {
             InitializeComponent();
         }
 
-        private static string connectionString = "Host=localhost;Database=QLNS;Username=postgres;Password=12345";
-        NpgsqlConnection? connpg = null;
+
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
+            if (connpg == null)
+            {
+                connpg = new NpgsqlConnection(connectionString);
+            }
+            if (connpg.State == ConnectionState.Closed)
+            {
+                connpg.Open(); // Đóng thì mở
+            }
+
             if (KiemTra())
             {
                 try
                 {
+                    string sql = "UPDATE nhan_vien SET matkhau = @matkhau WHERE taikhoan = @taikhoan";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connpg))
+                    {
+                        command.Parameters.AddWithValue("@matkhau", txt_mkm.Text);
+                        command.Parameters.AddWithValue("@taikhoan", LuuDN.taikhoan);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Mật khẩu đã được đổi thành công!");
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể đổi mật khẩu!");
+                        }
+                    }
 
 
-                    NpgsqlCommand cmd = new NpgsqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "SP_Update_Pass";
-                    cmd.Parameters.Add("@Matkhaucu", NpgsqlTypes.NpgsqlDbType.Char).Value = txt_mkc.Text;
-                    cmd.Parameters.Add("@Matkhaumoi", NpgsqlTypes.NpgsqlDbType.Char).Value = txt_mkm.Text;
-                    cmd.Connection = connpg;
-                    NpgsqlDataReader dr;
-                    dr = cmd.ExecuteReader();
-                    dr.Read();
-                    if (dr.GetInt32(0) == 1)
-                    {
-                        txt_nlmk.ForeColor = System.Drawing.Color.Blue;
-                        txt_nlmk.Text = dr.GetString(1);
-                        txt_nlmk.Text = "";
-                        txt_mkc.Text = "";
-                        txt_mkm.Text = "";
-                        txt_mkc.Focus();
-                    }
-                    else
-                    {
-                        txt_nlmk.ForeColor = System.Drawing.Color.Red;
-                        txt_nlmk.Text = dr.GetString(1);
-                        txt_mkc.Focus();
-                        txt_mkc.SelectAll();
-                    }
-                    dr.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Lỗi khi thực hiện sửa dữ liệu: " + ex.Message);
+                }
+                finally
+                {
+                    connpg.Close();
+
+
                 }
             }
         }
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
-        private void Form_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn muốn đóng chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
+
 
         private void txt_htmk_CheckedChanged(object sender, EventArgs e)
         {
@@ -94,29 +98,28 @@ namespace QuanLyNhaSach
         {
             if (txt_mkc.Text == "")
             {
-                txt_mkc.ForeColor = System.Drawing.Color.Red;
-                txt_mkc.Text = "Vui lòng nhập mật khẩu hiện tại !!";
+
+                MessageBox.Show("Vui lòng nhập mật khẫu hiện tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_mkc.Focus();
                 return false;
             }
             else if (txt_mkm.Text == "")
             {
-                txt_mkm.ForeColor = System.Drawing.Color.Red;
-                txt_mkm.Text = "Vui lòng nhập mật khẩu mới !!";
+                MessageBox.Show("Vui lòng nhập mật khẩu mới !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_mkm.Focus();
                 return false;
             }
             else if (txt_nlmk.Text == "")
             {
-                txt_nlmk.ForeColor = System.Drawing.Color.Red;
-                txt_nlmk.Text = "Vui lòng xác nhận mật khẩu !!";
+
+                MessageBox.Show("Vui lòng nhập lại mật khẩu mới !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nlmk.Focus();
                 return false;
             }
             else if (txt_mkm.Text != txt_nlmk.Text)
             {
-                txt_nlmk.ForeColor = System.Drawing.Color.Red;
-                txt_nlmk.Text = "Mật khẩu mới và mật khẩu xác nhận không trùng khớp";
+
+                MessageBox.Show("Mật khẩu mới và mật khẩu xác nhận không trùng khớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nlmk.Focus();
                 txt_nlmk.SelectAll();
                 return false;
@@ -128,5 +131,7 @@ namespace QuanLyNhaSach
         {
 
         }
+
+
     }
 }

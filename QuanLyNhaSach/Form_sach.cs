@@ -133,6 +133,7 @@ public partial class Form_sach : Form
         txt_ts.Text = "";
         comboBoxNXB.Text = "";
         comboBoxTheLoai.Text = "";
+        txt_ts.Focus();
     }
 
     private void btn_suasach_Click(object sender, EventArgs e)

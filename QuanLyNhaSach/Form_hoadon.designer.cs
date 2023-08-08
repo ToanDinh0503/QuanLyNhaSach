@@ -39,6 +39,7 @@ namespace QuanLyNhaSach
             btn_them = new Button();
             btn_xoa = new Button();
             groupBox2 = new GroupBox();
+            btn_qlkh = new Button();
             dt_nlhd = new DateTimePicker();
             cmb_mnv = new ComboBox();
             cmb_mkh = new ComboBox();
@@ -164,6 +165,7 @@ namespace QuanLyNhaSach
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(btn_qlkh);
             groupBox2.Controls.Add(dt_nlhd);
             groupBox2.Controls.Add(cmb_mnv);
             groupBox2.Controls.Add(cmb_mkh);
@@ -181,6 +183,16 @@ namespace QuanLyNhaSach
             groupBox2.TabIndex = 29;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin hóa đơn";
+            // 
+            // btn_qlkh
+            // 
+            btn_qlkh.Location = new Point(1119, 45);
+            btn_qlkh.Name = "btn_qlkh";
+            btn_qlkh.Size = new Size(176, 35);
+            btn_qlkh.TabIndex = 15;
+            btn_qlkh.Text = "Quản Lý Khách Hàng";
+            btn_qlkh.UseVisualStyleBackColor = true;
+            btn_qlkh.Click += btn_qlkh_Click;
             // 
             // dt_nlhd
             // 
@@ -221,6 +233,7 @@ namespace QuanLyNhaSach
             txt_mhd.ReadOnly = true;
             txt_mhd.Size = new Size(215, 24);
             txt_mhd.TabIndex = 8;
+            txt_mhd.TextChanged += txt_mhd_TextChanged;
             // 
             // label2
             // 
@@ -259,9 +272,9 @@ namespace QuanLyNhaSach
             label6.Location = new Point(728, 51);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(132, 18);
+            label6.Size = new Size(104, 18);
             label6.TabIndex = 4;
-            label6.Text = "Mã Khách Hàng:";
+            label6.Text = "Khách Hàng:";
             // 
             // txt_tongtien
             // 
@@ -493,6 +506,7 @@ namespace QuanLyNhaSach
             // 
             // btn_xoaSach
             // 
+            btn_xoaSach.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_xoaSach.Location = new Point(1223, 425);
             btn_xoaSach.Name = "btn_xoaSach";
             btn_xoaSach.Size = new Size(151, 39);
@@ -572,5 +586,6 @@ namespace QuanLyNhaSach
         private Button btn_inHD;
         private TextBox txt_search;
         private Button btn_xoaSach;
+        private Button btn_qlkh;
     }
 }

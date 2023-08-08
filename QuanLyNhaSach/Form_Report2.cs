@@ -88,7 +88,7 @@ namespace QuanLyNhaSach
                 }
 
                 //them cai source cua cai report
-                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyNhaSach.ReportDestination.Report_HoaDon.rdlc";
+                reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyNhaSach.ReportDestinations.Report_HoaDon.rdlc";
 
 
                 ReportDataSource cthdinf = new ReportDataSource("DataSet1", CTHDInfo());

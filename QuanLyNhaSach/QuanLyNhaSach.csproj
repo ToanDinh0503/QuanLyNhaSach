@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ReportDestinations\Report_HoaDon.rdlc" />
     <None Remove="ReportDestination\Report_Tien.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="ReportDestinations\Report_HoaDon.rdlc" />
     <EmbeddedResource Include="ReportDestination\Report_Tien.rdlc" />
   </ItemGroup>
 

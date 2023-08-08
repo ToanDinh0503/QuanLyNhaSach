@@ -124,7 +124,7 @@
             // btn_searchHoaDon
             // 
             btn_searchHoaDon.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_searchHoaDon.Location = new Point(182, 307);
+            btn_searchHoaDon.Location = new Point(182, 306);
             btn_searchHoaDon.Name = "btn_searchHoaDon";
             btn_searchHoaDon.Size = new Size(72, 28);
             btn_searchHoaDon.TabIndex = 1;
@@ -137,6 +137,7 @@
             // 
             txt_searchHoaDon.Location = new Point(274, 307);
             txt_searchHoaDon.Margin = new Padding(4, 3, 4, 3);
+            txt_searchHoaDon.MaxLength = 1000;
             txt_searchHoaDon.Name = "txt_searchHoaDon";
             txt_searchHoaDon.Size = new Size(233, 27);
             txt_searchHoaDon.TabIndex = 2;

@@ -22,33 +22,31 @@ namespace QuanLyNhaSach
         private void Form_Menu_Load(object sender, EventArgs e)
         {
             string vaitro = "";
-            if (Const.loaiTaiKhoan == 1)
+            if (LuuDN.loaiTaiKhoan == 1)
             {
                 vaitro = "Admin";
             }
-            else if (Const.loaiTaiKhoan == 2)
+            else if (LuuDN.loaiTaiKhoan == 2)
             {
                 vaitro = "Nhân Viên Bán Sách";
             }
 
-            lb_xinchao.Text = "Xin chào " + Const.nhanvien + "\n" +
+            lb_xinchao.Text = "Xin chào " + LuuDN.nhanvien + "\n" +
             "(" + vaitro + ")";
 
             //Gan gia tri "vai tro" vao Const.loaiTaiKhoan de phan loai tai khoan
-            if (Const.loaiTaiKhoan == 1)
+            if (LuuDN.loaiTaiKhoan == 1)
             {
                 mntt_sach.Enabled = true;
                 mntt_nv.Enabled = true;
-                mntt_kh.Enabled = true;
                 mnt_hd.Enabled = true;
                 mntt_tl.Enabled = true;
                 mntt_nxb.Enabled = true;
             }
-            else if (Const.loaiTaiKhoan == 2)
+            else if (LuuDN.loaiTaiKhoan == 2)
             {
                 mntt_sach.Enabled = false;
                 mntt_nv.Enabled = false;
-                mntt_kh.Enabled = false;
                 mnt_hd.Enabled = false;
                 mntt_tl.Enabled = false;
                 mntt_nxb.Enabled = false;
@@ -92,12 +90,6 @@ namespace QuanLyNhaSach
         private void mntt_nv_Click(object sender, EventArgs e)
         {
             Form_NhanVien f = new Form_NhanVien();
-            f.Show();
-        }
-
-        private void mntt_kh_Click(object sender, EventArgs e)
-        {
-            Form_khachhang f = new Form_khachhang();
             f.Show();
         }
 

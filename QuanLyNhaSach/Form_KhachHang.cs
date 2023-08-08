@@ -47,10 +47,9 @@ namespace QuanLyNhaSach
             {
                 int makh = reader.GetInt32(0);
                 string tenkh = reader.GetString(1);
-                string diachi = DataHelpers.GetNonNullString(reader.GetValue(2), "");
-                string sdt = DataHelpers.GetNonNullInt(reader.GetValue(3), "");
-                //kiem tra coi no co null khong co thi tra ve null
-                string email = DataHelpers.GetNonNullString(reader.GetValue(4), "");
+                string diachi = reader.GetString(2);
+                long sdt = reader.GetInt64(3);
+                string email = reader.GetString(4);
 
                 ListViewItem newitem = new ListViewItem(makh.ToString());
 
@@ -78,6 +77,7 @@ namespace QuanLyNhaSach
             txt_sdt.Text = "";
             txt_dchi.Text = "";
             txt_email.Text = "";
+            txt_tkh.Focus();
         }
         private void Form_khachhang_Load(object sender, EventArgs e)
         {
@@ -226,7 +226,7 @@ namespace QuanLyNhaSach
 
                     command.Parameters.AddWithValue("@tkh", txt_tkh.Text);
                     command.Parameters.AddWithValue("@dchi", txt_dchi.Text);
-                    command.Parameters.AddWithValue("@sdtkh", Convert.ToInt32(txt_sdt.Text));
+                    command.Parameters.AddWithValue("@sdtkh", Convert.ToInt64(txt_sdt.Text));
                     command.Parameters.AddWithValue("@emailkh", txt_email.Text);
 
 
@@ -262,7 +262,7 @@ namespace QuanLyNhaSach
                 {
                     command.Parameters.AddWithValue("@tkh", txt_tkh.Text);
                     command.Parameters.AddWithValue("@dchi", txt_dchi.Text);
-                    command.Parameters.AddWithValue("@sdtkh", Convert.ToInt32(txt_sdt.Text));
+                    command.Parameters.AddWithValue("@sdtkh", Convert.ToInt64(txt_sdt.Text));
                     command.Parameters.AddWithValue("@emailkh", txt_email.Text);
                     command.Parameters.AddWithValue("@mkh", Convert.ToInt32(txt_mkh.Text));
 
@@ -335,10 +335,9 @@ namespace QuanLyNhaSach
                             {
                                 int makh = reader.GetInt32(0);
                                 string tenkh = reader.GetString(1);
-                                string diachi = DataHelpers.GetNonNullString(reader.GetValue(2), "");
-                                string sdt = DataHelpers.GetNonNullInt(reader.GetValue(3), "");
-                                //kiem tra coi no co null khong co thi tra ve null
-                                string email = DataHelpers.GetNonNullString(reader.GetValue(4), "");
+                                string diachi = reader.GetString(2);
+                                long sdt = reader.GetInt64(3);
+                                string email = reader.GetString(4);
 
                                 ListViewItem newitem = new ListViewItem(makh.ToString());
 
@@ -368,11 +367,6 @@ namespace QuanLyNhaSach
 
         private void btn_thoatkhach_Click(object sender, EventArgs e)
         {
-            // DialogResult dg = MessageBox.Show("Bạn muốn đóng chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            // if (dg == DialogResult.Yes)
-            // {
-            // Application.Exit();
-            // }
             Close();
         }
 

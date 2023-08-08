@@ -40,7 +40,6 @@ namespace QuanLyNhaSach
             txt_soluong = new TextBox();
             txt_thanhtien = new TextBox();
             txt_tinhtrang = new TextBox();
-            btn_themchitiet = new Button();
             btn_suachitiet = new Button();
             btn_xoachitiet = new Button();
             btn_thoatchitiet = new Button();
@@ -56,6 +55,7 @@ namespace QuanLyNhaSach
             lsv_CTHD = new ListView();
             mahd = new ColumnHeader();
             masach = new ColumnHeader();
+            tensach = new ColumnHeader();
             soluong = new ColumnHeader();
             thanhtien = new ColumnHeader();
             tinhtrang = new ColumnHeader();
@@ -80,9 +80,9 @@ namespace QuanLyNhaSach
             label2.Location = new Point(427, 43);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(79, 18);
+            label2.Size = new Size(51, 18);
             label2.TabIndex = 2;
-            label2.Text = "Mã Sách:";
+            label2.Text = "Sách:";
             // 
             // label3
             // 
@@ -144,20 +144,9 @@ namespace QuanLyNhaSach
             txt_tinhtrang.Size = new Size(579, 44);
             txt_tinhtrang.TabIndex = 12;
             // 
-            // btn_themchitiet
-            // 
-            btn_themchitiet.Location = new Point(43, 62);
-            btn_themchitiet.Margin = new Padding(4, 3, 4, 3);
-            btn_themchitiet.Name = "btn_themchitiet";
-            btn_themchitiet.Size = new Size(139, 48);
-            btn_themchitiet.TabIndex = 15;
-            btn_themchitiet.Text = "Thêm";
-            btn_themchitiet.UseVisualStyleBackColor = true;
-            btn_themchitiet.Click += btn_themchitiet_Click;
-            // 
             // btn_suachitiet
             // 
-            btn_suachitiet.Location = new Point(207, 62);
+            btn_suachitiet.Location = new Point(43, 72);
             btn_suachitiet.Margin = new Padding(4, 3, 4, 3);
             btn_suachitiet.Name = "btn_suachitiet";
             btn_suachitiet.Size = new Size(139, 48);
@@ -168,7 +157,7 @@ namespace QuanLyNhaSach
             // 
             // btn_xoachitiet
             // 
-            btn_xoachitiet.Location = new Point(369, 62);
+            btn_xoachitiet.Location = new Point(207, 72);
             btn_xoachitiet.Margin = new Padding(4, 3, 4, 3);
             btn_xoachitiet.Name = "btn_xoachitiet";
             btn_xoachitiet.Size = new Size(139, 48);
@@ -193,7 +182,6 @@ namespace QuanLyNhaSach
             groupBox1.Controls.Add(btn_Luuchitiet);
             groupBox1.Controls.Add(btn_LamMoichitiet);
             groupBox1.Controls.Add(btn_thoatchitiet);
-            groupBox1.Controls.Add(btn_themchitiet);
             groupBox1.Controls.Add(btn_suachitiet);
             groupBox1.Controls.Add(btn_xoachitiet);
             groupBox1.Location = new Point(786, 87);
@@ -298,7 +286,7 @@ namespace QuanLyNhaSach
             // 
             // lsv_CTHD
             // 
-            lsv_CTHD.Columns.AddRange(new ColumnHeader[] { mahd, masach, soluong, thanhtien, tinhtrang });
+            lsv_CTHD.Columns.AddRange(new ColumnHeader[] { mahd, masach, tensach, soluong, thanhtien, tinhtrang });
             lsv_CTHD.FullRowSelect = true;
             lsv_CTHD.GridLines = true;
             lsv_CTHD.Location = new Point(23, 407);
@@ -317,7 +305,12 @@ namespace QuanLyNhaSach
             // masach
             // 
             masach.Text = "Mã Sách";
-            masach.Width = 350;
+            masach.Width = 150;
+            // 
+            // tensach
+            // 
+            tensach.Text = "Tên Sách";
+            tensach.Width = 300;
             // 
             // soluong
             // 
@@ -332,7 +325,7 @@ namespace QuanLyNhaSach
             // tinhtrang
             // 
             tinhtrang.Text = "Tình Trạng";
-            tinhtrang.Width = 300;
+            tinhtrang.Width = 250;
             // 
             // label7
             // 
@@ -347,7 +340,6 @@ namespace QuanLyNhaSach
             // 
             // Form_CTHD
             // 
-            AcceptButton = btn_themchitiet;
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoatchitiet;
@@ -381,7 +373,6 @@ namespace QuanLyNhaSach
         private TextBox txt_soluong;
         private TextBox txt_thanhtien;
         private TextBox txt_tinhtrang;
-        private Button btn_themchitiet;
         private Button btn_suachitiet;
         private Button btn_xoachitiet;
         private Button btn_thoatchitiet;
@@ -401,5 +392,6 @@ namespace QuanLyNhaSach
         private ComboBox cmb_MaHD;
         private ColumnHeader tinhtrang;
         private Label label7;
+        private ColumnHeader tensach;
     }
 }

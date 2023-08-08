@@ -128,6 +128,8 @@ namespace QuanLyNhaSach
                     dt_nlhd.Text = dataTable.Rows[0]["ngaylap"].ToString();
                     cmb_mnv.Text = dataTable.Rows[0]["manv"].ToString();
                     txt_tongtien.Text = dataTable.Rows[0]["tongtien"].ToString();
+
+
                 }
                 else
                 {
@@ -159,7 +161,7 @@ namespace QuanLyNhaSach
                 {
                     NpgsqlCommand sqlCmd = new NpgsqlCommand();
                     sqlCmd.CommandType = CommandType.Text;
-                    sqlCmd.CommandText = "select s.masach, s.tensach, c.soluong, s.gia, c.thanhtien from chi_tiet_hoa_don c, sach s where c.mahd = @mahd and c.masach = s.masach";
+                    sqlCmd.CommandText = "select s.masach, s.tensach, c.soluong, s.gia, c.thanhtien from chi_tiet_hoa_don c, sach s where c.masach = s.masach and c.mahd = @mahd";
                     sqlCmd.Parameters.AddWithValue("@mahd", NpgsqlDbType.Integer, mahdValue);
 
 
@@ -274,14 +276,6 @@ namespace QuanLyNhaSach
         }
 
 
-        private void hamtrong(bool true_false)
-        {
-            txt_mhd.Enabled = true_false;
-            dt_nlhd.Enabled = true_false;
-            cmb_mkh.Enabled = true_false;
-            cmb_mnv.Enabled = true_false;
-        }
-
         private void ThemCTHD(NpgsqlConnection connection)
         {
 
@@ -303,14 +297,11 @@ namespace QuanLyNhaSach
 
                     int rowsAffected = command.ExecuteNonQuery();
 
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Dữ liệu đã được cập nhật thành công!");
-                    }
-                    else
+                    if (rowsAffected <= 0)
                     {
                         MessageBox.Show("Không thể cập nhật dữ liệu!");
                     }
+
                 }
             }
             catch (Exception ex)
@@ -341,11 +332,7 @@ namespace QuanLyNhaSach
 
                     int rowsAffected = command.ExecuteNonQuery();
 
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Dữ liệu đã được cập nhật thành công!");
-                    }
-                    else
+                    if (rowsAffected <= 0)
                     {
                         MessageBox.Show("Không thể cập nhật dữ liệu!");
                     }
@@ -427,9 +414,8 @@ namespace QuanLyNhaSach
                 {
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
-                return soluong;
-
             }
+            return soluong;
         }
 
         private int CheckMaHD(int mahd)
@@ -468,7 +454,6 @@ namespace QuanLyNhaSach
         private void btn_them_Click(object sender, EventArgs e)
         {
             isThemSachButtonClicked = true;
-            //hamtrong(true);
             btn_them.Enabled = false;
             btn_huy.Enabled = true;
             btn_luu.Enabled = true;
@@ -493,13 +478,9 @@ namespace QuanLyNhaSach
                         command.Parameters.AddWithValue("@mhd", Convert.ToInt32(txt_mhd.Text));
                         int rowsAffected = command.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
+                        if (rowsAffected <= 0)
                         {
-                            MessageBox.Show("Dữ liệu đã được xóa thành công!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể xóa dữ liệu!");
+                            MessageBox.Show("Không thể cập nhật dữ liệu!");
                         }
                     }
                 }
@@ -567,6 +548,7 @@ namespace QuanLyNhaSach
             if (result == DialogResult.Yes)
             {
                 LamMoiGiaTri();
+                lsv_CTHD.Items.Clear();
                 HoaDon_Load_1(sender, e);
             }
 
@@ -641,23 +623,18 @@ namespace QuanLyNhaSach
 
                     ThemCTHD(connection);
                     HienThiDanhSach();
-                    int tongtienmoi = TinhTongTien();
-
-                    // Cap nhat tong tien
-                    txt_tongtien.Text = tongtienmoi.ToString();
+                    int tongtiencu = LayTongTien(Convert.ToInt32(txt_mhd.Text));
+                    int tongtienmoi = tongtiencu + Convert.ToInt32(txt_thanhtien.Text);
 
                     // Cap nhat tong tien vao database
                     CapNhatTongTien(connection, tongtienmoi);
 
-
-                    MessageBox.Show("Dữ liệu đã được cập nhật thành công!");
+                    // Cap nhat tong tien
+                    txt_tongtien.Text = tongtienmoi.ToString();
 
                     // Cập nhật giao diện 
                     LamMoiCTHD();
-                    btn_luu.Enabled = true;
-                    btn_xoa.Enabled = true;
-                    btn_them.Enabled = true;
-                    btn_inHD.Enabled = true;
+
                 }
                 catch (Exception ex)
                 {
@@ -665,42 +642,15 @@ namespace QuanLyNhaSach
                 }
                 finally
                 {
-
+                    btn_luu.Enabled = true;
+                    btn_xoa.Enabled = true;
+                    btn_them.Enabled = true;
+                    btn_inHD.Enabled = true;
                     if (connection.State == ConnectionState.Open)
                     {
                         connection.Close();
                     }
                 }
-            }
-        }
-        private void SuaHoaDon(NpgsqlConnection connection)
-        {
-            try
-            {
-                string sql = "UPDATE hoa_don SET ngaylap = @nlhd, tongtien = @tt, makh = @mkh, manv = @mnv WHERE mahd = @mhd";
-                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@mahd", txt_mhd.Text);
-                    command.Parameters.AddWithValue("@nlhd", dt_nlhd.Text);
-                    command.Parameters.AddWithValue("@tt", Convert.ToInt32(txt_tongtien.Text));
-                    command.Parameters.AddWithValue("@mkh", Convert.ToInt32(cmb_mkh.SelectedValue));
-                    command.Parameters.AddWithValue("@mnv", Convert.ToInt32(cmb_mnv.SelectedValue));
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Dữ liệu đã được cập nhật thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể cập nhật dữ liệu!");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi thực hiện cập nhật dữ liệu: " + ex.Message);
             }
         }
 
@@ -719,14 +669,11 @@ namespace QuanLyNhaSach
 
                     int rowsAffected = command.ExecuteNonQuery();
 
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Dữ liệu đã được thêm thành công!");
-                    }
-                    else
+                    if (rowsAffected <= 0)
                     {
                         MessageBox.Show("Không thể thêm dữ liệu!");
                     }
+
                 }
             }
             catch (Exception ex)
@@ -737,7 +684,7 @@ namespace QuanLyNhaSach
         }
 
 
-        private int TinhTongTien()
+        /*private int TinhTongTien()
         {
             int tong = 0;
 
@@ -749,6 +696,39 @@ namespace QuanLyNhaSach
                 tong += thanhtien;
             }
             return tong;
+        }*/
+
+        private int LayTongTien(int mahd)
+        {
+            int tongtien = 0;
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                try
+                {
+                    string sql = "SELECT tongtien FROM hoa_don WHERE mahd = @mhd";
+                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@mhd", mahd);
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            tongtien = Convert.ToInt32(result);
+                        }
+
+                        // Đóng kết nối
+                        connection.Close();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+                return tongtien;
+
+            }
         }
 
         private void lsv_CTHD_SelectedIndexChanged(object sender, EventArgs e)
@@ -756,7 +736,7 @@ namespace QuanLyNhaSach
             if (lsv_CTHD.SelectedItems.Count == 0) return;
 
             btn_xoa.Enabled = true;
-            btn_luu.Enabled = false;
+            btn_luu.Enabled = true;
             btn_huy.Enabled = false;
             // Lấy phần tử được chọn trên listview
             ListViewItem lvi = lsv_CTHD.SelectedItems[0];
@@ -821,7 +801,6 @@ namespace QuanLyNhaSach
             txt_mhd.Text = txt_search.Text;
             loadInfoHoaDon();
             HienThiDanhSach();
-            HienThiDanhSach();
             btn_xoa.Enabled = true;
             btn_inHD.Enabled = true;
             btn_luu.Enabled = true;
@@ -845,12 +824,11 @@ namespace QuanLyNhaSach
                         string sql = "DELETE FROM chi_tiet_hoa_don WHERE mahd = @mhd and masach=@msach";
 
                         //lay tien cua sach bị xóa
-                        int thanhtienxoa = LayGiaTien(Convert.ToInt32(cmb_MaSach.SelectedValue));
+                        int giaxoa = LayGiaTien(Convert.ToInt32(cmb_MaSach.SelectedValue));
                         int soluongxoa = LaySoLuong(Convert.ToInt32(cmb_MaSach.SelectedValue), Convert.ToInt32(txt_mhd.Text));
 
                         using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                         {
-                            DataRowView selectedRowMS = cmb_MaSach.SelectedItem as DataRowView;
                             command.Parameters.AddWithValue("@mhd", Convert.ToInt32(txt_mhd.Text));
                             command.Parameters.AddWithValue("@msach", Convert.ToInt32(cmb_MaSach.SelectedValue));
 
@@ -867,17 +845,19 @@ namespace QuanLyNhaSach
                         }
 
                         //tinh tong tien  
-                        int tongtiencu = TinhTongTien();
-                        int tongtienmoi = tongtiencu - (thanhtienxoa * soluongxoa);
+                        int tongtiencu = LayTongTien(Convert.ToInt32(txt_mhd.Text));
+                        int tongtienmoi = tongtiencu - (giaxoa * soluongxoa);
 
+                        // Cap nhat tong tien vao database
+                        CapNhatTongTien(connection, tongtienmoi);
 
                         // Cap nhat tong tien vao textbox
                         txt_tongtien.Text = tongtienmoi.ToString();
 
-                        // Cap nhat tong tien vao database
-                        CapNhatTongTien(connection, tongtienmoi);
+
                         HienThiDanhSach();
-                        
+                        btn_luu.Enabled = true;
+                        btn_huy.Enabled = true;
                     }
                     catch (Exception ex)
                     {
@@ -886,7 +866,6 @@ namespace QuanLyNhaSach
                     finally
                     {
                         connection.Close();
-                        btn_luu.Enabled = true;
                     }
                 }
             }
@@ -896,6 +875,17 @@ namespace QuanLyNhaSach
         {
             Form_Report_2 form_Report = new Form_Report_2(Convert.ToInt32(txt_mhd.Text));
             form_Report.ShowDialog();
+        }
+
+        private void txt_mhd_TextChanged(object sender, EventArgs e)
+        {
+            btn_luu.Enabled = true;
+        }
+
+        private void btn_qlkh_Click(object sender, EventArgs e)
+        {
+            Form_khachhang f = new Form_khachhang();
+            f.ShowDialog();
         }
     }
 }

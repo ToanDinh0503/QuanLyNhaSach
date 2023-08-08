@@ -65,7 +65,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Location = new Point(10, 66);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(659, 404);
             panel1.TabIndex = 2;
@@ -75,10 +75,10 @@
             txt_htmk.AutoSize = true;
             txt_htmk.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             txt_htmk.Location = new Point(270, 276);
-            txt_htmk.Margin = new Padding(2, 2, 2, 2);
+            txt_htmk.Margin = new Padding(2);
             txt_htmk.Name = "txt_htmk";
             txt_htmk.Size = new Size(181, 27);
-            txt_htmk.TabIndex = 21;
+            txt_htmk.TabIndex = 4;
             txt_htmk.Text = "Hiển Thị Mật Khẩu";
             txt_htmk.UseVisualStyleBackColor = true;
             txt_htmk.CheckedChanged += txt_htmk_CheckedChanged;
@@ -87,7 +87,7 @@
             // 
             btn_thoat.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_thoat.Location = new Point(419, 321);
-            btn_thoat.Margin = new Padding(2, 2, 2, 2);
+            btn_thoat.Margin = new Padding(2);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.Size = new Size(140, 65);
             btn_thoat.TabIndex = 20;
@@ -99,40 +99,44 @@
             // 
             btn_xacnhan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_xacnhan.Location = new Point(62, 321);
-            btn_xacnhan.Margin = new Padding(2, 2, 2, 2);
+            btn_xacnhan.Margin = new Padding(2);
             btn_xacnhan.Name = "btn_xacnhan";
             btn_xacnhan.Size = new Size(139, 65);
             btn_xacnhan.TabIndex = 18;
             btn_xacnhan.Text = "Xác Nhận";
             btn_xacnhan.UseVisualStyleBackColor = true;
+            btn_xacnhan.Click += btn_xacnhan_Click;
             // 
             // txt_mkm
             // 
             txt_mkm.Location = new Point(270, 146);
-            txt_mkm.Margin = new Padding(2, 2, 2, 2);
+            txt_mkm.Margin = new Padding(2);
+            txt_mkm.MaxLength = 10;
             txt_mkm.Name = "txt_mkm";
             txt_mkm.PasswordChar = '*';
             txt_mkm.Size = new Size(357, 27);
-            txt_mkm.TabIndex = 17;
+            txt_mkm.TabIndex = 2;
             // 
             // txt_nlmk
             // 
             txt_nlmk.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txt_nlmk.Location = new Point(270, 246);
-            txt_nlmk.Margin = new Padding(2, 2, 2, 2);
+            txt_nlmk.Margin = new Padding(2);
+            txt_nlmk.MaxLength = 10;
             txt_nlmk.Name = "txt_nlmk";
             txt_nlmk.PasswordChar = '*';
             txt_nlmk.Size = new Size(357, 27);
-            txt_nlmk.TabIndex = 16;
+            txt_nlmk.TabIndex = 3;
             // 
             // txt_mkc
             // 
             txt_mkc.Location = new Point(270, 41);
-            txt_mkc.Margin = new Padding(2, 2, 2, 2);
+            txt_mkc.Margin = new Padding(2);
+            txt_mkc.MaxLength = 10;
             txt_mkc.Name = "txt_mkc";
             txt_mkc.PasswordChar = '*';
             txt_mkc.Size = new Size(357, 27);
-            txt_mkc.TabIndex = 15;
+            txt_mkc.TabIndex = 1;
             // 
             // label5
             // 
@@ -169,16 +173,16 @@
             // 
             // Form_DoiMatKhau
             // 
+            AcceptButton = btn_xacnhan;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(678, 480);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Form_DoiMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ĐỔi MẬT KHẨU";
-            FormClosing += Form_DoiMatKhau_FormClosing;
             Load += Form_DoiMatKhau_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

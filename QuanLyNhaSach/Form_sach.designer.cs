@@ -46,7 +46,6 @@ namespace QuanLyNhaSach
             btn_suasach = new Button();
             btn_xoasach = new Button();
             btn_thoat = new Button();
-            groupBox1 = new GroupBox();
             btn_Luu = new Button();
             btn_Huy = new Button();
             groupBox2 = new GroupBox();
@@ -54,6 +53,7 @@ namespace QuanLyNhaSach
             btn_htmt = new Button();
             comboBoxNXB = new ComboBox();
             comboBoxTheLoai = new ComboBox();
+            txt_nxb = new TextBox();
             label8 = new Label();
             btn_search = new Button();
             txt_search = new TextBox();
@@ -66,8 +66,6 @@ namespace QuanLyNhaSach
             matl = new ColumnHeader();
             mota = new ColumnHeader();
             button1 = new Button();
-            txt_nxb = new TextBox();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -148,6 +146,7 @@ namespace QuanLyNhaSach
             txt_ms.Name = "txt_ms";
             txt_ms.Size = new Size(173, 24);
             txt_ms.TabIndex = 8;
+            txt_ms.TabStop = false;
             // 
             // txt_ts
             // 
@@ -156,7 +155,7 @@ namespace QuanLyNhaSach
             txt_ts.MaxLength = 50;
             txt_ts.Name = "txt_ts";
             txt_ts.Size = new Size(173, 24);
-            txt_ts.TabIndex = 9;
+            txt_ts.TabIndex = 1;
             // 
             // txt_mt
             // 
@@ -166,7 +165,7 @@ namespace QuanLyNhaSach
             txt_mt.Multiline = true;
             txt_mt.Name = "txt_mt";
             txt_mt.Size = new Size(173, 24);
-            txt_mt.TabIndex = 10;
+            txt_mt.TabIndex = 2;
             // 
             // txt_gia
             // 
@@ -175,38 +174,38 @@ namespace QuanLyNhaSach
             txt_gia.MaxLength = 8;
             txt_gia.Name = "txt_gia";
             txt_gia.Size = new Size(174, 24);
-            txt_gia.TabIndex = 11;
+            txt_gia.TabIndex = 3;
             txt_gia.KeyPress += txt_gia_KeyPress;
             // 
             // btn_themsach
             // 
-            btn_themsach.Location = new Point(43, 62);
+            btn_themsach.Location = new Point(872, 141);
             btn_themsach.Margin = new Padding(4, 3, 4, 3);
             btn_themsach.Name = "btn_themsach";
             btn_themsach.Size = new Size(139, 48);
-            btn_themsach.TabIndex = 15;
+            btn_themsach.TabIndex = 7;
             btn_themsach.Text = "Thêm";
             btn_themsach.UseVisualStyleBackColor = true;
             btn_themsach.Click += btn_themsach_Click;
             // 
             // btn_suasach
             // 
-            btn_suasach.Location = new Point(207, 62);
+            btn_suasach.Location = new Point(1036, 141);
             btn_suasach.Margin = new Padding(4, 3, 4, 3);
             btn_suasach.Name = "btn_suasach";
             btn_suasach.Size = new Size(139, 48);
-            btn_suasach.TabIndex = 17;
+            btn_suasach.TabIndex = 10;
             btn_suasach.Text = "Sửa";
             btn_suasach.UseVisualStyleBackColor = true;
             btn_suasach.Click += btn_suasach_Click;
             // 
             // btn_xoasach
             // 
-            btn_xoasach.Location = new Point(369, 62);
+            btn_xoasach.Location = new Point(1198, 141);
             btn_xoasach.Margin = new Padding(4, 3, 4, 3);
             btn_xoasach.Name = "btn_xoasach";
             btn_xoasach.Size = new Size(139, 48);
-            btn_xoasach.TabIndex = 18;
+            btn_xoasach.TabIndex = 11;
             btn_xoasach.Text = "Xóa";
             btn_xoasach.UseVisualStyleBackColor = true;
             btn_xoasach.Click += btn_xoasach_Click;
@@ -214,50 +213,33 @@ namespace QuanLyNhaSach
             // btn_thoat
             // 
             btn_thoat.DialogResult = DialogResult.Cancel;
-            btn_thoat.Location = new Point(369, 160);
+            btn_thoat.Location = new Point(1198, 239);
             btn_thoat.Margin = new Padding(4, 3, 4, 3);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.Size = new Size(139, 48);
-            btn_thoat.TabIndex = 22;
+            btn_thoat.TabIndex = 15;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
             btn_thoat.Click += btn_thoat_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btn_Luu);
-            groupBox1.Controls.Add(btn_Huy);
-            groupBox1.Controls.Add(btn_thoat);
-            groupBox1.Controls.Add(btn_themsach);
-            groupBox1.Controls.Add(btn_suasach);
-            groupBox1.Controls.Add(btn_xoasach);
-            groupBox1.Location = new Point(825, 90);
-            groupBox1.Margin = new Padding(4, 3, 4, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(556, 254);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chức năng";
-            // 
             // btn_Luu
             // 
-            btn_Luu.Location = new Point(43, 160);
+            btn_Luu.Location = new Point(872, 239);
             btn_Luu.Margin = new Padding(4, 3, 4, 3);
             btn_Luu.Name = "btn_Luu";
             btn_Luu.Size = new Size(139, 48);
-            btn_Luu.TabIndex = 20;
+            btn_Luu.TabIndex = 7;
             btn_Luu.Text = "Lưu";
             btn_Luu.UseVisualStyleBackColor = true;
             btn_Luu.Click += btn_Luu_Click;
             // 
             // btn_Huy
             // 
-            btn_Huy.Location = new Point(207, 160);
+            btn_Huy.Location = new Point(1036, 239);
             btn_Huy.Margin = new Padding(4, 3, 4, 3);
             btn_Huy.Name = "btn_Huy";
             btn_Huy.Size = new Size(139, 48);
-            btn_Huy.TabIndex = 21;
+            btn_Huy.TabIndex = 8;
             btn_Huy.Text = "Hủy";
             btn_Huy.UseVisualStyleBackColor = true;
             btn_Huy.Click += btn_Huy_Click;
@@ -285,7 +267,7 @@ namespace QuanLyNhaSach
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 3, 4, 3);
             groupBox2.Size = new Size(794, 254);
-            groupBox2.TabIndex = 22;
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sách";
             // 
@@ -317,7 +299,7 @@ namespace QuanLyNhaSach
             comboBoxNXB.Location = new Point(147, 161);
             comboBoxNXB.Name = "comboBoxNXB";
             comboBoxNXB.Size = new Size(173, 26);
-            comboBoxNXB.TabIndex = 15;
+            comboBoxNXB.TabIndex = 4;
             // 
             // comboBoxTheLoai
             // 
@@ -325,7 +307,17 @@ namespace QuanLyNhaSach
             comboBoxTheLoai.Location = new Point(147, 215);
             comboBoxTheLoai.Name = "comboBoxTheLoai";
             comboBoxTheLoai.Size = new Size(173, 26);
-            comboBoxTheLoai.TabIndex = 14;
+            comboBoxTheLoai.TabIndex = 6;
+            // 
+            // txt_nxb
+            // 
+            txt_nxb.Location = new Point(556, 155);
+            txt_nxb.Margin = new Padding(4, 3, 4, 3);
+            txt_nxb.MaxLength = 4;
+            txt_nxb.Name = "txt_nxb";
+            txt_nxb.Size = new Size(174, 24);
+            txt_nxb.TabIndex = 5;
+            txt_nxb.KeyPress += txt_nxb_KeyPress;
             // 
             // label8
             // 
@@ -344,7 +336,7 @@ namespace QuanLyNhaSach
             btn_search.Location = new Point(23, 354);
             btn_search.Name = "btn_search";
             btn_search.Size = new Size(72, 28);
-            btn_search.TabIndex = 25;
+            btn_search.TabIndex = 13;
             btn_search.Text = "Lọc";
             btn_search.UseVisualStyleBackColor = true;
             btn_search.Click += btn_search_Click;
@@ -356,7 +348,7 @@ namespace QuanLyNhaSach
             txt_search.MaxLength = 50;
             txt_search.Name = "txt_search";
             txt_search.Size = new Size(233, 24);
-            txt_search.TabIndex = 15;
+            txt_search.TabIndex = 12;
             // 
             // lsv_sach
             // 
@@ -366,7 +358,7 @@ namespace QuanLyNhaSach
             lsv_sach.Location = new Point(23, 398);
             lsv_sach.Name = "lsv_sach";
             lsv_sach.Size = new Size(1358, 218);
-            lsv_sach.TabIndex = 26;
+            lsv_sach.TabIndex = 9;
             lsv_sach.UseCompatibleStateImageBehavior = false;
             lsv_sach.View = View.Details;
             lsv_sach.SelectedIndexChanged += lsv_sach_SelectedIndexChanged;
@@ -411,20 +403,10 @@ namespace QuanLyNhaSach
             button1.Location = new Point(357, 354);
             button1.Name = "button1";
             button1.Size = new Size(178, 34);
-            button1.TabIndex = 27;
+            button1.TabIndex = 14;
             button1.Text = "Hiển Thị Danh Sách";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // txt_nxb
-            // 
-            txt_nxb.Location = new Point(556, 155);
-            txt_nxb.Margin = new Padding(4, 3, 4, 3);
-            txt_nxb.MaxLength = 4;
-            txt_nxb.Name = "txt_nxb";
-            txt_nxb.Size = new Size(174, 24);
-            txt_nxb.TabIndex = 13;
-            txt_nxb.KeyPress += txt_nxb_KeyPress;
             // 
             // Form_sach
             // 
@@ -433,20 +415,24 @@ namespace QuanLyNhaSach
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoat;
             ClientSize = new Size(1412, 628);
+            Controls.Add(btn_Luu);
             Controls.Add(button1);
+            Controls.Add(btn_Huy);
             Controls.Add(lsv_sach);
+            Controls.Add(btn_thoat);
             Controls.Add(btn_search);
+            Controls.Add(btn_themsach);
             Controls.Add(txt_search);
+            Controls.Add(btn_suasach);
+            Controls.Add(btn_xoasach);
             Controls.Add(label8);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form_sach";
             Text = "QUẢN LÝ THÔNG TIN SÁCH";
             FormClosing += Form_sach_FormClosing;
             Load += Form_sach_Load;
-            groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -469,7 +455,6 @@ namespace QuanLyNhaSach
         private Button btn_suasach;
         private Button btn_xoasach;
         private Button btn_thoat;
-        private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label label8;
         private Button btn_search;
