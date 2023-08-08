@@ -22,7 +22,18 @@ namespace QuanLyNhaSach
             InitializeComponent();
         }
 
+        public static bool chuanHoaTaiKhoanMatKhau(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c == ' ' || !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')))
+                {
+                    return false;
+                }
+            }
 
+            return true;
+        }
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
             if (connpg == null)
@@ -36,6 +47,11 @@ namespace QuanLyNhaSach
 
             if (KiemTra())
             {
+                if (chuanHoaTaiKhoanMatKhau(txt_mkm.Text) == false || chuanHoaTaiKhoanMatKhau(txt_nlmk.Text) == false)
+                {
+                    MessageBox.Show("Mật khẩu không được chứa ký tự đặc biệt hoặc có dấu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 try
                 {
                     string sql = "UPDATE nhan_vien SET matkhau = @matkhau WHERE taikhoan = @taikhoan";

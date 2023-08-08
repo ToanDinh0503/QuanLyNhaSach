@@ -98,6 +98,7 @@ namespace QuanLyNhaSach
 
             txt_mtl.Text = "";
             txt_ttl.Text = "";
+            txt_ttl.Focus();
         }
 
         private void btn_suatl_Click(object sender, EventArgs e)
@@ -111,6 +112,7 @@ namespace QuanLyNhaSach
             btn_xoatl.Enabled = false;
             btn_luu.Enabled = true;
             btn_huy.Enabled = true;
+            txt_ttl.Focus();
         }
 
         private void btn_huy_Click(object sender, EventArgs e)

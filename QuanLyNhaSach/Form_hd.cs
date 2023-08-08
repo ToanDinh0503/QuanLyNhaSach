@@ -152,7 +152,7 @@ namespace QuanLyNhaSach
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-
+            
             isSuaSachButtonClicked = true;
             //ban dau thi cac txt deu la readonly
             hamtrong(true);
@@ -160,6 +160,7 @@ namespace QuanLyNhaSach
             btn_xoa.Enabled = false;
             btn_luu.Enabled = true;
             btn_huy.Enabled = true;
+            dt_nlhd.Focus();
         }
         private void btn_xoa_Click(object sender, EventArgs e)
         {

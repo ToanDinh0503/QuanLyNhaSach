@@ -208,7 +208,7 @@ namespace QuanLyNhaSach
             LayDuLieuComboboxMaSach();
 
             //ban dau thi tat ca cac textbox deu la read het
-            //hamtrong(false);
+            hamtrong(false);
             txt_mhd.Text = "";
             LamMoiGiaTri();
 
@@ -221,6 +221,19 @@ namespace QuanLyNhaSach
             //hien thi thong tin hoa don dc goi
 
 
+        }
+        private void hamtrong(bool true_false)
+        {
+            txt_mhd.Enabled = true_false;
+            dt_nlhd.Enabled = true_false;
+            cmb_mkh.Enabled = true_false;
+            cmb_mnv.Enabled = true_false;
+            btn_qlkh.Enabled = true_false;
+            cmb_MaSach.Enabled = true_false;
+            txt_soluong.Enabled = true_false;
+            txt_Gia.Enabled = true_false;
+            txt_thanhtien.Enabled = true_false;
+            txt_tinhtrang.Enabled = true_false;
         }
 
         private int TaomaHD()
@@ -459,9 +472,11 @@ namespace QuanLyNhaSach
             btn_luu.Enabled = true;
             btn_xoa.Enabled = false;
             btn_inHD.Enabled = false;
+            hamtrong(true);
             LamMoiGiaTri();
             txt_mhd.Text = TaomaHD().ToString();
             HienThiDanhSach();
+            dt_nlhd.Focus();
         }
         private void xoaAllCTHD()
         {
@@ -650,6 +665,7 @@ namespace QuanLyNhaSach
                     {
                         connection.Close();
                     }
+                    cmb_MaSach.Focus();
                 }
             }
         }

@@ -149,9 +149,9 @@ namespace QuanLyNhaSach
             //ban dau thi tat ca cac textbox deu la read het
             cmb_MaHD.Enabled = false;
             cmb_MaSach.Enabled = false;
-            txt_soluong.ReadOnly = true;
-            txt_thanhtien.ReadOnly = true;
-            txt_tinhtrang.ReadOnly = true;
+            txt_soluong.Enabled = false;
+            txt_thanhtien.Enabled = false;
+            txt_tinhtrang.Enabled = false;
 
             btn_LamMoichitiet.Enabled = false;
             btn_Luuchitiet.Enabled = false;
@@ -211,8 +211,8 @@ namespace QuanLyNhaSach
                         //lay du lieu tu combobox
                         DataRowView selectedRow = cmb_MaSach.SelectedItem as DataRowView;
                         // Lấy giá trị id sách từ ComboBox
-                       int masach = Convert.ToInt32(selectedRow["masach"].ToString());
-                        
+                        int masach = Convert.ToInt32(selectedRow["masach"].ToString());
+
 
                         // Lấy giá tiền của sách từ cơ sở dữ liệu 
                         int giaTien = LayGiaTien(masach);
@@ -291,9 +291,9 @@ namespace QuanLyNhaSach
 
         private void btn_searchchitiet_Click_1(object sender, EventArgs e)
         {
-            
+
             string keyword = txt_searchMaHD.Text.Trim();
-            if(keyword == "")
+            if (keyword == "")
             {
                 HienThiDanhSach();
                 return;
@@ -333,19 +333,16 @@ namespace QuanLyNhaSach
 
         private void btn_suachitiet_Click_1(object sender, EventArgs e)
         {
-            
+
             isSuaChiTietButtonClicked = true;
-            //ban dau thi cac txt deu la readonly
-
             cmb_MaSach.Enabled = true;
-            txt_soluong.ReadOnly = false;
-            txt_thanhtien.ReadOnly = true;
-            txt_tinhtrang.ReadOnly = false;
-
-            
+            txt_soluong.Enabled = true;
+            txt_thanhtien.Enabled = false;
+            txt_tinhtrang.Enabled = true;
             btn_xoachitiet.Enabled = false;
             btn_Luuchitiet.Enabled = true;
             btn_LamMoichitiet.Enabled = true;
+            cmb_MaSach.Focus();
 
         }
 
@@ -357,9 +354,9 @@ namespace QuanLyNhaSach
             btn_suachitiet.Enabled = true;
             cmb_MaSach.Enabled = false;
             cmb_MaHD.Enabled = false;
-            txt_soluong.ReadOnly = true;
-            txt_thanhtien.ReadOnly = true;
-            txt_tinhtrang.ReadOnly = true;
+            txt_soluong.Enabled = false;
+            txt_thanhtien.Enabled = false; 
+            txt_tinhtrang.Enabled = false;
             // Lấy phần tử được chọn trên listview
             ListViewItem lvi = lsv_CTHD.SelectedItems[0];
 
@@ -407,8 +404,8 @@ namespace QuanLyNhaSach
 
                     int rowsAffected = command.ExecuteNonQuery();
 
-                    
-                    if(rowsAffected<=0)
+
+                    if (rowsAffected <= 0)
                     {
                         MessageBox.Show("Không thể cập nhật dữ liệu!");
                     }
@@ -510,12 +507,12 @@ namespace QuanLyNhaSach
 
                         //tinh tong tien  
                         int tongtiencu = TinhTongTien();
-                        int tongtienmoi = tongtiencu - (thanhtienxoa * soluongxoa); 
+                        int tongtienmoi = tongtiencu - (thanhtienxoa * soluongxoa);
 
                         // Cap nhat tong tien vao database
                         CapNhatTongTien(connection, tongtienmoi);
                         HienThiDanhSach();
-                        
+
 
                     }
                     catch (Exception ex)

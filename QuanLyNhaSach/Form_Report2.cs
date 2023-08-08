@@ -38,7 +38,7 @@ namespace QuanLyNhaSach
             {
                 connpg.Open(); // Đóng thì mở
             }
-       
+
             NpgsqlCommand sqlCmd = new NpgsqlCommand();
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = "SELECT * FROM hoa_don Where mahd = @mhd";

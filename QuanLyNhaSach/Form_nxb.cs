@@ -98,6 +98,7 @@ namespace QuanLyNhaSach
 
             txt_mnxb.Text = "";
             txt_tnxb.Text = "";
+            txt_tnxb.Focus();
         }
         private void btn_suanxb_Click(object sender, EventArgs e)
         {
@@ -109,6 +110,7 @@ namespace QuanLyNhaSach
             btn_xoanxb.Enabled = false;
             btn_luu.Enabled = true;
             btn_huy.Enabled = true;
+            txt_tnxb.Focus();
         }
 
         private void btn_huy_Click(object sender, EventArgs e)

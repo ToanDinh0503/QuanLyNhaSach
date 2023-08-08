@@ -38,9 +38,6 @@
             tt = new ColumnHeader();
             kh = new ColumnHeader();
             nv = new ColumnHeader();
-            btn_searchHoaDon = new Button();
-            txt_searchHoaDon = new TextBox();
-            button1 = new Button();
             groupBox2 = new GroupBox();
             txt_nv = new TextBox();
             txt_kh = new TextBox();
@@ -60,7 +57,7 @@
             // 
             panel1.BackColor = Color.Aquamarine;
             panel1.Controls.Add(label17);
-            panel1.Location = new Point(0, 11);
+            panel1.Location = new Point(0, 26);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1285, 73);
@@ -71,7 +68,7 @@
             label17.AutoSize = true;
             label17.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label17.ForeColor = Color.Navy;
-            label17.Location = new Point(443, 20);
+            label17.Location = new Point(462, 23);
             label17.Name = "label17";
             label17.Size = new Size(344, 29);
             label17.TabIndex = 0;
@@ -121,38 +118,6 @@
             nv.Text = "Nhân Viên";
             nv.Width = 350;
             // 
-            // btn_searchHoaDon
-            // 
-            btn_searchHoaDon.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_searchHoaDon.Location = new Point(182, 306);
-            btn_searchHoaDon.Name = "btn_searchHoaDon";
-            btn_searchHoaDon.Size = new Size(72, 28);
-            btn_searchHoaDon.TabIndex = 1;
-            btn_searchHoaDon.Text = "Lọc";
-            btn_searchHoaDon.UseVisualStyleBackColor = true;
-            btn_searchHoaDon.Click += btn_searchHoaDon_Click;
-            btn_searchHoaDon.KeyDown += btn_searchHoaDon_KeyDown;
-            // 
-            // txt_searchHoaDon
-            // 
-            txt_searchHoaDon.Location = new Point(274, 307);
-            txt_searchHoaDon.Margin = new Padding(4, 3, 4, 3);
-            txt_searchHoaDon.MaxLength = 1000;
-            txt_searchHoaDon.Name = "txt_searchHoaDon";
-            txt_searchHoaDon.Size = new Size(233, 27);
-            txt_searchHoaDon.TabIndex = 2;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(529, 306);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 28);
-            button1.TabIndex = 30;
-            button1.Text = "Hiển thị danh sách";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(txt_nv);
@@ -166,7 +131,7 @@
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label6);
             groupBox2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox2.Location = new Point(12, 102);
+            groupBox2.Location = new Point(11, 139);
             groupBox2.Margin = new Padding(4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4);
@@ -273,9 +238,6 @@
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1282, 654);
             Controls.Add(groupBox2);
-            Controls.Add(button1);
-            Controls.Add(btn_searchHoaDon);
-            Controls.Add(txt_searchHoaDon);
             Controls.Add(lsv_dmhd);
             Controls.Add(panel1);
             KeyPreview = true;
@@ -290,7 +252,6 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -361,9 +322,6 @@
         private ColumnHeader mahd;
         private ColumnHeader nlhd;
         private ColumnHeader kh;
-        private Button btn_searchHoaDon;
-        private TextBox txt_searchHoaDon;
-        private Button button1;
         private ColumnHeader nv;
         private GroupBox groupBox2;
         private TextBox txt_nlhd;

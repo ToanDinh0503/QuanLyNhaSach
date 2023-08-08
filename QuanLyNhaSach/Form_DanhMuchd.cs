@@ -65,70 +65,6 @@ namespace QuanLyNhaSach
             }
             reader.Close();
         }
-        private void btn_searchHoaDon_Click(object sender, EventArgs e)
-        {
-            string searchString = txt_searchHoaDon.ToString(); // Giá trị tìm kiếm từ TextBox
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-                try
-                {
-                    string sql = "SELECT * FROM hoa_don WHERE mahd LIKE @search";
-                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@search", "%" + searchString + "%");
-
-                        using (NpgsqlDataReader reader = command.ExecuteReader())
-                        {
-
-                            lsv_dmhd.Items.Clear();
-                            while (reader.Read())
-                            {
-                                int mahd = reader.GetInt32(0);
-                                DateOnly nlhd = DateOnly.FromDateTime(reader.GetDateTime(1));
-                                //kiem tra coi no co null khong co thi tra ve null
-                                int tongtien = reader.GetInt32(2);
-                                string tenkh = reader.GetString(3);
-                                string tennv = reader.GetString(4);
-
-                                ListViewItem newitem = new ListViewItem(mahd.ToString());
-                                newitem.SubItems.Add(nlhd.ToString("MM/dd/yyyy"));
-                                newitem.SubItems.Add(tongtien.ToString());
-                                newitem.SubItems.Add(tenkh);
-                                newitem.SubItems.Add(tennv);
-
-                                lsv_dmhd.Items.Add(newitem);
-                            }
-                            reader.Close();
-                        }
-
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi tìm kiếm dữ liệu: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-                HienThiDanhSach();
-            }
-        }
-        private void enter(object sender, KeyPressEventArgs e)
-        {
-            btn_searchHoaDon_Click(sender, e);
-        }
-
-        private void btn_searchHoaDon_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btn_searchHoaDon.PerformClick();
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             HienThiDanhSach();
@@ -137,7 +73,6 @@ namespace QuanLyNhaSach
             txt_tt.Text = "";
             txt_kh.Text = "";
             txt_nv.Text = "";
-            txt_searchHoaDon.Text = "";
         }
 
         private void Form_DanhMucHD_Load(object sender, EventArgs e)
@@ -148,7 +83,6 @@ namespace QuanLyNhaSach
             txt_tt.ReadOnly = true;
             txt_kh.ReadOnly = true;
             txt_nv.ReadOnly = true;
-            btn_searchHoaDon.Focus();
         }
 
         private void lsv_dmhd_SelectedIndexChanged(object sender, EventArgs e)

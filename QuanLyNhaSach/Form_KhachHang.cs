@@ -107,6 +107,7 @@ namespace QuanLyNhaSach
             btn_xoakhach.Enabled = false;
             btn_LuuKhach.Enabled = true;
             btn_LamMoiKhach.Enabled = true;
+            txt_tkh.Focus();
         }
 
         private void btn_xoakhach_Click(object sender, EventArgs e)

@@ -42,7 +42,6 @@
             btn_sua = new Button();
             btn_xoa = new Button();
             btn_thoat = new Button();
-            groupBox1 = new GroupBox();
             btn_Luu = new Button();
             btn_Huy = new Button();
             groupBox2 = new GroupBox();
@@ -71,10 +70,7 @@
             taikhoan = new ColumnHeader();
             matkhau = new ColumnHeader();
             btn_hiendanhsach = new Button();
-            panel1 = new Panel();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -153,7 +149,7 @@
             txb_taikhoan.Multiline = true;
             txb_taikhoan.Name = "txb_taikhoan";
             txb_taikhoan.Size = new Size(174, 24);
-            txb_taikhoan.TabIndex = 9;
+            txb_taikhoan.TabIndex = 8;
             // 
             // txb_diachi
             // 
@@ -177,83 +173,66 @@
             // 
             // btn_them
             // 
-            btn_them.Location = new Point(15, 50);
+            btn_them.Location = new Point(846, 400);
             btn_them.Margin = new Padding(4, 3, 4, 3);
             btn_them.Name = "btn_them";
             btn_them.Size = new Size(139, 48);
-            btn_them.TabIndex = 11;
+            btn_them.TabIndex = 12;
             btn_them.Text = "Thêm";
             btn_them.UseVisualStyleBackColor = true;
             btn_them.Click += btn_them_Click;
             // 
             // btn_sua
             // 
-            btn_sua.Location = new Point(188, 50);
+            btn_sua.Location = new Point(1019, 400);
             btn_sua.Margin = new Padding(4, 3, 4, 3);
             btn_sua.Name = "btn_sua";
             btn_sua.Size = new Size(139, 48);
-            btn_sua.TabIndex = 12;
+            btn_sua.TabIndex = 14;
             btn_sua.Text = "Sửa";
             btn_sua.UseVisualStyleBackColor = true;
             btn_sua.Click += btn_suasach_Click;
             // 
             // btn_xoa
             // 
-            btn_xoa.Location = new Point(362, 50);
+            btn_xoa.Location = new Point(1193, 400);
             btn_xoa.Margin = new Padding(4, 3, 4, 3);
             btn_xoa.Name = "btn_xoa";
             btn_xoa.Size = new Size(139, 48);
-            btn_xoa.TabIndex = 18;
+            btn_xoa.TabIndex = 15;
             btn_xoa.Text = "Xóa";
             btn_xoa.UseVisualStyleBackColor = true;
             btn_xoa.Click += btn_xoa_Click;
             // 
             // btn_thoat
             // 
-            btn_thoat.Location = new Point(362, 160);
+            btn_thoat.Location = new Point(1193, 510);
             btn_thoat.Margin = new Padding(4, 3, 4, 3);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.Size = new Size(139, 48);
-            btn_thoat.TabIndex = 14;
+            btn_thoat.TabIndex = 19;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
             btn_thoat.Click += btn_thoat_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btn_Luu);
-            groupBox1.Controls.Add(btn_Huy);
-            groupBox1.Controls.Add(btn_thoat);
-            groupBox1.Controls.Add(btn_them);
-            groupBox1.Controls.Add(btn_sua);
-            groupBox1.Controls.Add(btn_xoa);
-            groupBox1.Location = new Point(810, 327);
-            groupBox1.Margin = new Padding(4, 3, 4, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(515, 235);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chức năng";
-            // 
             // btn_Luu
             // 
-            btn_Luu.Location = new Point(15, 160);
+            btn_Luu.Location = new Point(846, 510);
             btn_Luu.Margin = new Padding(4, 3, 4, 3);
             btn_Luu.Name = "btn_Luu";
             btn_Luu.Size = new Size(139, 48);
-            btn_Luu.TabIndex = 11;
+            btn_Luu.TabIndex = 10;
             btn_Luu.Text = "Lưu";
             btn_Luu.UseVisualStyleBackColor = true;
             btn_Luu.Click += btn_Luu_Click_1;
             // 
             // btn_Huy
             // 
-            btn_Huy.Location = new Point(188, 160);
+            btn_Huy.Location = new Point(1019, 510);
             btn_Huy.Margin = new Padding(4, 3, 4, 3);
             btn_Huy.Name = "btn_Huy";
             btn_Huy.Size = new Size(139, 48);
-            btn_Huy.TabIndex = 13;
+            btn_Huy.TabIndex = 11;
             btn_Huy.Text = "Hủy";
             btn_Huy.UseVisualStyleBackColor = true;
             btn_Huy.Click += btn_LamMoi_Click;
@@ -286,7 +265,7 @@
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 3, 4, 3);
             groupBox2.Size = new Size(755, 468);
-            groupBox2.TabIndex = 2;
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin nhân viên";
             // 
@@ -299,6 +278,7 @@
             txb_manv.Name = "txb_manv";
             txb_manv.Size = new Size(174, 24);
             txb_manv.TabIndex = 23;
+            txb_manv.TabStop = false;
             // 
             // label1
             // 
@@ -317,7 +297,7 @@
             txb_matkhau.MaxLength = 10;
             txb_matkhau.Name = "txb_matkhau";
             txb_matkhau.Size = new Size(173, 24);
-            txb_matkhau.TabIndex = 10;
+            txb_matkhau.TabIndex = 9;
             // 
             // label12
             // 
@@ -414,32 +394,32 @@
             // 
             // btn_search
             // 
-            btn_search.Location = new Point(15, 5);
+            btn_search.Location = new Point(832, 103);
             btn_search.Name = "btn_search";
             btn_search.Size = new Size(72, 28);
-            btn_search.TabIndex = 25;
+            btn_search.TabIndex = 17;
             btn_search.Text = "Lọc";
             btn_search.UseVisualStyleBackColor = true;
             btn_search.Click += btn_search_Click_1;
             // 
             // txt_search
             // 
-            txt_search.Location = new Point(94, 7);
+            txt_search.Location = new Point(911, 105);
             txt_search.Margin = new Padding(4, 3, 4, 3);
             txt_search.MaxLength = 35;
             txt_search.Name = "txt_search";
             txt_search.Size = new Size(233, 24);
-            txt_search.TabIndex = 15;
+            txt_search.TabIndex = 16;
             // 
             // lsv_danhsach
             // 
             lsv_danhsach.Columns.AddRange(new ColumnHeader[] { manv, tennv, gioitinh, sdt, ngaysinh, diachi, vaitro, taikhoan, matkhau });
             lsv_danhsach.FullRowSelect = true;
             lsv_danhsach.GridLines = true;
-            lsv_danhsach.Location = new Point(15, 51);
+            lsv_danhsach.Location = new Point(832, 149);
             lsv_danhsach.Name = "lsv_danhsach";
             lsv_danhsach.Size = new Size(500, 218);
-            lsv_danhsach.TabIndex = 26;
+            lsv_danhsach.TabIndex = 13;
             lsv_danhsach.UseCompatibleStateImageBehavior = false;
             lsv_danhsach.View = View.Details;
             lsv_danhsach.SelectedIndexChanged += lsv_danhsach_SelectedIndexChanged;
@@ -491,36 +471,33 @@
             // 
             // btn_hiendanhsach
             // 
-            btn_hiendanhsach.Location = new Point(334, 7);
+            btn_hiendanhsach.Location = new Point(1151, 105);
             btn_hiendanhsach.Name = "btn_hiendanhsach";
             btn_hiendanhsach.Size = new Size(133, 29);
-            btn_hiendanhsach.TabIndex = 27;
+            btn_hiendanhsach.TabIndex = 18;
             btn_hiendanhsach.Text = "Hiện danh sách";
             btn_hiendanhsach.UseVisualStyleBackColor = true;
             btn_hiendanhsach.Click += btn_hiendanhsach_Click;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(txt_search);
-            panel1.Controls.Add(lsv_danhsach);
-            panel1.Controls.Add(btn_hiendanhsach);
-            panel1.Controls.Add(btn_search);
-            panel1.Location = new Point(810, 102);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(531, 205);
-            panel1.TabIndex = 28;
-            // 
             // Form_NhanVien
             // 
-            AcceptButton = btn_Luu;
+            AcceptButton = btn_them;
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoat;
             ClientSize = new Size(1412, 593);
-            Controls.Add(panel1);
+            Controls.Add(btn_Luu);
+            Controls.Add(txt_search);
+            Controls.Add(lsv_danhsach);
+            Controls.Add(btn_Huy);
             Controls.Add(label8);
+            Controls.Add(btn_hiendanhsach);
+            Controls.Add(btn_thoat);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(btn_search);
+            Controls.Add(btn_them);
+            Controls.Add(btn_xoa);
+            Controls.Add(btn_sua);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form_NhanVien";
@@ -528,11 +505,8 @@
             Text = "QUẢN LÝ THÔNG TIN NHÂN VIÊN";
             FormClosing += Form_NhanVien_FormClosing;
             Load += Form_data_Load;
-            groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -552,7 +526,6 @@
         private Button btn_sua;
         private Button btn_xoa;
         private Button btn_thoat;
-        private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label label8;
         private Button btn_search;
@@ -579,7 +552,6 @@
         private Button btn_hiendanhsach;
         private Label label12;
         private TextBox txb_matkhau;
-        private Panel panel1;
         private TextBox txb_manv;
         private Label label1;
     }

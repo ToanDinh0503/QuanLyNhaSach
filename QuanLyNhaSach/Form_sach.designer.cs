@@ -183,7 +183,7 @@ namespace QuanLyNhaSach
             btn_themsach.Margin = new Padding(4, 3, 4, 3);
             btn_themsach.Name = "btn_themsach";
             btn_themsach.Size = new Size(139, 48);
-            btn_themsach.TabIndex = 7;
+            btn_themsach.TabIndex = 9;
             btn_themsach.Text = "Thêm";
             btn_themsach.UseVisualStyleBackColor = true;
             btn_themsach.Click += btn_themsach_Click;
@@ -194,7 +194,7 @@ namespace QuanLyNhaSach
             btn_suasach.Margin = new Padding(4, 3, 4, 3);
             btn_suasach.Name = "btn_suasach";
             btn_suasach.Size = new Size(139, 48);
-            btn_suasach.TabIndex = 10;
+            btn_suasach.TabIndex = 11;
             btn_suasach.Text = "Sửa";
             btn_suasach.UseVisualStyleBackColor = true;
             btn_suasach.Click += btn_suasach_Click;
@@ -205,7 +205,7 @@ namespace QuanLyNhaSach
             btn_xoasach.Margin = new Padding(4, 3, 4, 3);
             btn_xoasach.Name = "btn_xoasach";
             btn_xoasach.Size = new Size(139, 48);
-            btn_xoasach.TabIndex = 11;
+            btn_xoasach.TabIndex = 12;
             btn_xoasach.Text = "Xóa";
             btn_xoasach.UseVisualStyleBackColor = true;
             btn_xoasach.Click += btn_xoasach_Click;
@@ -217,7 +217,7 @@ namespace QuanLyNhaSach
             btn_thoat.Margin = new Padding(4, 3, 4, 3);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.Size = new Size(139, 48);
-            btn_thoat.TabIndex = 15;
+            btn_thoat.TabIndex = 16;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
             btn_thoat.Click += btn_thoat_Click;
@@ -278,6 +278,7 @@ namespace QuanLyNhaSach
             btn_htts.Name = "btn_htts";
             btn_htts.Size = new Size(36, 23);
             btn_htts.TabIndex = 17;
+            btn_htts.TabStop = false;
             btn_htts.Text = "...";
             btn_htts.UseVisualStyleBackColor = true;
             btn_htts.Click += btn_htts_Click;
@@ -289,6 +290,7 @@ namespace QuanLyNhaSach
             btn_htmt.Name = "btn_htmt";
             btn_htmt.Size = new Size(36, 23);
             btn_htmt.TabIndex = 16;
+            btn_htmt.TabStop = false;
             btn_htmt.Text = "...";
             btn_htmt.UseVisualStyleBackColor = true;
             btn_htmt.Click += btn_htmt_Click;
@@ -299,7 +301,7 @@ namespace QuanLyNhaSach
             comboBoxNXB.Location = new Point(147, 161);
             comboBoxNXB.Name = "comboBoxNXB";
             comboBoxNXB.Size = new Size(173, 26);
-            comboBoxNXB.TabIndex = 4;
+            comboBoxNXB.TabIndex = 5;
             // 
             // comboBoxTheLoai
             // 
@@ -316,7 +318,7 @@ namespace QuanLyNhaSach
             txt_nxb.MaxLength = 4;
             txt_nxb.Name = "txt_nxb";
             txt_nxb.Size = new Size(174, 24);
-            txt_nxb.TabIndex = 5;
+            txt_nxb.TabIndex = 4;
             txt_nxb.KeyPress += txt_nxb_KeyPress;
             // 
             // label8
@@ -336,7 +338,7 @@ namespace QuanLyNhaSach
             btn_search.Location = new Point(23, 354);
             btn_search.Name = "btn_search";
             btn_search.Size = new Size(72, 28);
-            btn_search.TabIndex = 13;
+            btn_search.TabIndex = 14;
             btn_search.Text = "Lọc";
             btn_search.UseVisualStyleBackColor = true;
             btn_search.Click += btn_search_Click;
@@ -348,7 +350,7 @@ namespace QuanLyNhaSach
             txt_search.MaxLength = 50;
             txt_search.Name = "txt_search";
             txt_search.Size = new Size(233, 24);
-            txt_search.TabIndex = 12;
+            txt_search.TabIndex = 13;
             // 
             // lsv_sach
             // 
@@ -358,7 +360,7 @@ namespace QuanLyNhaSach
             lsv_sach.Location = new Point(23, 398);
             lsv_sach.Name = "lsv_sach";
             lsv_sach.Size = new Size(1358, 218);
-            lsv_sach.TabIndex = 9;
+            lsv_sach.TabIndex = 10;
             lsv_sach.UseCompatibleStateImageBehavior = false;
             lsv_sach.View = View.Details;
             lsv_sach.SelectedIndexChanged += lsv_sach_SelectedIndexChanged;
@@ -403,7 +405,7 @@ namespace QuanLyNhaSach
             button1.Location = new Point(357, 354);
             button1.Name = "button1";
             button1.Size = new Size(178, 34);
-            button1.TabIndex = 14;
+            button1.TabIndex = 15;
             button1.Text = "Hiển Thị Danh Sách";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;

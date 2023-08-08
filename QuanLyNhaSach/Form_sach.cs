@@ -147,6 +147,7 @@ public partial class Form_sach : Form
         btn_xoasach.Enabled = false;
         btn_Luu.Enabled = true;
         btn_Huy.Enabled = true;
+        txt_ts.Focus();
     }
 
     private void hamtrong(bool true_false)

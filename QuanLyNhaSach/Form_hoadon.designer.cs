@@ -31,7 +31,6 @@ namespace QuanLyNhaSach
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
             btn_inHD = new Button();
             btn_luu = new Button();
             btn_huy = new Button();
@@ -72,59 +71,43 @@ namespace QuanLyNhaSach
             btn_searchchitiet = new Button();
             txt_search = new TextBox();
             btn_xoaSach = new Button();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btn_inHD);
-            groupBox1.Controls.Add(btn_luu);
-            groupBox1.Controls.Add(btn_huy);
-            groupBox1.Controls.Add(btn_thoat);
-            groupBox1.Controls.Add(btn_them);
-            groupBox1.Controls.Add(btn_xoa);
-            groupBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(24, 653);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(1358, 101);
-            groupBox1.TabIndex = 28;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chức năng";
-            // 
             // btn_inHD
             // 
             btn_inHD.DialogResult = DialogResult.Cancel;
-            btn_inHD.Location = new Point(857, 33);
+            btn_inHD.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_inHD.Location = new Point(866, 674);
             btn_inHD.Margin = new Padding(4);
             btn_inHD.Name = "btn_inHD";
             btn_inHD.Size = new Size(139, 60);
-            btn_inHD.TabIndex = 23;
+            btn_inHD.TabIndex = 16;
             btn_inHD.Text = "In";
             btn_inHD.UseVisualStyleBackColor = true;
             btn_inHD.Click += btn_inHD_Click;
             // 
             // btn_luu
             // 
-            btn_luu.Location = new Point(437, 33);
+            btn_luu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_luu.Location = new Point(446, 674);
             btn_luu.Margin = new Padding(4);
             btn_luu.Name = "btn_luu";
             btn_luu.Size = new Size(139, 60);
-            btn_luu.TabIndex = 20;
+            btn_luu.TabIndex = 8;
             btn_luu.Text = "Lưu";
             btn_luu.UseVisualStyleBackColor = true;
             btn_luu.Click += btn_luu_Click;
             // 
             // btn_huy
             // 
-            btn_huy.Location = new Point(641, 33);
+            btn_huy.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_huy.Location = new Point(650, 674);
             btn_huy.Margin = new Padding(4);
             btn_huy.Name = "btn_huy";
             btn_huy.Size = new Size(139, 60);
-            btn_huy.TabIndex = 21;
+            btn_huy.TabIndex = 9;
             btn_huy.Text = "Hủy";
             btn_huy.UseVisualStyleBackColor = true;
             btn_huy.Click += btn_huy_Click;
@@ -132,33 +115,36 @@ namespace QuanLyNhaSach
             // btn_thoat
             // 
             btn_thoat.DialogResult = DialogResult.Cancel;
-            btn_thoat.Location = new Point(1076, 33);
+            btn_thoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_thoat.Location = new Point(1085, 674);
             btn_thoat.Margin = new Padding(4);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.Size = new Size(139, 60);
-            btn_thoat.TabIndex = 22;
+            btn_thoat.TabIndex = 17;
             btn_thoat.Text = "Thoát";
             btn_thoat.UseVisualStyleBackColor = true;
             btn_thoat.Click += btn_thoat_Click;
             // 
             // btn_them
             // 
-            btn_them.Location = new Point(40, 33);
+            btn_them.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_them.Location = new Point(49, 674);
             btn_them.Margin = new Padding(4);
             btn_them.Name = "btn_them";
             btn_them.Size = new Size(139, 60);
-            btn_them.TabIndex = 15;
+            btn_them.TabIndex = 10;
             btn_them.Text = "Thêm";
             btn_them.UseVisualStyleBackColor = true;
             btn_them.Click += btn_them_Click;
             // 
             // btn_xoa
             // 
-            btn_xoa.Location = new Point(236, 33);
+            btn_xoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_xoa.Location = new Point(245, 674);
             btn_xoa.Margin = new Padding(4);
             btn_xoa.Name = "btn_xoa";
             btn_xoa.Size = new Size(139, 60);
-            btn_xoa.TabIndex = 18;
+            btn_xoa.TabIndex = 11;
             btn_xoa.Text = "Xóa";
             btn_xoa.UseVisualStyleBackColor = true;
             btn_xoa.Click += btn_xoa_Click;
@@ -180,7 +166,7 @@ namespace QuanLyNhaSach
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4);
             groupBox2.Size = new Size(1350, 172);
-            groupBox2.TabIndex = 29;
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin hóa đơn";
             // 
@@ -189,7 +175,7 @@ namespace QuanLyNhaSach
             btn_qlkh.Location = new Point(1119, 45);
             btn_qlkh.Name = "btn_qlkh";
             btn_qlkh.Size = new Size(176, 35);
-            btn_qlkh.TabIndex = 15;
+            btn_qlkh.TabIndex = 3;
             btn_qlkh.Text = "Quản Lý Khách Hàng";
             btn_qlkh.UseVisualStyleBackColor = true;
             btn_qlkh.Click += btn_qlkh_Click;
@@ -202,7 +188,7 @@ namespace QuanLyNhaSach
             dt_nlhd.MaxDate = new DateTime(2023, 8, 5, 21, 9, 17, 15);
             dt_nlhd.Name = "dt_nlhd";
             dt_nlhd.Size = new Size(215, 24);
-            dt_nlhd.TabIndex = 14;
+            dt_nlhd.TabIndex = 1;
             dt_nlhd.Value = new DateTime(2023, 8, 5, 21, 9, 17, 15);
             // 
             // cmb_mnv
@@ -212,7 +198,7 @@ namespace QuanLyNhaSach
             cmb_mnv.Margin = new Padding(3, 4, 3, 4);
             cmb_mnv.Name = "cmb_mnv";
             cmb_mnv.Size = new Size(215, 26);
-            cmb_mnv.TabIndex = 13;
+            cmb_mnv.TabIndex = 4;
             // 
             // cmb_mkh
             // 
@@ -221,7 +207,7 @@ namespace QuanLyNhaSach
             cmb_mkh.Margin = new Padding(3, 4, 3, 4);
             cmb_mkh.Name = "cmb_mkh";
             cmb_mkh.Size = new Size(215, 26);
-            cmb_mkh.TabIndex = 12;
+            cmb_mkh.TabIndex = 2;
             cmb_mkh.DisplayMemberChanged += cmb_mkh_DisplayMemberChanged;
             // 
             // txt_mhd
@@ -233,6 +219,7 @@ namespace QuanLyNhaSach
             txt_mhd.ReadOnly = true;
             txt_mhd.Size = new Size(215, 24);
             txt_mhd.TabIndex = 8;
+            txt_mhd.TabStop = false;
             txt_mhd.TextChanged += txt_mhd_TextChanged;
             // 
             // label2
@@ -286,6 +273,7 @@ namespace QuanLyNhaSach
             txt_tongtien.ReadOnly = true;
             txt_tongtien.Size = new Size(215, 29);
             txt_tongtien.TabIndex = 10;
+            txt_tongtien.TabStop = false;
             // 
             // label4
             // 
@@ -328,7 +316,7 @@ namespace QuanLyNhaSach
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(4, 3, 4, 3);
             groupBox3.Size = new Size(1358, 157);
-            groupBox3.TabIndex = 31;
+            groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Thông tin chi tiêt hóa đơn";
             // 
@@ -341,6 +329,7 @@ namespace QuanLyNhaSach
             txt_Gia.ReadOnly = true;
             txt_Gia.Size = new Size(199, 27);
             txt_Gia.TabIndex = 18;
+            txt_Gia.TabStop = false;
             // 
             // label7
             // 
@@ -359,7 +348,7 @@ namespace QuanLyNhaSach
             cmb_MaSach.Location = new Point(149, 42);
             cmb_MaSach.Name = "cmb_MaSach";
             cmb_MaSach.Size = new Size(172, 28);
-            cmb_MaSach.TabIndex = 14;
+            cmb_MaSach.TabIndex = 5;
             // 
             // label9
             // 
@@ -380,7 +369,7 @@ namespace QuanLyNhaSach
             txt_tinhtrang.Multiline = true;
             txt_tinhtrang.Name = "txt_tinhtrang";
             txt_tinhtrang.Size = new Size(351, 44);
-            txt_tinhtrang.TabIndex = 12;
+            txt_tinhtrang.TabIndex = 7;
             // 
             // txt_soluong
             // 
@@ -389,7 +378,7 @@ namespace QuanLyNhaSach
             txt_soluong.MaxLength = 11;
             txt_soluong.Name = "txt_soluong";
             txt_soluong.Size = new Size(175, 27);
-            txt_soluong.TabIndex = 10;
+            txt_soluong.TabIndex = 6;
             txt_soluong.TextChanged += txt_soluong_TextChanged;
             txt_soluong.KeyPress += txt_soluong_KeyPress;
             // 
@@ -413,6 +402,7 @@ namespace QuanLyNhaSach
             txt_thanhtien.ReadOnly = true;
             txt_thanhtien.Size = new Size(199, 27);
             txt_thanhtien.TabIndex = 11;
+            txt_thanhtien.TabStop = false;
             // 
             // label13
             // 
@@ -445,7 +435,7 @@ namespace QuanLyNhaSach
             lsv_CTHD.Location = new Point(24, 425);
             lsv_CTHD.Name = "lsv_CTHD";
             lsv_CTHD.Size = new Size(1197, 153);
-            lsv_CTHD.TabIndex = 32;
+            lsv_CTHD.TabIndex = 12;
             lsv_CTHD.UseCompatibleStateImageBehavior = false;
             lsv_CTHD.View = View.Details;
             lsv_CTHD.SelectedIndexChanged += lsv_CTHD_SelectedIndexChanged;
@@ -492,7 +482,7 @@ namespace QuanLyNhaSach
             btn_searchchitiet.Location = new Point(350, 604);
             btn_searchchitiet.Name = "btn_searchchitiet";
             btn_searchchitiet.Size = new Size(72, 28);
-            btn_searchchitiet.TabIndex = 35;
+            btn_searchchitiet.TabIndex = 15;
             btn_searchchitiet.Text = "Lọc";
             btn_searchchitiet.UseVisualStyleBackColor = true;
             btn_searchchitiet.Click += btn_searchchitiet_Click;
@@ -502,7 +492,7 @@ namespace QuanLyNhaSach
             txt_search.Location = new Point(146, 607);
             txt_search.Name = "txt_search";
             txt_search.Size = new Size(189, 27);
-            txt_search.TabIndex = 36;
+            txt_search.TabIndex = 14;
             // 
             // btn_xoaSach
             // 
@@ -510,25 +500,31 @@ namespace QuanLyNhaSach
             btn_xoaSach.Location = new Point(1223, 425);
             btn_xoaSach.Name = "btn_xoaSach";
             btn_xoaSach.Size = new Size(151, 39);
-            btn_xoaSach.TabIndex = 19;
+            btn_xoaSach.TabIndex = 13;
             btn_xoaSach.Text = "Bỏ Chọn Sách";
             btn_xoaSach.UseVisualStyleBackColor = true;
             btn_xoaSach.Click += btn_xoaSach_Click;
             // 
             // Form_banhang
             // 
+            AcceptButton = btn_them;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1412, 779);
+            Controls.Add(btn_inHD);
             Controls.Add(btn_xoaSach);
+            Controls.Add(btn_luu);
             Controls.Add(txt_search);
+            Controls.Add(btn_huy);
+            Controls.Add(btn_thoat);
             Controls.Add(label15);
+            Controls.Add(btn_them);
             Controls.Add(btn_searchchitiet);
+            Controls.Add(btn_xoa);
             Controls.Add(lsv_CTHD);
             Controls.Add(groupBox3);
             Controls.Add(label8);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
             Controls.Add(label4);
             Controls.Add(txt_tongtien);
             Margin = new Padding(2);
@@ -536,7 +532,6 @@ namespace QuanLyNhaSach
             Text = "QUẢN LÝ THÔNG TIN BÁN HÀNG";
             FormClosing += HoaDon_FormClosing;
             Load += HoaDon_Load_1;
-            groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -546,7 +541,6 @@ namespace QuanLyNhaSach
         }
 
         #endregion
-        private GroupBox groupBox1;
         private Button btn_luu;
         private Button btn_huy;
         private Button btn_thoat;

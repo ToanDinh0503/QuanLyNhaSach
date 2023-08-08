@@ -168,7 +168,7 @@ namespace QuanLyNhaSach
             btn_themkhach.Margin = new Padding(4, 3, 4, 3);
             btn_themkhach.Name = "btn_themkhach";
             btn_themkhach.Size = new Size(139, 48);
-            btn_themkhach.TabIndex = 5;
+            btn_themkhach.TabIndex = 7;
             btn_themkhach.Text = "Thêm";
             btn_themkhach.UseVisualStyleBackColor = true;
             btn_themkhach.Click += btn_themkhach_Click;
@@ -179,7 +179,7 @@ namespace QuanLyNhaSach
             btn_suakhach.Margin = new Padding(4, 3, 4, 3);
             btn_suakhach.Name = "btn_suakhach";
             btn_suakhach.Size = new Size(139, 48);
-            btn_suakhach.TabIndex = 8;
+            btn_suakhach.TabIndex = 9;
             btn_suakhach.Text = "Sửa";
             btn_suakhach.UseVisualStyleBackColor = true;
             btn_suakhach.Click += btn_suakhach_Click;
@@ -190,7 +190,7 @@ namespace QuanLyNhaSach
             btn_xoakhach.Margin = new Padding(4, 3, 4, 3);
             btn_xoakhach.Name = "btn_xoakhach";
             btn_xoakhach.Size = new Size(139, 48);
-            btn_xoakhach.TabIndex = 9;
+            btn_xoakhach.TabIndex = 10;
             btn_xoakhach.Text = "Xóa";
             btn_xoakhach.UseVisualStyleBackColor = true;
             btn_xoakhach.Click += btn_xoakhach_Click;
@@ -202,7 +202,7 @@ namespace QuanLyNhaSach
             btn_thoatkhach.Margin = new Padding(4, 3, 4, 3);
             btn_thoatkhach.Name = "btn_thoatkhach";
             btn_thoatkhach.Size = new Size(139, 48);
-            btn_thoatkhach.TabIndex = 13;
+            btn_thoatkhach.TabIndex = 14;
             btn_thoatkhach.Text = "Thoát";
             btn_thoatkhach.UseVisualStyleBackColor = true;
             btn_thoatkhach.Click += btn_thoatkhach_Click;
@@ -267,7 +267,7 @@ namespace QuanLyNhaSach
             btn_searchKhach.Location = new Point(23, 330);
             btn_searchKhach.Name = "btn_searchKhach";
             btn_searchKhach.Size = new Size(72, 28);
-            btn_searchKhach.TabIndex = 11;
+            btn_searchKhach.TabIndex = 12;
             btn_searchKhach.Text = "Lọc";
             btn_searchKhach.UseVisualStyleBackColor = true;
             btn_searchKhach.Click += btn_searchKhach_Click;
@@ -279,7 +279,7 @@ namespace QuanLyNhaSach
             txt_searchKhach.MaxLength = 35;
             txt_searchKhach.Name = "txt_searchKhach";
             txt_searchKhach.Size = new Size(233, 24);
-            txt_searchKhach.TabIndex = 10;
+            txt_searchKhach.TabIndex = 11;
             // 
             // lsv_khach
             // 
@@ -289,7 +289,7 @@ namespace QuanLyNhaSach
             lsv_khach.Location = new Point(23, 373);
             lsv_khach.Name = "lsv_khach";
             lsv_khach.Size = new Size(1358, 218);
-            lsv_khach.TabIndex = 7;
+            lsv_khach.TabIndex = 8;
             lsv_khach.UseCompatibleStateImageBehavior = false;
             lsv_khach.View = View.Details;
             lsv_khach.SelectedIndexChanged += lsv_khach_SelectedIndexChanged;
@@ -324,7 +324,7 @@ namespace QuanLyNhaSach
             btn_htds.Location = new Point(363, 330);
             btn_htds.Name = "btn_htds";
             btn_htds.Size = new Size(178, 34);
-            btn_htds.TabIndex = 12;
+            btn_htds.TabIndex = 13;
             btn_htds.Text = "Hiển Thị Danh Sách";
             btn_htds.UseVisualStyleBackColor = true;
             btn_htds.Click += btn_htds_Click;

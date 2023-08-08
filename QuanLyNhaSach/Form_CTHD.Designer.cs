@@ -43,7 +43,6 @@ namespace QuanLyNhaSach
             btn_suachitiet = new Button();
             btn_xoachitiet = new Button();
             btn_thoatchitiet = new Button();
-            groupBox1 = new GroupBox();
             btn_Luuchitiet = new Button();
             btn_LamMoichitiet = new Button();
             groupBox2 = new GroupBox();
@@ -60,7 +59,6 @@ namespace QuanLyNhaSach
             thanhtien = new ColumnHeader();
             tinhtrang = new ColumnHeader();
             label7 = new Label();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,7 +119,7 @@ namespace QuanLyNhaSach
             txt_soluong.MaxLength = 3;
             txt_soluong.Name = "txt_soluong";
             txt_soluong.Size = new Size(173, 24);
-            txt_soluong.TabIndex = 10;
+            txt_soluong.TabIndex = 3;
             txt_soluong.TextChanged += txt_soluong_TextChanged;
             txt_soluong.KeyPress += txt_soluong_KeyPress;
             // 
@@ -133,6 +131,7 @@ namespace QuanLyNhaSach
             txt_thanhtien.Name = "txt_thanhtien";
             txt_thanhtien.Size = new Size(173, 24);
             txt_thanhtien.TabIndex = 11;
+            txt_thanhtien.TabStop = false;
             // 
             // txt_tinhtrang
             // 
@@ -142,76 +141,60 @@ namespace QuanLyNhaSach
             txt_tinhtrang.Multiline = true;
             txt_tinhtrang.Name = "txt_tinhtrang";
             txt_tinhtrang.Size = new Size(579, 44);
-            txt_tinhtrang.TabIndex = 12;
+            txt_tinhtrang.TabIndex = 4;
             // 
             // btn_suachitiet
             // 
-            btn_suachitiet.Location = new Point(43, 72);
+            btn_suachitiet.Location = new Point(818, 144);
             btn_suachitiet.Margin = new Padding(4, 3, 4, 3);
             btn_suachitiet.Name = "btn_suachitiet";
             btn_suachitiet.Size = new Size(139, 48);
-            btn_suachitiet.TabIndex = 17;
+            btn_suachitiet.TabIndex = 8;
             btn_suachitiet.Text = "Sửa";
             btn_suachitiet.UseVisualStyleBackColor = true;
             btn_suachitiet.Click += btn_suachitiet_Click_1;
             // 
             // btn_xoachitiet
             // 
-            btn_xoachitiet.Location = new Point(207, 72);
+            btn_xoachitiet.Location = new Point(982, 144);
             btn_xoachitiet.Margin = new Padding(4, 3, 4, 3);
             btn_xoachitiet.Name = "btn_xoachitiet";
             btn_xoachitiet.Size = new Size(139, 48);
-            btn_xoachitiet.TabIndex = 18;
+            btn_xoachitiet.TabIndex = 9;
             btn_xoachitiet.Text = "Xóa";
             btn_xoachitiet.UseVisualStyleBackColor = true;
             btn_xoachitiet.Click += btn_xoachitiet_Click_1;
             // 
             // btn_thoatchitiet
             // 
-            btn_thoatchitiet.Location = new Point(369, 160);
+            btn_thoatchitiet.Location = new Point(1144, 232);
             btn_thoatchitiet.Margin = new Padding(4, 3, 4, 3);
             btn_thoatchitiet.Name = "btn_thoatchitiet";
             btn_thoatchitiet.Size = new Size(139, 48);
-            btn_thoatchitiet.TabIndex = 22;
+            btn_thoatchitiet.TabIndex = 12;
             btn_thoatchitiet.Text = "Thoát";
             btn_thoatchitiet.UseVisualStyleBackColor = true;
             btn_thoatchitiet.Click += btn_thoatchitiet_Click_1;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btn_Luuchitiet);
-            groupBox1.Controls.Add(btn_LamMoichitiet);
-            groupBox1.Controls.Add(btn_thoatchitiet);
-            groupBox1.Controls.Add(btn_suachitiet);
-            groupBox1.Controls.Add(btn_xoachitiet);
-            groupBox1.Location = new Point(786, 87);
-            groupBox1.Margin = new Padding(4, 3, 4, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(556, 254);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Chức năng";
-            // 
             // btn_Luuchitiet
             // 
-            btn_Luuchitiet.Location = new Point(43, 160);
+            btn_Luuchitiet.Location = new Point(818, 232);
             btn_Luuchitiet.Margin = new Padding(4, 3, 4, 3);
             btn_Luuchitiet.Name = "btn_Luuchitiet";
             btn_Luuchitiet.Size = new Size(139, 48);
-            btn_Luuchitiet.TabIndex = 20;
+            btn_Luuchitiet.TabIndex = 5;
             btn_Luuchitiet.Text = "Lưu";
             btn_Luuchitiet.UseVisualStyleBackColor = true;
             btn_Luuchitiet.Click += btn_Luuchitiet_Click;
             // 
             // btn_LamMoichitiet
             // 
-            btn_LamMoichitiet.Location = new Point(207, 160);
+            btn_LamMoichitiet.Location = new Point(982, 232);
             btn_LamMoichitiet.Margin = new Padding(4, 3, 4, 3);
             btn_LamMoichitiet.Name = "btn_LamMoichitiet";
             btn_LamMoichitiet.Size = new Size(139, 48);
-            btn_LamMoichitiet.TabIndex = 21;
-            btn_LamMoichitiet.Text = "Làm Mới";
+            btn_LamMoichitiet.TabIndex = 6;
+            btn_LamMoichitiet.Text = "Hủy";
             btn_LamMoichitiet.UseVisualStyleBackColor = true;
             btn_LamMoichitiet.Click += btn_LamMoichitiet_Click;
             // 
@@ -232,7 +215,7 @@ namespace QuanLyNhaSach
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(4, 3, 4, 3);
             groupBox2.Size = new Size(755, 254);
-            groupBox2.TabIndex = 22;
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin chi tiêt hóa đơn";
             groupBox2.Enter += groupBox2_Enter;
@@ -243,7 +226,7 @@ namespace QuanLyNhaSach
             cmb_MaSach.Location = new Point(555, 40);
             cmb_MaSach.Name = "cmb_MaSach";
             cmb_MaSach.Size = new Size(173, 26);
-            cmb_MaSach.TabIndex = 14;
+            cmb_MaSach.TabIndex = 2;
             // 
             // cmb_MaHD
             // 
@@ -251,7 +234,7 @@ namespace QuanLyNhaSach
             cmb_MaHD.Location = new Point(150, 41);
             cmb_MaHD.Name = "cmb_MaHD";
             cmb_MaHD.Size = new Size(171, 26);
-            cmb_MaHD.TabIndex = 13;
+            cmb_MaHD.TabIndex = 1;
             // 
             // label8
             // 
@@ -270,7 +253,7 @@ namespace QuanLyNhaSach
             btn_searchchitiet.Location = new Point(61, 358);
             btn_searchchitiet.Name = "btn_searchchitiet";
             btn_searchchitiet.Size = new Size(72, 28);
-            btn_searchchitiet.TabIndex = 25;
+            btn_searchchitiet.TabIndex = 11;
             btn_searchchitiet.Text = "Lọc";
             btn_searchchitiet.UseVisualStyleBackColor = true;
             btn_searchchitiet.Click += btn_searchchitiet_Click_1;
@@ -282,7 +265,7 @@ namespace QuanLyNhaSach
             txt_searchMaHD.MaxLength = 1000;
             txt_searchMaHD.Name = "txt_searchMaHD";
             txt_searchMaHD.Size = new Size(180, 24);
-            txt_searchMaHD.TabIndex = 15;
+            txt_searchMaHD.TabIndex = 10;
             // 
             // lsv_CTHD
             // 
@@ -292,7 +275,7 @@ namespace QuanLyNhaSach
             lsv_CTHD.Location = new Point(23, 407);
             lsv_CTHD.Name = "lsv_CTHD";
             lsv_CTHD.Size = new Size(1319, 218);
-            lsv_CTHD.TabIndex = 26;
+            lsv_CTHD.TabIndex = 7;
             lsv_CTHD.UseCompatibleStateImageBehavior = false;
             lsv_CTHD.View = View.Details;
             lsv_CTHD.SelectedIndexChanged += lsv_CTHD_SelectedIndexChanged;
@@ -344,20 +327,23 @@ namespace QuanLyNhaSach
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btn_thoatchitiet;
             ClientSize = new Size(1352, 643);
+            Controls.Add(btn_Luuchitiet);
             Controls.Add(label7);
+            Controls.Add(btn_LamMoichitiet);
+            Controls.Add(btn_thoatchitiet);
             Controls.Add(lsv_CTHD);
+            Controls.Add(btn_suachitiet);
             Controls.Add(btn_searchchitiet);
+            Controls.Add(btn_xoachitiet);
             Controls.Add(txt_searchMaHD);
             Controls.Add(label8);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form_CTHD";
             Text = "QUẢN LÝ CHI TIẾT HÓA ĐƠN";
             FormClosing += Form_CTHD_FormClosing;
             Load += Form_CTHD_Load;
-            groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -376,7 +362,6 @@ namespace QuanLyNhaSach
         private Button btn_suachitiet;
         private Button btn_xoachitiet;
         private Button btn_thoatchitiet;
-        private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label label8;
         private Button btn_searchchitiet;
