@@ -33,10 +33,21 @@ namespace QuanLyNhaSach
              return ((int)value).ToString();
         }
     }
+        public static string GetNonNullLong(object value, string defaultValue = "")
+        {
+            if (value == null || DBNull.Value.Equals(value))
+            {
+                return defaultValue;
+            }
+            else
+            {
+                return ((long)value).ToString();
+            }
+        }
 
-    
-    public static string GetNonNullDouble(object value, string defaultValue = "")
-    {
+
+        public static string GetNonNullDouble(object value, string defaultValue = "")
+        {
         if (value == null || DBNull.Value.Equals(value))
         {
             return defaultValue;

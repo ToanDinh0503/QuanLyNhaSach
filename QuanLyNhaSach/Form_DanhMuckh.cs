@@ -52,7 +52,7 @@ namespace QuanLyNhaSach
                 int makh = reader.GetInt32(0);
                 string tenkh = reader.GetString(1);
                 string diachi = DataHelpers.GetNonNullString(reader.GetValue(2), "");
-                string sdt = DataHelpers.GetNonNullInt(reader.GetValue(3), "");
+                string sdt = DataHelpers.GetNonNullLong(reader.GetValue(3), "");
                 //kiem tra coi no co null khong co thi tra ve null
                 string email = DataHelpers.GetNonNullString(reader.GetValue(4), "");
 
@@ -100,7 +100,7 @@ namespace QuanLyNhaSach
                                 int makh = reader.GetInt32(0);
                                 string tenkh = reader.GetString(1);
                                 string diachi = DataHelpers.GetNonNullString(reader.GetValue(2), "");
-                                string sdt = DataHelpers.GetNonNullInt(reader.GetValue(3), "");
+                                string sdt = DataHelpers.GetNonNullLong(reader.GetValue(3), "");
                                 //kiem tra coi no co null khong co thi tra ve null
                                 string email = DataHelpers.GetNonNullString(reader.GetValue(4), "");
 
