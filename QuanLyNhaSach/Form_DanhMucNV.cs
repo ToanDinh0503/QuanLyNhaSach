@@ -56,7 +56,7 @@ namespace QuanLyNhaSach
                 nv.tennv = reader.GetString(3);
 
                 nv.diachi = reader.GetString(4);
-                nv.sdt = reader.GetInt32(5);
+                nv.sdt = reader.GetInt64(5);
                 nv.tenvt = reader.GetString(6);
                 nv.ngaysinh = DateOnly.FromDateTime(reader.GetDateTime(7));
                 nv.gioitinh = reader.GetBoolean(8);
@@ -124,7 +124,7 @@ namespace QuanLyNhaSach
                             nv.tennv = reader.GetString(3);
 
                             nv.diachi = reader.GetString(4);
-                            nv.sdt = reader.GetInt32(5);
+                            nv.sdt = reader.GetInt64(5);
                             nv.tenvt = reader.GetString(6);
                             nv.ngaysinh = DateOnly.FromDateTime(reader.GetDateTime(7));
                             nv.gioitinh = reader.GetBoolean(8);

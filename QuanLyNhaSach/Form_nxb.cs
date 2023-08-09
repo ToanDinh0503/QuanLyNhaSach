@@ -296,7 +296,7 @@ namespace QuanLyNhaSach
                 try
                 {
                     NpgsqlCommand cmd = new NpgsqlCommand("select manxb, tennxb from nha_xuat_ban where tennxb LIKE  @keyword ", conn);
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
+                    cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
                     NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);

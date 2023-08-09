@@ -403,7 +403,7 @@ namespace QuanLyNhaSach
                     dt_nlhd.Text = dataTable.Rows[0]["ngaylap"].ToString();
                     cbo_nv.Text = dataTable.Rows[0]["tennv"].ToString();
                     txt_tt.Text = dataTable.Rows[0]["tongtien"].ToString();
-                    HienThiDanhSach();
+                    //HienThiDanhSach();
                 }
                 else
                 {

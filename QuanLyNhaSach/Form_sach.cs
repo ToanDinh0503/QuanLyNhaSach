@@ -394,7 +394,7 @@ public partial class Form_sach : Form
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand("select masach,tensach,gia,nam,tennxb,tentl, mota from sach s, the_loai t, nha_xuat_ban n where s.manxb = n.manxb and s.matl = t.matl and tensach LIKE  @keyword ", conn);
-                cmd.Parameters.AddWithValue("@keyword", keyword);
+                cmd.Parameters.AddWithValue("@keyword", "%"+keyword+"%");
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);

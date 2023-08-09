@@ -300,7 +300,7 @@ namespace QuanLyNhaSach
                 try
                 {
                     NpgsqlCommand cmd = new NpgsqlCommand("select matl, tentl from the_loai where tentl LIKE  @keyword ", conn);
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
+                    cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
                     NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
